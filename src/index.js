@@ -5,7 +5,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Home from "./Home";
 import Navbar from './Navbar';
-import Login from './Login';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 
@@ -16,13 +15,11 @@ function App() {
     }
 
     return(
-        <div className="container-fluid bg-dark pb-2">
+        <div className="container-fluid">
         <BrowserRouter>
         <Navbar />
         <Routes>
             <Route path="Home" element={<Home />} />
-            <Route path="Login" element={<Login />} />
-            <Route path="*" element={<Login />} />
         </Routes>
       </BrowserRouter>
       </div>
