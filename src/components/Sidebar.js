@@ -1,9 +1,11 @@
 import React from 'react';
 
+import {AiFillHome as HomeIcon} from 'react-icons/ai';
+
 const Sidebar = () => {
     return (
-        <div className="sidebar">
-        <h2>Sidebar</h2>
+        <div className='container'>
+            <HomeIcon />
         </div>
     );
     }
