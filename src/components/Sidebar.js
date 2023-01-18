@@ -4,6 +4,7 @@ import {AiFillHome as HomeIcon} from 'react-icons/ai';
 import {VscProject as ProjectIcon} from 'react-icons/vsc';
 import {BsBookmarks as ResumeIcon} from 'react-icons/bs';
 import {BsCodeSquare as SkillIcon} from 'react-icons/bs';
+import {BiMessageSquareDots as ContactIcon} from 'react-icons/bi';
 
 const Sidebar = () => {
     return (
@@ -28,6 +29,11 @@ const Sidebar = () => {
                     <div className="row mx-auto bg-dark">
                     <div className='col-md-10 col-12 text-center mx-auto pt-5 mt-4'>
                     <SkillIcon className='text-white' size={30}/>
+                    </div>
+                    </div>
+                    <div className="row mx-auto bg-dark">
+                    <div className='col-md-10 col-12 text-center mx-auto pt-5 mt-4'>
+                    <ContactIcon className='text-white' size={30}/>
                     </div>
                     </div>
                 </div>
