@@ -11,7 +11,7 @@ import "../styles/Sidebar.css";
 
 const Sidebar = () => {
   return (
-        <div className="col-md-1 bg-black ml-auto float-left bg-primary">
+        <div className="col-md-1 bg-black me-auto">
           <div className="row mx-auto bg-black">
             <div className="col-md-8 col-12 text-center mx-auto py-3 mt-4">
               <HomeIcon className="text-white" size={30} />

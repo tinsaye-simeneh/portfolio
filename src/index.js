@@ -11,7 +11,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 function App() {
 
     return(
-        <div className="container-fluid">
+        <div className="d-flex justify-content-between">
         <BrowserRouter>
         <Sidebar />
         <Routes>
