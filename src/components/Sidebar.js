@@ -57,7 +57,7 @@ const Sidebar = ({
         <div className="col-md-8 col-12 text-center mx-auto py-4">
             <div className={ContactIconColor}>
           <SkillIcon size={30} />{" "}
-          <span></span>Skills</span>
+          <span>Skills</span>
         </div>
         </div>
       </div>
