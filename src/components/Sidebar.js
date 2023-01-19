@@ -33,12 +33,12 @@ const Sidebar = ({
     <div className="col-md-1 bg-black me-auto">
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-3 mt-4">
-          <HomeIcon className={HomeIconColor} size={30} />
+          <HomeIcon className={HomeIconColor} size={30} /> <span className="text-white">Home</span>
         </div>
       </div>
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-4 mt-3">
-          <ProjectIcon className={ProjectIconColor} size={30} />
+          <ProjectIcon className={ProjectIconColor} size={30} /> <span className="text-white">Projects</span>
         </div>
       </div>
       <div className="row mx-auto bg-black">

@@ -7,11 +7,11 @@ import {ImBehance2 as BehanceIcon} from "react-icons/im";
 
 import "../styles/Topbar.css";
 
-const Topbar = () => {
+const Topbar = ({PageName}) => {
   return (
-    <div className="container bg-primary mt-4 bg-dark me-auto">
+    <div className="container bg-primary bg-dark me-auto">
       <nav class="navbar navbar-expand-sm shadow-lg p-3 mb-5 top-border">
-        <p class="ms-3 mt-3 text-white">HOME</p>
+        <h5 class="ms-3 text-white">{PageName}</h5>
         <div class="ms-auto">
             <a href="#" class="text-white me-5"><GithubIcon size={30} /></a>
             <a href="#" class="text-white me-5"><TelegramIcon size={30} /></a>
