@@ -8,7 +8,7 @@ import Image from "../assets/Images/memoji.png";
 const Home = () => {
   return (
     <>
-    <Sidebar />
+    <Sidebar HomeIconColor="text-primary"/>
     <div className="container bg-primary mt-4 bg-dark me-auto">
       <Topbar />
       <div className="row">
