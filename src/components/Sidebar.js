@@ -15,49 +15,61 @@ const Sidebar = ({
   ResumeIconColor,
   ContactIconColor,
 }) => {
-
-    if(HomeIconColor === undefined) {
-        HomeIconColor = "text-white";
-    }
-    if(ProjectIconColor === undefined) {
-        ProjectIconColor = "text-white";
-    }
-    if(ResumeIconColor === undefined) {
-        ResumeIconColor = "text-white";
-    }
-    if(ContactIconColor === undefined) {
-        ContactIconColor = "text-white";
-    }
+  if (HomeIconColor === undefined) {
+    HomeIconColor = "text-white";
+  }
+  if (ProjectIconColor === undefined) {
+    ProjectIconColor = "text-white";
+  }
+  if (ResumeIconColor === undefined) {
+    ResumeIconColor = "text-white";
+  }
+  if (ContactIconColor === undefined) {
+    ContactIconColor = "text-white";
+  }
 
   return (
     <div className="col-md-1 bg-black me-auto">
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-3 mt-4">
-          <HomeIcon className={HomeIconColor} size={30} /> <span className="text-white">Home</span>
+            <div className={HomeIconColor}>
+          <HomeIcon size={30} />{" "}
+          <span>Home</span>
+          </div>
         </div>
       </div>
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-4 mt-3">
-          <ProjectIcon className={ProjectIconColor} size={30} /> <span className="text-white">Projects</span>
+            <div className={ProjectIconColor}>
+          <ProjectIcon size={30} />{" "}
+          <span className="text-white">Projects</span>
+        </div>
         </div>
       </div>
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-4 mt-3">
-          <ResumeIcon className={ResumeIconColor} size={30} />
+            <div className={ResumeIconColor}>
+          <ResumeIcon size={30} />{" "}
+          <span className="text-white">Resume</span>
+        </div>
         </div>
       </div>
       <div className="row mx-auto bg-black">
-        <div className="col-md-8 col-12 text-center mx-auto py-4 mt-3">
-          <SkillIcon className={ContactIconColor} size={30} />
+        <div className="col-md-8 col-12 text-center mx-auto py-4">
+            <div className={ContactIconColor}>
+          <SkillIcon size={30} />{" "}
+          <span className="text-white">Skills</span>
+        </div>
         </div>
       </div>
       <div className="row mx-auto bg-black">
-        <div className="col-md-8 col-12 text-center mx-auto py-4 mt-4">
+        <div className="col-md-8 col-12 text-center mx-auto mt-4">
           <ContactIcon className="text-white" size={30} />
+          <span className="text-white">Contact</span>
         </div>
       </div>
       <div className="row mx-auto bg-black mt-5 pt-4">
-        <div className="col-md-10 col-12 text-center mx-auto mt-5 pb-5">
+        <div className="col-md-10 col-12 text-center mx-auto mt-2 pb-5">
           <ThemeIcon className="text-white" size={30} />
         </div>
       </div>
