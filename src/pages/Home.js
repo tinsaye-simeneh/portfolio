@@ -9,10 +9,10 @@ const Home = () => {
   return (
     <>
       <Sidebar HomeIconColor="text-primary" />
-      <div className="container bg-primary mt-4 bg-dark me-auto">
+      <div className="container bg-primary mt-4 bg-dark me-5">
         <Topbar PageName="Home" />
-        <div className="row mt-5 pt-5">
-          <div className="col-md-6 col-12">
+        <div className="row mt-5 py-5 mx-auto">
+          <div className="col-md-6 col-12 mx-auto">
             <img
               src={Image}
               alt="undraw-Developer-re"

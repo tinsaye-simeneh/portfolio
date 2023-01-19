@@ -28,7 +28,7 @@ const Sidebar = ({
   }
 
   return (
-    <div className="col-md-1 bg-black me-auto h-auto">
+    <div className="col-md-1 bg-black me-auto h-auto main-row">
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-3 mt-4">
             <div className={HomeIconColor}>

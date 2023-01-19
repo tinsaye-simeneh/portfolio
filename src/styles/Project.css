@@ -1,0 +1,7 @@
+.main-content {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    overflow: auto;
+    text-align:justify;
+}

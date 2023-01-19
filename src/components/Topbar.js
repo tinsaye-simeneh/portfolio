@@ -9,7 +9,7 @@ import { CiLight as ThemeIcon } from "react-icons/ci";
 
 import "../styles/Topbar.css";
 
-const Topbar = ({PageName}) => {
+const Topbar = () => {
   return (
     <div className="container bg-primary bg-dark top-border">
       <nav class="navbar navbar-expand-sm shadow-lg">

@@ -1,3 +1,6 @@
 .bg-black{
     background-color: #000;
 }
+.main-row{
+    position: fixed;
+}
