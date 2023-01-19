@@ -41,7 +41,7 @@ const Sidebar = ({
         <div className="col-md-8 col-12 text-center mx-auto py-4 mt-3">
             <div className={ProjectIconColor}>
           <ProjectIcon size={30} />{" "}
-          <span className="text-white">Projects</span>
+          <span>Projects</span>
         </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ const Sidebar = ({
         <div className="col-md-8 col-12 text-center mx-auto py-4 mt-3">
             <div className={ResumeIconColor}>
           <ResumeIcon size={30} />{" "}
-          <span className="text-white">Resume</span>
+          <span>Resume</span>
         </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ const Sidebar = ({
         <div className="col-md-8 col-12 text-center mx-auto py-4">
             <div className={ContactIconColor}>
           <SkillIcon size={30} />{" "}
-          <span className="text-white">Skills</span>
+          <span></span>Skills</span>
         </div>
         </div>
       </div>
