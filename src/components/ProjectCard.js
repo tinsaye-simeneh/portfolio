@@ -3,8 +3,8 @@ import React from "react";
 import { BsGithub as GithubIcon } from "react-icons/bs";
 import { BsLink45Deg as LinkIcon } from "react-icons/bs";
 
-const ProjectCard = ({ title, image, GithubLink, DemoLink }) => {
-  if (DemoLink === undefined) DemoLink = GithubLink;
+const ProjectCard = ({ title, image, GithubLink, LiveLink }) => {
+  if (LiveLink === undefined) LiveLink = GithubLink;
 
   return (
     <div className="col-md-4 col-12 mx-auto">
@@ -13,7 +13,7 @@ const ProjectCard = ({ title, image, GithubLink, DemoLink }) => {
         <div className="card-body bg-white rounded">
           <h5 className="card-title text-dark text-center">{title}</h5>
           <hr className="text-dark" />
-          <div className="row mx-auto">
+          <div className="row mx-auto text-center">
             <div className="ms-auto col-md-6">
               <a href={GithubLink} className="btn btn-secondary">
                 <GithubIcon size={20} className="mb-1" />
@@ -21,9 +21,9 @@ const ProjectCard = ({ title, image, GithubLink, DemoLink }) => {
               </a>
             </div>
             <div className="ms-auto col-md-6">
-              <a href={DemoLink} className="btn btn-secondary">
+              <a href={LiveLink} className="btn btn-secondary">
                 <LinkIcon size={20} />
-                <span className="ms-1">Demo</span>
+                <span className="ms-1">Live</span>
               </a>
             </div>
           </div>

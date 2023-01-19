@@ -16,7 +16,12 @@ const Project = () => {
         <Topbar PageName="Project" />
         <div className="border border-white mt-5">
           <div className="row bg-dark py-5 mx-auto p-3 px-5">
-            <ProjectCard title="Weather App" image={Coding}/>
+            <ProjectCard
+              title="Weather App"
+              image={Coding}
+              GithubLink="https://github.com/tinsaye-simeneh/Weather-app"
+              LiveLink="http://weather-app-cyan-three.vercel.app/"
+            />
             <ProjectCard />
             <ProjectCard />
           </div>
