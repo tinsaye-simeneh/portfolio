@@ -11,8 +11,8 @@ const ProjectCard = ({ title, image, GithubLink, LiveLink }) => {
   return (
     <div className="col-md-4 col-12 mx-auto">
       <div className="card bg-dark rounded">
-        <div className="card-img-top bg-gradient p-5 text-center text-white">
-           {title}
+        <div className="card-img-top gradient p-5 text-center text-white">
+           <h5>{title}</h5>
         </div>
         <div className="card-body bg-white rounded">
           <h5 className="card-title text-dark text-center">{title}</h5>

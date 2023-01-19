@@ -47,7 +47,7 @@ const Project = () => {
           </div>
           <div className="row bg-dark pb-5 mx-auto p-3 px-5">
             <ProjectCard
-              title="Portfolio Site Template"
+              title="Portfolio Site"
               GithubLink="https://github.com/tinsaye-simeneh/portfolio-site-template2"
               LiveLink="http://portfolio-ochre-rho-14.vercel.app/"
             />
