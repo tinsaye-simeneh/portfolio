@@ -2,6 +2,8 @@ import React from 'react';
 
 import Topbar from "../components/Topbar";
 
+import Image from "../assets/Images/memoji.png";
+
 const Home = () => {
     return (
         <div className="container bg-primary mt-4 bg-dark me-auto">
@@ -14,7 +16,7 @@ const Home = () => {
                     <button className="btn btn-primary">Hire Me</button>
                 </div>
                 <div className="col-md-6 col-12">
-                    <img src="https://i.ibb.co/0hY4Z4T/undraw-Developer-re.svg" alt="undraw-Developer-re" border="0" />
+                    <img src={Image} alt="undraw-Developer-re" border="0" height={400}/>
                 </div>
             </div>
         </div>
