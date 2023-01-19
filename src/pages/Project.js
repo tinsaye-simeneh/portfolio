@@ -67,7 +67,7 @@ const Project = () => {
               LiveLink="https://et-construction.vercel.app/"
             />
             <ProjectCard
-              title="Frontend Mentor Landing with dropdown"
+              title="Landing Page"
               image={Coding}
               GithubLink="https://github.com/tinsaye-simeneh/Frontend-Mentor-Landing-with_dropdown"
               LiveLink="https://fm-landing.vercel.app/"
