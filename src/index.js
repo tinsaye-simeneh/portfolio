@@ -13,7 +13,6 @@ function App() {
     return(
         <div className="d-flex justify-content-between bg-dark">
         <BrowserRouter>
-        <Sidebar />
         <Routes>
             <Route path="/home" element={<Home />} />
         </Routes>
