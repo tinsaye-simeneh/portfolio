@@ -5,7 +5,6 @@ import { VscProject as ProjectIcon } from "react-icons/vsc";
 import { BsBookmarks as ResumeIcon } from "react-icons/bs";
 import { BsCodeSquare as SkillIcon } from "react-icons/bs";
 import { BiMessageSquareDots as ContactIcon } from "react-icons/bi";
-import { CiLight as ThemeIcon } from "react-icons/ci";
 
 import "../styles/Sidebar.css";
 
@@ -70,7 +69,7 @@ const Sidebar = ({
       </div>
       <div className="row mx-auto bg-black mt-5 pt-4">
         <div className="col-md-10 col-12 text-center mx-auto mt-2 pb-5">
-          <ThemeIcon className="text-white" size={30} />
+         {"<TSD/>"}
         </div>
       </div>
     </div>
