@@ -11,8 +11,8 @@ import "../styles/Topbar.css";
 
 const Topbar = ({PageName}) => {
   return (
-    <div className="container bg-primary bg-dark me-auto">
-      <nav class="navbar navbar-expand-sm shadow-lg top-border">
+    <div className="container bg-primary bg-dark top-border">
+      <nav class="navbar navbar-expand-sm shadow-lg">
         <div class="ml-auto">
             <a href="#" class="text-white ms-4 me-5"><GithubIcon size={30} /></a>
             <a href="#" class="text-white me-5"><TelegramIcon size={30} /></a>
