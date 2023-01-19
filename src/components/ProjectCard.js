@@ -3,13 +3,17 @@ import React from "react";
 import { BsGithub as GithubIcon } from "react-icons/bs";
 import { BsLink45Deg as LinkIcon } from "react-icons/bs";
 
+import "../styles/ProjectCard.css";
+
 const ProjectCard = ({ title, image, GithubLink, LiveLink }) => {
   if (LiveLink === undefined) LiveLink = GithubLink;
 
   return (
     <div className="col-md-4 col-12 mx-auto">
       <div className="card bg-dark rounded">
-        <img src={image} className="card-img-top" alt="..." />
+        <div className="card-img-top bg-gradient p-5 text-center text-white">
+           {title}
+        </div>
         <div className="card-body bg-white rounded">
           <h5 className="card-title text-dark text-center">{title}</h5>
           <hr className="text-dark" />
