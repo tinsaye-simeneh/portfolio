@@ -5,15 +5,17 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Home from "./pages/Home";
 import Sidebar from './components/Sidebar';
+import Topbar from "./components/Topbar";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 
 function App() {
 
     return(
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-between bg-dark">
         <BrowserRouter>
         <Sidebar />
+        <Topbar />
         <Routes>
             <Route path="/home" element={<Home />} />
         </Routes>
