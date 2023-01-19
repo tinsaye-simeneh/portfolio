@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Home from "./pages/Home";
-import Sidebar from './components/Sidebar';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 
@@ -15,6 +14,7 @@ function App() {
         <BrowserRouter>
         <Routes>
             <Route path="/home" element={<Home />} />
+            <Route path="/project" element={<Home />} />
         </Routes>
       </BrowserRouter>
       </div>
