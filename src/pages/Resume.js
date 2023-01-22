@@ -16,9 +16,10 @@ const Resume = () => {
           <div className="row bg-dark pb-5 pt-4 mx-auto p-3 px-5">
             <h6 className="text-white text-decoration-underline">Experience</h6>
             <ExperienceTemplate
-              Position="Gebeya.Inc - Junior Frontend Developer"
+              CompanyName="Gebeya.Inc"
+              Position="Junior Frontend Developer"
               Timeline="Addis Ababa, Ethiopia | October 2022 - Present"
-            CompanyLink="https://gebeya.com/"
+              CompanyLink="https://gebeya.com/"
             />
             <ExperienceTemplate />
           </div>

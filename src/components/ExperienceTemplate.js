@@ -1,7 +1,14 @@
 import React from "react";
 
-const ExperienceTemplate = ({ Position, CompanyLink, Timeline }) => {
-  if (CompanyLink === undefined){
+import { BsLink45Deg } from "react-icons/bs";
+
+const ExperienceTemplate = ({
+  CompanyName,
+  Position,
+  CompanyLink,
+  Timeline,
+}) => {
+  if (CompanyLink === undefined) {
     CompanyLink = "https://www.google.com/?hl=en";
   }
 
@@ -9,8 +16,10 @@ const ExperienceTemplate = ({ Position, CompanyLink, Timeline }) => {
     <div>
       <div className="col-md-6 pt-3">
         <a href={CompanyLink} target="_blank" rel="noreferrer">
-        <h6 className="text-white">{Position}</h6>
+          <BsLink45Deg className="text-white" />
         </a>
+        <h6 className="text-white d-inline">{CompanyName} - </h6>
+        <p className="text-white d-inline">{Position}</p>
         <p className="text-white">{Timeline}</p>
       </div>
     </div>
