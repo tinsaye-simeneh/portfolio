@@ -22,10 +22,19 @@ const Resume = () => {
               CompanyLink="https://gebeya.com/"
             />
             <ExperienceTemplate 
-                CompanyName="Utopix Technologies"
-                Position="Frontend Developer"
-                Timeline="Addis Ababa, Ethiopia | July 2021 - October 2021"
-                CompanyLink="https://utopixtechnologies.vercel.com/"
+                CompanyName="Safari Sports Bet"
+                Position="IT Manager"
+                Timeline="Addis Ababa, Ethiopia | July 2022 - Present"
+            />
+            <ExperienceTemplate
+                CompanyName="Glory Sports Bet"
+                Position="Web Developer"
+                Timeline="Addis Ababa, Ethiopia | October 2021 - April 2022"
+            />
+            <ExperienceTemplate
+                CompanyName="Elsam Technologies"
+                Position="UI/UX Designer & Web Developer"
+                Timeline="Addis Ababa, Ethiopia | June 2020 - April 2022"
             />
           </div>
         </div>

@@ -9,7 +9,7 @@ const ExperienceTemplate = ({
   Timeline,
 }) => {
   if (CompanyLink === undefined) {
-    CompanyLink = "https://www.google.com/?hl=en";
+    CompanyLink = "#";
   }
 
   return (
