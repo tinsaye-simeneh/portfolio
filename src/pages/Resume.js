@@ -21,7 +21,12 @@ const Resume = () => {
               Timeline="Addis Ababa, Ethiopia | October 2022 - Present"
               CompanyLink="https://gebeya.com/"
             />
-            <ExperienceTemplate />
+            <ExperienceTemplate 
+                CompanyName="Utopix Technologies"
+                Position="Frontend Developer"
+                Timeline="Addis Ababa, Ethiopia | July 2021 - October 2021"
+                CompanyLink="https://utopixtechnologies.vercel.com/"
+            />
           </div>
         </div>
       </div>
