@@ -3,6 +3,7 @@ import React from "react";
 import "../styles/Resume.css";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
+import ExperienceTemplate from "../components/ExperienceTemplate";
 
 const Resume = () => {
   return (
@@ -10,6 +11,18 @@ const Resume = () => {
       <Sidebar ProjectIconColor="text-primary" />
       <div className="container my-4 bg-dark me-auto me-5 ps-5">
         <Topbar PageName="Resume" />
+
+        <div className="border border-white mt-5">
+          <div className="row bg-dark pb-5 pt-4 mx-auto p-3 px-5">
+            <h6 className="text-white text-decoration-underline">Experience</h6>
+            <ExperienceTemplate
+              Position="Gebeya.Inc - Junior Frontend Developer"
+              Timeline="Addis Ababa, Ethiopia | October 2022 - Present"
+            CompanyLink="https://gebeya.com/"
+            />
+            <ExperienceTemplate />
+          </div>
+        </div>
       </div>
     </>
   );
