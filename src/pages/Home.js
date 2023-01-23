@@ -35,8 +35,8 @@ const Home = () => {
               technical feasibility. Implemented new responsive website Design
               and Development approach which increased mobile traffic.
             </p>
-            <button className="btn btn-dark border mt-3 me-5">See My Work</button>
-            <button className="btn btn-primary mt-3">Hire Me</button>
+            <a className="btn btn-dark border mt-3 me-5" href="/project">See My Work</a>
+            <a className="btn btn-primary mt-3" href="/contact">Hire Me</a>
           </div>
         </div>
       </div>
