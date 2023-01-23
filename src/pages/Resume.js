@@ -4,11 +4,12 @@ import "../styles/Resume.css";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 import ExperienceTemplate from "../components/ExperienceTemplate";
+import EducationTemplate from "../components/EducationTemplate";
 
 const Resume = () => {
   return (
     <>
-      <Sidebar ProjectIconColor="text-primary" />
+      <Sidebar ResumeIconColor="text-primary" />
       <div className="container my-4 bg-dark me-auto me-5 ps-5">
         <Topbar PageName="Resume" />
 
@@ -36,6 +37,13 @@ const Resume = () => {
                 Position="UI/UX Designer & Web Developer"
                 Timeline="Addis Ababa, Ethiopia | June 2020 - April 2022"
             />
+            <EducationTemplate
+                SchoolName="Addis Ababa Science and Technology University"
+                EducationType="Bachelor of Science in ElectroMechanical Engineering"
+                Timeline="Addis Ababa, Ethiopia | October 2022 - Present"
+                SchoolLink="https://www.aastu.edu.et/"
+            />
+
           </div>
         </div>
       </div>
