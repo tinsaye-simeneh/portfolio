@@ -24,7 +24,7 @@ const Skills = () => {
               <h4 className="text-white text-decoration-underline my-4 text-center pb-4">
                 Coding SkillSet
               </h4>
-              <div className="row">
+              <div className="row mx-auto">
                 <div className="col-md-3 bg-white text-center border rounded py-3 mx-auto">
                   <AiOutlineHtml5 className="text-primary me-3" size={40} />
                   <h4 className="text-dark d-inline">HTML 5</h4>
@@ -53,6 +53,16 @@ const Skills = () => {
                 <div className="col-md-3 bg-white text-center border rounded py-3 mx-auto">
                   <SiCplusplus className="text-primary me-3" size={40} />
                   <h5 className="text-dark d-inline">C++</h5>
+                </div>
+              </div>
+
+              <div className="col-md-12 mx-auto">
+                <h4 className="text-white text-decoration-underline my-4 text-center py-3">
+                  Designing Tools and Skills
+                </h4>
+                <div className="col-md-3 bg-white text-center border rounded py-3 mx-auto">
+                  <SiAdobexd className="text-primary me-3" size={40} />
+                  <h4 className="text-dark d-inline">Adobe XD</h4>
                 </div>
               </div>
             </div>
