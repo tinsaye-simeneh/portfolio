@@ -51,7 +51,7 @@ const Resume = () => {
                 SchoolName="Alx Africa - Holberton"
                 EducationType="Certified Full Stack Web Developer"
                 Timeline="Addis Ababa, Ethiopia | January 2021 - June 2022"
-                SchoolLink="https://www.alx.com"
+                SchoolLink="https://www.alxafrica.com/"
             />
 
 
