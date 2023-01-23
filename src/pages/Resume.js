@@ -8,7 +8,7 @@ import EducationTemplate from "../components/EducationTemplate";
 
 import { HiOutlineMail } from "react-icons/hi";
 import { AiOutlinePhone } from "react-icons/ai";
-import { MdLocationPin } from "react-icons/md";
+import { MdOutlineLocationOn } from "react-icons/md";
 
 const Resume = () => {
   return (
@@ -64,7 +64,7 @@ const Resume = () => {
             <div className="col-md-4 text-white mt-3">
               <div>
                 <p>
-                  <MdLocationPin className="text-white me-2" />
+                  <MdOutlineLocationOn className="text-white me-2" />
                   Addis Ababa, Ethiopia
                 </p>
                 <p>
