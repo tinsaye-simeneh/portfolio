@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <Sidebar HomeIconColor="text-primary" />
-      <div className="container bg-primary mt-4 bg-dark me-5">
+      <div className="container bg-primary my-5 bg-dark me-5">
         <Topbar PageName="Home" />
         <div className="row mt-5 py-5 mx-auto">
           <div className="col-md-6 col-12 mx-auto">
@@ -35,6 +35,7 @@ const Home = () => {
               technical feasibility. Implemented new responsive website Design
               and Development approach which increased mobile traffic.
             </p>
+            <button className="btn btn-dark border mt-3 me-5">See My Work</button>
             <button className="btn btn-primary mt-3">Hire Me</button>
           </div>
         </div>

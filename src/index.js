@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Project from "./pages/Project";
 import Resume from "./pages/Resume";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Skills from "./pages/Skills";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/project" element={<Project />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/skill" element={<Skills/>}/>
         </Routes>
       </BrowserRouter>
       </div>
