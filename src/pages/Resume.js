@@ -37,12 +37,23 @@ const Resume = () => {
                 Position="UI/UX Designer & Web Developer"
                 Timeline="Addis Ababa, Ethiopia | June 2020 - April 2022"
             />
+
+            <h6 className="text-white text-decoration-underline mt-3">
+              Education
+            </h6>
             <EducationTemplate
                 SchoolName="Addis Ababa Science and Technology University"
                 EducationType="Bachelor of Science in ElectroMechanical Engineering"
                 Timeline="Addis Ababa, Ethiopia | October 2022 - Present"
                 SchoolLink="https://www.aastu.edu.et/"
             />
+            <EducationTemplate
+                SchoolName="Alx Africa - Holberton"
+                EducationType="Certified Full Stack Web Developer"
+                Timeline="Addis Ababa, Ethiopia | January 2021 - June 2022"
+                SchoolLink="https://www.alx.com"
+            />
+
 
           </div>
         </div>
