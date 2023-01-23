@@ -35,42 +35,67 @@ const Sidebar = ({
     <div className="col-md-1 bg-black me-auto h-auto main-row">
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-3 mt-4">
+        <a
+            href="/home"
+            className="text-decoration-none"
+          >
             <div className={HomeIconColor}>
           <HomeIcon size={30} />{" "}
           <span>Home</span>
           </div>
+          </a>
         </div>
       </div>
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-4 mt-3">
+        <a
+            href="/project"
+            className="text-decoration-none"
+          >
             <div className={ProjectIconColor}>
           <ProjectIcon size={30} />{" "}
           <span>Projects</span>
         </div>
+        </a>
         </div>
       </div>
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-4 mt-3">
+        <a
+            href="/resume"
+            className="text-decoration-none"
+          >
             <div className={ResumeIconColor}>
           <ResumeIcon size={30} />{" "}
           <span>Resume</span>
         </div>
+        </a>
         </div>
       </div>
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-4">
+        <a
+            href="/skill"
+            className="text-decoration-none"
+          >
             <div className={SkillIconColor}>
           <SkillIcon size={30} />{" "}
           <span>Skills</span>
         </div>
+        </a>
         </div>
       </div>
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto mt-4">
+        <a
+            href="/contact"
+            className="text-decoration-none"
+          >
         <div className={ContactIconColor}>
           <ContactIcon size={30} />
           <span>Contact</span>
         </div>
+        </a>
         </div>
       </div>
       <div className="row mx-auto bg-black mt-5 pt-4">
