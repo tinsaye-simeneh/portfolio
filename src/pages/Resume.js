@@ -23,6 +23,7 @@ const Resume = () => {
             <a
               href="https://drive.google.com/file/d/1gxONWZ6Fdazp64LTYSrvvtld05CQ6voK/view?usp=share_link"
               className="text-dark"
+              target="_blank"
             >
               <AiOutlineDownload className="text-dark me-2" />
               Download the full Resume
