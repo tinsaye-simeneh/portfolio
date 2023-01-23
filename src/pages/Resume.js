@@ -20,9 +20,13 @@ const Resume = () => {
 
         <div className="border border-white mt-5">
           <div className="bg-white text-dark text-center">
-            <a href="" className="text-dark">
-            <AiOutlineDownload className="text-dark me-2" />
-            Download the full Resume
+            <a
+              href="https://drive.google.com/file/d/1gxONWZ6Fdazp64LTYSrvvtld05CQ6voK/view?usp=share_link"
+              className="text-dark"
+              target="_blank"
+            >
+              <AiOutlineDownload className="text-dark me-2" />
+              Download the full Resume
             </a>
           </div>
           <div className="row bg-dark pb-5 pt-4 mx-auto p-3 px-5">
