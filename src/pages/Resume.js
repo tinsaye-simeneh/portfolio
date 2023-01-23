@@ -6,6 +6,10 @@ import Topbar from "../components/Topbar";
 import ExperienceTemplate from "../components/ExperienceTemplate";
 import EducationTemplate from "../components/EducationTemplate";
 
+import { HiOutlineMail } from "react-icons/hi";
+import { AiOutlinePhone } from "react-icons/ai";
+import { MdLocationPin } from "react-icons/md";
+
 const Resume = () => {
   return (
     <>
@@ -15,46 +19,62 @@ const Resume = () => {
 
         <div className="border border-white mt-5">
           <div className="row bg-dark pb-5 pt-4 mx-auto p-3 px-5">
-            <h6 className="text-white text-decoration-underline">Experience</h6>
-            <ExperienceTemplate
-              CompanyName="Gebeya.Inc"
-              Position="Junior Frontend Developer"
-              Timeline="Addis Ababa, Ethiopia | October 2022 - Present"
-              CompanyLink="https://gebeya.com/"
-            />
-            <ExperienceTemplate 
+            <div className="col-md-8">
+              <h6 className="text-white text-decoration-underline">
+                Experience
+              </h6>
+              <ExperienceTemplate
+                CompanyName="Gebeya.Inc"
+                Position="Junior Frontend Developer"
+                Timeline="Addis Ababa, Ethiopia | October 2022 - Present"
+                CompanyLink="https://gebeya.com/"
+              />
+              <ExperienceTemplate
                 CompanyName="Safari Sports Bet"
                 Position="IT Manager"
                 Timeline="Addis Ababa, Ethiopia | July 2022 - Present"
-            />
-            <ExperienceTemplate
+              />
+              <ExperienceTemplate
                 CompanyName="Glory Sports Bet"
                 Position="Web Developer"
                 Timeline="Addis Ababa, Ethiopia | October 2021 - April 2022"
-            />
-            <ExperienceTemplate
+              />
+              <ExperienceTemplate
                 CompanyName="Elsam Technologies"
                 Position="UI/UX Designer & Web Developer"
                 Timeline="Addis Ababa, Ethiopia | June 2020 - April 2022"
-            />
+              />
 
-            <h6 className="text-white text-decoration-underline mt-3">
-              Education
-            </h6>
-            <EducationTemplate
+              <h6 className="text-white text-decoration-underline mt-3">
+                Education
+              </h6>
+              <EducationTemplate
                 SchoolName="Addis Ababa Science and Technology University"
                 EducationType="Bachelor of Science in ElectroMechanical Engineering"
                 Timeline="Addis Ababa, Ethiopia | October 2022 - Present"
                 SchoolLink="https://www.aastu.edu.et/"
-            />
-            <EducationTemplate
+              />
+              <EducationTemplate
                 SchoolName="Alx Africa - Holberton"
                 EducationType="Certified Full Stack Web Developer"
                 Timeline="Addis Ababa, Ethiopia | January 2021 - June 2022"
                 SchoolLink="https://www.alxafrica.com/"
-            />
-
-
+              />
+            </div>
+            <div className="col-md-4 text-white mt-3">
+              <p>
+                <MdLocationPin className="text-white me-2" />
+                Addis Ababa, Ethiopia
+              </p>
+              <p>
+                <AiOutlinePhone className="text-white me-1" />
+                +251983779803
+              </p>
+              <p>
+                <HiOutlineMail className="text-white me-2" />
+                tinsayesimeneh608@gmail.com
+              </p>
+            </div>
           </div>
         </div>
       </div>

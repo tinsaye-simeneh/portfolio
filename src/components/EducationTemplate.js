@@ -14,7 +14,7 @@ const EducationTemplate = ({
 
   return (
     <div>
-      <div className="col-md-6 pt-3">
+      <div className="col-md-12 pt-3">
         <h6 className="text-white">
           <a href={SchoolLink} target="_blank" rel="noreferrer">
             <BsLink45Deg className="text-white" />
