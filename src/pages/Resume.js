@@ -62,18 +62,34 @@ const Resume = () => {
               />
             </div>
             <div className="col-md-4 text-white mt-3">
-              <p>
-                <MdLocationPin className="text-white me-2" />
-                Addis Ababa, Ethiopia
-              </p>
-              <p>
-                <AiOutlinePhone className="text-white me-1" />
-                +251983779803
-              </p>
-              <p>
-                <HiOutlineMail className="text-white me-2" />
-                tinsayesimeneh608@gmail.com
-              </p>
+              <div>
+                <p>
+                  <MdLocationPin className="text-white me-2" />
+                  Addis Ababa, Ethiopia
+                </p>
+                <p>
+                  <AiOutlinePhone className="text-white me-1" />
+                  +251983779803
+                </p>
+                <p>
+                  <HiOutlineMail className="text-white me-2" />
+                  tinsayesimeneh608@gmail.com
+                </p>
+              </div>
+
+              <div className="mt-5">
+                <h6 className="text-white text-decoration-underline mt-3">
+                  Awards
+                </h6>
+                <h6 className="text-white">
+                  3rd Best Project of the Hackathon
+                </h6>
+                <p className="text-white">GDG Addis - USAID Hackathon </p>
+                <span className="text-white">
+                  We develop a charity website to assist refugees to create a
+                  connection between them and supporters.
+                </span>
+              </div>
             </div>
           </div>
         </div>
