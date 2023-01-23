@@ -79,6 +79,20 @@ const Resume = () => {
 
               <div className="mt-5">
                 <h6 className="text-white text-decoration-underline mt-3">
+                  Skills
+                </h6>
+                <p className="text-white">
+                  Programming Languages - C, C++, JavaScript
+                </p>
+                <p className="text-white">
+                  FrameWorks - React.js, Bootstrap, Tailwind
+                </p>
+                <p>Other Languages - HTML5, CSS3</p>
+                <p>Designing Tools - Adobe XD</p>
+              </div>
+
+              <div className="mt-5">
+                <h6 className="text-white text-decoration-underline mt-3">
                   Awards
                 </h6>
                 <h6 className="text-white">
