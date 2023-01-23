@@ -9,6 +9,7 @@ import EducationTemplate from "../components/EducationTemplate";
 import { HiOutlineMail } from "react-icons/hi";
 import { AiOutlinePhone } from "react-icons/ai";
 import { MdOutlineLocationOn } from "react-icons/md";
+import { AiOutlineDownload } from "react-icons/ai";
 
 const Resume = () => {
   return (
@@ -18,6 +19,12 @@ const Resume = () => {
         <Topbar PageName="Resume" />
 
         <div className="border border-white mt-5">
+          <div className="bg-white text-dark text-center">
+            <a href="" className="text-dark">
+            <AiOutlineDownload className="text-dark me-2" />
+            Download the full Resume
+            </a>
+          </div>
           <div className="row bg-dark pb-5 pt-4 mx-auto p-3 px-5">
             <div className="col-md-8">
               <h6 className="text-white text-decoration-underline">
