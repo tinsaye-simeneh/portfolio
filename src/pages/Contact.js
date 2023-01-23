@@ -3,7 +3,7 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 
-import '../styles/Contact.css'
+import "../styles/Contact.css";
 
 const Contact = () => {
   return (
@@ -52,6 +52,7 @@ const Contact = () => {
                     rows={5}
                   />
                 </div>
+                <button className="btn btn-primary w-100">Submit</button>
               </form>
             </div>
           </div>
