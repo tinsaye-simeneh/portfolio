@@ -12,6 +12,7 @@ const Sidebar = ({
   HomeIconColor,
   ProjectIconColor,
   ResumeIconColor,
+  SkillIconColor,
   ContactIconColor,
 }) => {
   if (HomeIconColor === undefined) {
@@ -22,6 +23,9 @@ const Sidebar = ({
   }
   if (ResumeIconColor === undefined) {
     ResumeIconColor = "text-white";
+  }
+  if (SkillIconColor === undefined) {
+    SkillIconColor = "text-white";
   }
   if (ContactIconColor === undefined) {
     ContactIconColor = "text-white";
@@ -55,7 +59,7 @@ const Sidebar = ({
       </div>
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto py-4">
-            <div className={ContactIconColor}>
+            <div className={SkillIconColor}>
           <SkillIcon size={30} />{" "}
           <span>Skills</span>
         </div>
@@ -63,8 +67,10 @@ const Sidebar = ({
       </div>
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto mt-4">
+        <div className={ContactIconColor}>
           <ContactIcon className="text-white" size={30} />
           <span className="text-white">Contact</span>
+        </div>
         </div>
       </div>
       <div className="row mx-auto bg-black mt-5 pt-4">
