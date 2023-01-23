@@ -68,8 +68,8 @@ const Sidebar = ({
       <div className="row mx-auto bg-black">
         <div className="col-md-8 col-12 text-center mx-auto mt-4">
         <div className={ContactIconColor}>
-          <ContactIcon className="text-white" size={30} />
-          <span className="text-white">Contact</span>
+          <ContactIcon size={30} />
+          <span>Contact</span>
         </div>
         </div>
       </div>

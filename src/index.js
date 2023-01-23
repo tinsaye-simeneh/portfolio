@@ -8,6 +8,7 @@ import Project from "./pages/Project";
 import Resume from "./pages/Resume";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Skills from "./pages/Skills";
+import Contact from './pages/Contact'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/project" element={<Project />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/skill" element={<Skills/>}/>
+            <Route path="/contact" element={<Contact/>}/>
         </Routes>
       </BrowserRouter>
       </div>
