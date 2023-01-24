@@ -4,3 +4,15 @@
 .main-row{
     position: fixed;
 }
+.sidebar-mobile{
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .sidebar-mobile{
+        display: block;
+    }
+    .main-row{
+       display: none;
+    }
+}

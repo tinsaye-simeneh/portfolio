@@ -1,15 +1,19 @@
 import React from "react";
 
 import Sidebar from "../components/Sidebar";
+import SidebarMobile from "../components/SidebarMobile";
 import Topbar from "../components/Topbar";
 
 import Image from "../assets/Images/memoji.png";
+
+import '../styles/Home.css'
 
 const Home = () => {
   return (
     <>
       <Sidebar HomeIconColor="text-primary" />
-      <div className="container bg-primary my-5 bg-dark me-5">
+      <div className="container home-container bg-dark me-5">
+        <SidebarMobile HomeIconColor="text-primary" />
         <Topbar PageName="Home" />
         <div className="row mt-5 py-5 mx-auto">
           <div className="col-md-6 col-12 mx-auto">
