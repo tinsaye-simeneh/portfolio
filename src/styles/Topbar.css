@@ -21,3 +21,9 @@
     border: 1px solid blue;
   }
 }
+
+@media (max-width: 600px) {
+  .contact-btn{
+    display: none;
+  }
+}

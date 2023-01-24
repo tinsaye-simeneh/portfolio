@@ -39,12 +39,20 @@ const Topbar = () => {
           <a
             href="https://www.behance.net/tinsayesimeneh"
             target="_blank"
-            class="text-white"
+            class="text-white me-5"
           >
             <BehanceIcon size={30} />
           </a>
+          <a
+            href="mailto:tinsayesimeneh608@gmail.com"
+            target="_blank"
+            class="text-white 
+          "
+          >
+          <EmailIcon size={30} />
+          </a>
         </div>
-        <div class="ms-auto">
+        <div class="ms-auto contact-btn">
           <a
             href="/contact"
             class="text-white text-decoration-none me-4 border p-2 rounded
@@ -53,6 +61,7 @@ const Topbar = () => {
             Get In Touch
           </a>
         </div>
+       
       </nav>
     </div>
   );
