@@ -12,7 +12,7 @@ import "../styles/Topbar.css";
 const Topbar = () => {
   return (
     <div className="container bg-primary bg-dark top-border">
-      <nav class="navbar navbar-expand-sm shadow-lg">
+      <nav class="navbar navbar-expand-sm shadow-lg py-3">
         <div class="ml-auto">
           <a
             href="https://github.com/tinsaye-simeneh"
@@ -21,7 +21,11 @@ const Topbar = () => {
           >
             <GithubIcon size={30} />
           </a>
-          <a href="https://t.me/TinsayeSimeneh" target="_blank" class="text-white me-5">
+          <a
+            href="https://t.me/TinsayeSimeneh"
+            target="_blank"
+            class="text-white me-5"
+          >
             <TelegramIcon size={30} />
           </a>
           <a
@@ -34,14 +38,20 @@ const Topbar = () => {
           <a
             href="https://www.behance.net/tinsayesimeneh"
             target="_blank"
-            class="text-white me-5"
+            class="text-white"
           >
             <BehanceIcon size={30} />
           </a>
         </div>
-        <h5 class="ms-auto me-4 mt-2 text-white">
-          <ThemeIcon className="text-white" size={30} />
-        </h5>
+        <div class="ms-auto">
+          <a
+            href="#"
+            class="text-white me-4
+          "
+          >
+            <ThemeIcon size={30} />
+          </a>
+        </div>
       </nav>
     </div>
   );
