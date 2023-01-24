@@ -2,6 +2,7 @@ import React from "react";
 
 import "../styles/Resume.css";
 import Sidebar from "../components/Sidebar";
+import SidebarMobile from "../components/SidebarMobile";
 import Topbar from "../components/Topbar";
 import ExperienceTemplate from "../components/ExperienceTemplate";
 import EducationTemplate from "../components/EducationTemplate";
@@ -14,10 +15,10 @@ import { AiOutlineDownload } from "react-icons/ai";
 const Resume = () => {
   return (
     <>
-      <Sidebar ResumeIconColor="text-primary" />
-      <div className="container my-4 bg-dark me-auto me-5 ps-5">
-        <Topbar PageName="Resume" />
-
+       <Sidebar HomeIconColor="text-primary" />
+      <div className="container main-container bg-dark">
+        <SidebarMobile HomeIconColor="text-primary" />
+        <Topbar/>
         <div className="border border-white mt-5">
           <div className="bg-white text-dark text-center">
             <a
