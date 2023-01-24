@@ -31,7 +31,7 @@ const Topbar = () => {
           <a
             href="https://www.linkedin.com/in/tinsayesimeneh"
             target="_blank"
-            class="text-white me-5"
+            class="text-white me-3"
           >
             <LinkedinIcon size={30} />
           </a>
