@@ -3,10 +3,21 @@
     margin-bottom: 0.45rem;
     margin-left: 12%;
   }
-  
+.row-card{
+    margin-bottom:3rem;
+    padding-bottom:0rem;
+}
+
   @media (max-width: 768px) {
     .main-container {
       margin: 0 auto;
+    }
+    .col-card{
+        margin-bottom:4rem;
+        padding-bottom:0rem;
+    }
+    .row-card{
+        margin-bottom:0rem;
     }
   }
   

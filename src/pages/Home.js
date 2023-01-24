@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <Sidebar HomeIconColor="text-primary" />
-      <div className="container main-container bg-primary">
+      <div className="container main-container bg-dark">
         <SidebarMobile HomeIconColor="text-primary" />
         <Topbar/>
         <div className="row mt-5 py-5 mx-auto">

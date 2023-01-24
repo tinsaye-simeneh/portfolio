@@ -11,10 +11,10 @@ const Project = () => {
   return (
     <>
       <Sidebar ProjectIconColor="text-primary" />
-      <div className="container main-container bg-primary">
+      <div className="container main-container bg-dark">
         <SidebarMobile ProjectIconColor="text-primary" />
         <Topbar/>
-        <div className="row mt-5 py-5 mx-auto">
+        <div className="row mt-5 row-card mx-auto px-3">
             <ProjectCard
               title="Glory Sports Bet"
               GithubLink="https://github.com/tinsaye-simeneh/Glory-sports_bet"
@@ -30,7 +30,7 @@ const Project = () => {
               LiveLink="http://weather-app-cyan-three.vercel.app/"
             />
           </div>
-          <div className="row bg-dark pb-5 mx-auto p-3 px-5">
+          <div className="row bg-dark row-card mx-auto px-3">
             <ProjectCard
               title="Utopix E-Learning"
               GithubLink="https://github.com/utopix-et/eLearning"
@@ -46,7 +46,7 @@ const Project = () => {
               LiveLink="https://ruth-coffee.vercel.app/"
             />
           </div>
-          <div className="row bg-dark pb-5 mx-auto p-3 px-5">
+          <div className="row bg-dark row-card mx-auto px-3">
             <ProjectCard
               title="Portfolio Site"
               GithubLink="https://github.com/tinsaye-simeneh/portfolio-site-template2"
