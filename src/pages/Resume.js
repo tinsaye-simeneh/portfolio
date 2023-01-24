@@ -15,10 +15,10 @@ import { AiOutlineDownload } from "react-icons/ai";
 const Resume = () => {
   return (
     <>
-       <Sidebar HomeIconColor="text-primary" />
+      <Sidebar ResumeIconColor="text-primary" />
       <div className="container main-container bg-dark">
-        <SidebarMobile HomeIconColor="text-primary" />
-        <Topbar/>
+        <SidebarMobile ResumeIconColor="text-primary" />
+        <Topbar />
         <div className="border border-white mt-5">
           <div className="bg-white text-dark text-center">
             <a
