@@ -6,13 +6,13 @@ import Topbar from "../components/Topbar";
 
 import Image from "../assets/Images/memoji.png";
 
-import '../styles/Home.css'
+import '../styles/index.css'
 
 const Home = () => {
   return (
     <>
       <Sidebar HomeIconColor="text-primary" />
-      <div className="container home-container bg-dark me-5">
+      <div className="container main-container bg-dark me-5">
         <SidebarMobile HomeIconColor="text-primary" />
         <Topbar PageName="Home" />
         <div className="row mt-5 py-5 mx-auto">

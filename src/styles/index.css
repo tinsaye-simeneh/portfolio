@@ -1,0 +1,11 @@
+.main-container {
+    margin-top: 3rem;
+    margin-bottom: 0.45rem;
+  }
+  
+  @media (max-width: 768px) {
+    .main-container {
+      margin: 0;
+    }
+  }
+  

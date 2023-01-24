@@ -1,16 +1,19 @@
 import React from "react";
 
 import Sidebar from "../components/Sidebar";
+import SidebarMobile from "../components/SidebarMobile";
 import Topbar from "../components/Topbar";
 import ProjectCard from "../components/ProjectCard";
 
 import "../styles/Project.css";
+import "../styles/index.css";
 
 const Project = () => {
   return (
     <>
       <Sidebar ProjectIconColor="text-primary" />
-      <div className="container my-4 bg-dark me-auto me-5 ps-5">
+      <div className="container bg-dark main-container me-5">
+      <SidebarMobile ProjectIconColor="text-primary" />
         <Topbar PageName="Project" />
         <div className="border border-white mt-5">
           <div className="row bg-dark py-5 mx-auto p-3 px-5">
