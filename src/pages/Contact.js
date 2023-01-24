@@ -9,9 +9,9 @@ import "../styles/Contact.css";
 const Contact = () => {
   return (
     <>
-     <Sidebar SkillIconColor="text-primary" />
+     <Sidebar ContactIconColor="text-primary" />
       <div className="container main-container bg-dark">
-        <SidebarMobile SkillIconColor="text-primary" />
+        <SidebarMobile ContactIconColor="text-primary" />
         <Topbar />
 
         <div className="border border-white mt-5">

@@ -33,7 +33,7 @@ const SidebarMobile = ({
   return (
     <>
       {/* Mobile Sidebar */}
-      <div className="container bg-dark sidebar-mobile">
+      <div className="container bg-dark sidebar-mobile my-3">
         <nav class="navbar navbar-expand-sm shadow-lg">
           <div class="container-fluid">
             <a class="navbar-brand text-white" href="/home">
