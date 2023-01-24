@@ -15,18 +15,19 @@ const Home = () => {
       <div className="container main-container bg-dark">
         <SidebarMobile HomeIconColor="text-primary" />
         <Topbar/>
-        <div className="row mt-5 py-5 mx-auto">
+        <div className="row py-4 mx-auto">
           <div className="col-md-6 col-12 mx-auto">
             <img
               src={Image}
               alt="undraw-Developer-re"
+              className="img-fluid home-img"
               border="0"
               height={400}
             />
           </div>
-          <div className="col-md-6 col-12 mt-5">
+          <div className="col-md-6 col-12 home-txt">
             <h3 className="text-white">
-              Hello, I'm{" "}
+              Hey, I'm{" "}
               <span className="text-primary">TINSAYE SIMENEH DESSIE</span>
             </h3>
             <h1 className="text-white">
@@ -39,8 +40,10 @@ const Home = () => {
               technical feasibility. Implemented new responsive website Design
               and Development approach which increased mobile traffic.
             </p>
-            <a className="btn btn-dark border mt-3 me-5" href="/project">See My Work</a>
-            <a className="btn btn-primary mt-3" href="/contact">Hire Me</a>
+            <div className="home-btn">
+            <a className="btn btn-dark border my-2 me-5" href="/project">See My Work</a>
+            <a className="btn btn-primary my-2" href="/contact">Hire Me</a>
+            </div>
           </div>
         </div>
       </div>

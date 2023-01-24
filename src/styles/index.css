@@ -7,6 +7,9 @@
     margin-bottom:3rem;
     padding-bottom:0rem;
 }
+.home-txt{
+    margin-top:7rem;
+}
 
   @media (max-width: 768px) {
     .main-container {
@@ -21,6 +24,17 @@
     }
     .skill-card{
         margin-bottom:2rem;
+    }
+    .home-img{
+        margin-top:2rem;
+    }
+    .home-btn{
+        margin-top:3rem;
+        margin-bottom:3rem;
+        text-align:center;
+    }
+    .home-txt{
+        margin:0;
     }
   }
   
