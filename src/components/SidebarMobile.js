@@ -8,7 +8,28 @@ import { BiMessageSquareDots as ContactIcon } from "react-icons/bi";
 
 import "../styles/Sidebar.css";
 
-const SidebarMobile = () => {
+const SidebarMobile = ({
+  HomeIconColor,
+  ProjectIconColor,
+  ResumeIconColor,
+  SkillIconColor,
+  ContactIconColor,
+}) => {
+  if (HomeIconColor === undefined) {
+    HomeIconColor = "text-white";
+  }
+  if (ProjectIconColor === undefined) {
+    ProjectIconColor = "text-white";
+  }
+  if (ResumeIconColor === undefined) {
+    ResumeIconColor = "text-white";
+  }
+  if (SkillIconColor === undefined) {
+    SkillIconColor = "text-white";
+  }
+  if (ContactIconColor === undefined) {
+    ContactIconColor = "text-white";
+  }
   return (
     <>
       {/* Mobile Sidebar */}
@@ -31,33 +52,43 @@ const SidebarMobile = () => {
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul
-                class="navbar-nav
+                class="navbar-nav text-center mx-auto
               "
               >
                 <li class="nav-item">
                   <a class="nav-link" href="/home">
-                    <HomeIcon size={30} /> <span>Home</span>
+                    <div className={HomeIconColor}>
+                      <HomeIcon size={30} /> <span>Home</span>
+                    </div>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/project">
-                    <ProjectIcon size={30} /> <span>Projects</span>
+                    <div className={ProjectIconColor}>
+                      <ProjectIcon size={30} /> <span>Projects</span>
+                    </div>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/resume">
-                    <ResumeIcon size={30} /> <span>Resume</span>
-                  </a>
+                    <a class="nav-link" href="/resume">
+                        <div className={ResumeIconColor}>
+                      <ResumeIcon size={30} /> <span>Resume</span>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/skill">
-                    <SkillIcon size={30} /> <span>Skills</span>
-                  </a>
+                    <a class="nav-link" href="/skill">
+                      <div className={SkillIconColor}>
+                      <SkillIcon size={30} /> <span>Skills</span>
+                        </div>
+                    </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/contact">
-                    <ContactIcon size={30} /> <span>Contact</span>
-                  </a>
+                    <a class="nav-link" href="/contact">
+                        <div className={ContactIconColor}>
+                      <ContactIcon size={30} /> <span>Contact</span>
+                        </div>
+                    </a>
                 </li>
               </ul>
             </div>

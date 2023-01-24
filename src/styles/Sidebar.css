@@ -15,4 +15,10 @@
     .main-row{
        display: none;
     }
+    .nav-item{
+        border: 1px solid #fff;
+        text-align: center;
+        padding: 5px;
+        margin: 5px;
+    }
 }
