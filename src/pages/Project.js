@@ -5,18 +5,16 @@ import SidebarMobile from "../components/SidebarMobile";
 import Topbar from "../components/Topbar";
 import ProjectCard from "../components/ProjectCard";
 
-import "../styles/Project.css";
 import "../styles/index.css";
 
 const Project = () => {
   return (
     <>
       <Sidebar ProjectIconColor="text-primary" />
-      <div className="container bg-dark main-container">
-      <SidebarMobile ProjectIconColor="text-primary" />
-        <Topbar PageName="Project" />
-        <div className="border border-white mt-5">
-          <div className="row bg-dark py-5 mx-auto p-3 px-5">
+      <div className="container main-container bg-primary">
+        <SidebarMobile ProjectIconColor="text-primary" />
+        <Topbar/>
+        <div className="row mt-5 py-5 mx-auto">
             <ProjectCard
               title="Glory Sports Bet"
               GithubLink="https://github.com/tinsaye-simeneh/Glory-sports_bet"
@@ -66,7 +64,6 @@ const Project = () => {
             />
           </div>
         </div>
-      </div>
     </>
   );
 };
