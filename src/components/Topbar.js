@@ -4,7 +4,6 @@ import { BsGithub as GithubIcon } from "react-icons/bs";
 import { ImTelegram as TelegramIcon } from "react-icons/im";
 import { AiFillLinkedin as LinkedinIcon } from "react-icons/ai";
 import { ImBehance2 as BehanceIcon } from "react-icons/im";
-import {MdEmail as EmailIcon} from "react-icons/md"
 
 import { CiLight as ThemeIcon } from "react-icons/ci";
 
@@ -42,14 +41,6 @@ const Topbar = () => {
             class="text-white me-5"
           >
             <BehanceIcon size={30} />
-          </a>
-          <a
-            href="mailto:tinsayesimeneh608@gmail.com"
-            target="_blank"
-            class="text-white 
-          "
-          >
-          <EmailIcon size={30} />
           </a>
         </div>
         <div class="ms-auto contact-btn">
