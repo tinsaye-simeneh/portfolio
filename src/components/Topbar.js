@@ -17,28 +17,28 @@ const Topbar = () => {
           <a
             href="https://github.com/tinsaye-simeneh"
             target="_blank"
-            class="text-white ms-4 me-5"
+            class="text-white ms-4 me-4"
           >
             <GithubIcon size={30} />
           </a>
           <a
             href="https://t.me/TinsayeSimeneh"
             target="_blank"
-            class="text-white me-5"
+            class="text-white me-4"
           >
             <TelegramIcon size={30} />
           </a>
           <a
             href="https://www.linkedin.com/in/tinsayesimeneh"
             target="_blank"
-            class="text-white me-3"
+            class="text-white me-4"
           >
             <LinkedinIcon size={30} />
           </a>
           <a
             href="https://www.behance.net/tinsayesimeneh"
             target="_blank"
-            class="text-white me-3"
+            class="text-white me-4"
           >
             <BehanceIcon size={30} />
           </a>
