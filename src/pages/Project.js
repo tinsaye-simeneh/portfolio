@@ -12,7 +12,7 @@ const Project = () => {
   return (
     <>
       <Sidebar ProjectIconColor="text-primary" />
-      <div className="container bg-dark main-container me-5">
+      <div className="container bg-dark main-container">
       <SidebarMobile ProjectIconColor="text-primary" />
         <Topbar PageName="Project" />
         <div className="border border-white mt-5">
