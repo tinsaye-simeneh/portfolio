@@ -43,7 +43,7 @@ const Topbar = () => {
             <BehanceIcon size={30} />
           </a>
         </div>
-        <div class="ms-auto contact-btn">
+        <div class="mx-auto contact-btn">
           <a
             href="/contact"
             class="text-white text-decoration-none me-4 border p-2 rounded
