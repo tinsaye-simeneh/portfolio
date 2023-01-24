@@ -46,7 +46,7 @@ const Topbar = () => {
         </div>
         <div class="ms-auto">
           <a
-            href="#"
+            href="/contact"
             class="text-white text-decoration-none me-4 border p-2 rounded
           "
           >
