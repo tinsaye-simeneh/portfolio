@@ -1,6 +1,7 @@
 import React from "react";
 
 import Sidebar from "../components/Sidebar";
+import SidebarMobile from "../components/SidebarMobile";
 import Topbar from "../components/Topbar";
 
 import "../styles/Contact.css";
@@ -8,17 +9,18 @@ import "../styles/Contact.css";
 const Contact = () => {
   return (
     <>
-      <Sidebar ContactIconColor="text-primary" />
-      <div className="container my-4 bg-dark me-auto me-5 ps-5">
+     <Sidebar SkillIconColor="text-primary" />
+      <div className="container main-container bg-dark">
+        <SidebarMobile SkillIconColor="text-primary" />
         <Topbar />
 
         <div className="border border-white mt-5">
-          <div className="row bg-dark pb-5 pt-4 mx-auto p-3 px-5">
+          <div className="row bg-dark pb-5 pt-4 mx-auto p-3">
             <div className="col-md-6 mx-auto">
               <h4 className="text-white text-decoration-underline my-4 text-center pb-4">
                 Contact Us
               </h4>
-              <form>
+              <form className="mx-auto">
                 <div className="pb-4">
                   <label className="text-white pb-2">FullName:</label>
                   <input
