@@ -38,7 +38,7 @@ const Topbar = () => {
           <a
             href="https://www.behance.net/tinsayesimeneh"
             target="_blank"
-            class="text-white me-5"
+            class="text-white me-3"
           >
             <BehanceIcon size={30} />
           </a>
