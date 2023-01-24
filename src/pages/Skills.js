@@ -15,9 +15,9 @@ import { SiCplusplus } from "react-icons/si";
 const Skills = () => {
   return (
     <>
-      <Sidebar ResumeIconColor="text-primary" />
+      <Sidebar SkillIconColor="text-primary" />
       <div className="container main-container bg-dark">
-        <SidebarMobile ResumeIconColor="text-primary" />
+        <SidebarMobile SkillIconColor="text-primary" />
         <Topbar />
 
         <div className="border border-white mt-5">
