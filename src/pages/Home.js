@@ -28,7 +28,7 @@ const Home = () => {
           <div className="col-md-6 col-12 home-txt">
             <h3 className="text-white">
               Hey, I'm{" "}
-              <span className="text-primary">TINSAYE SIMENEH DESSIE</span>
+              <span className="text-primary">TINSAYE SIMENEH</span>
             </h3>
             <h1 className="text-white">
               I'm a <span className="text-primary">Front-End Developer</span>
