@@ -13,7 +13,7 @@ const Topbar = () => {
   return (
     <div className="container bg-primary bg-dark top-border">
       <nav class="navbar navbar-expand-sm shadow-lg py-3">
-        <div class="ml-auto">
+        <div class="mx-auto">
           <a
             href="https://github.com/tinsaye-simeneh"
             target="_blank"
