@@ -4,6 +4,7 @@ import { BsGithub as GithubIcon } from "react-icons/bs";
 import { ImTelegram as TelegramIcon } from "react-icons/im";
 import { AiFillLinkedin as LinkedinIcon } from "react-icons/ai";
 import { ImBehance2 as BehanceIcon } from "react-icons/im";
+import {MdEmail as EmailIcon} from "react-icons/md"
 
 import { CiLight as ThemeIcon } from "react-icons/ci";
 
@@ -46,10 +47,10 @@ const Topbar = () => {
         <div class="ms-auto">
           <a
             href="#"
-            class="text-white me-4
+            class="text-white text-decoration-none me-4 border p-2 rounded
           "
           >
-            <ThemeIcon size={30} />
+            Get In Touch
           </a>
         </div>
       </nav>

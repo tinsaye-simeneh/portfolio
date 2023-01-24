@@ -53,7 +53,7 @@ const Project = () => {
               LiveLink="http://portfolio-ochre-rho-14.vercel.app/"
             />
             <ProjectCard
-              title="ET COnstruction"
+              title="ET Construction"
               GithubLink="https://github.com/tinsaye-simeneh/ET_construction"
               LiveLink="https://et-construction.vercel.app/"
             />
