@@ -18,7 +18,6 @@ const Resume = () => {
       <Sidebar ResumeIconColor="text-primary" />
       <div className="container main-container bg-dark">
         <SidebarMobile ResumeIconColor="text-primary" />
-        <Topbar />
         <div className="border border-white mt-5">
           <div className="bg-white text-dark text-center">
             <a

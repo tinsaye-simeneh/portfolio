@@ -14,7 +14,6 @@ const Home = () => {
       <Sidebar HomeIconColor="text-primary" />
       <div className="container main-container bg-dark">
         <SidebarMobile HomeIconColor="text-primary" />
-        <Topbar/>
         <div className="row py-4 mx-auto">
           <div className="col-md-6 col-12 mx-auto">
             <img
