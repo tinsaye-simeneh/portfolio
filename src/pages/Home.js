@@ -4,6 +4,11 @@ import Sidebar from "../components/Sidebar";
 import SidebarMobile from "../components/SidebarMobile";
 import Topbar from "../components/Topbar";
 
+import { BsGithub as GithubIcon } from "react-icons/bs";
+import { ImTelegram as TelegramIcon } from "react-icons/im";
+import { AiFillLinkedin as LinkedinIcon } from "react-icons/ai";
+import { ImBehance2 as BehanceIcon } from "react-icons/im";
+
 import Image from "../assets/Images/memoji.png";
 
 import '../styles/index.css'
@@ -39,6 +44,37 @@ const Home = () => {
               technical feasibility. Implemented new responsive website Design
               and Development approach which increased mobile traffic.
             </p>
+            <div class="mx-auto mt-4 mb-5 text-white">
+                My Social Links:
+                <a
+                  href="https://github.com/tinsaye-simeneh"
+                  target="_blank"
+                  class="text-white ms-4 me-5"
+                >
+                  <GithubIcon size={30} />
+                </a>
+                <a
+                  href="https://t.me/TinsayeSimeneh"
+                  target="_blank"
+                  class="text-white me-5"
+                >
+                  <TelegramIcon size={30} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/tinsayesimeneh"
+                  target="_blank"
+                  class="text-white me-5"
+                >
+                  <LinkedinIcon size={30} />
+                </a>
+                <a
+                  href="https://www.behance.net/tinsayesimeneh"
+                  target="_blank"
+                  class="text-white me-5"
+                >
+                  <BehanceIcon size={30} />
+                </a>
+              </div>
             <div className="home-btn">
             <a className="btn btn-dark border my-2 me-5" href="/project">See My Work</a>
             <a className="btn btn-primary my-2" href="/contact">Hire Me</a>

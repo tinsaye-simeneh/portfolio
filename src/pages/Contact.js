@@ -9,7 +9,7 @@ import "../styles/Contact.css";
 const Contact = () => {
   return (
     <>
-     <Sidebar ContactIconColor="text-primary" />
+      <Sidebar ContactIconColor="text-primary" />
       <div className="container main-container bg-dark">
         <SidebarMobile ContactIconColor="text-primary" />
         <div className="border border-white">
@@ -44,11 +44,11 @@ const Contact = () => {
                   />
                 </div>
                 <div className="pb-4">
-                  <label className="text-white pb-2">Subject:</label>
+                  <label className="text-white pb-2">Message:</label>
                   <textarea
                     className="form-control textArea"
                     type="text"
-                    placeholder="Write the Subject"
+                    placeholder="Write the Message"
                     rows={5}
                   />
                 </div>
