@@ -12,7 +12,7 @@ const Contact = () => {
      <Sidebar ContactIconColor="text-primary" />
       <div className="container main-container bg-dark">
         <SidebarMobile ContactIconColor="text-primary" />
-        <div className="border border-white mt-5">
+        <div className="border border-white">
           <div className="row bg-dark pb-5 pt-4 mx-auto p-3">
             <div className="col-md-6 mx-auto">
               <h4 className="text-white text-decoration-underline my-4 text-center pb-4">

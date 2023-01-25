@@ -52,7 +52,7 @@ const SidebarMobile = ({
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul
-                class="navbar-nav text-center mx-auto
+                class="navbar-nav text-center mx-auto mt-3
               "
               >
                 <li class="nav-item">

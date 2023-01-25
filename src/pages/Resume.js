@@ -18,7 +18,7 @@ const Resume = () => {
       <Sidebar ResumeIconColor="text-primary" />
       <div className="container main-container bg-dark">
         <SidebarMobile ResumeIconColor="text-primary" />
-        <div className="border border-white mt-5">
+        <div className="border border-white">
           <div className="bg-white text-dark text-center">
             <a
               href="https://drive.google.com/file/d/1gxONWZ6Fdazp64LTYSrvvtld05CQ6voK/view?usp=share_link"
@@ -29,7 +29,7 @@ const Resume = () => {
               Download the full Resume
             </a>
           </div>
-          <div className="row bg-dark pb-5 pt-4 mx-auto p-3 px-5">
+          <div className="row bg-dark pb-5 pt-4 mx-auto p-3">
             <div className="col-md-8">
               <h6 className="text-white text-decoration-underline">
                 Experience

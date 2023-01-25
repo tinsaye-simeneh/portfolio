@@ -16,9 +16,9 @@ const Skills = () => {
   return (
     <>
       <Sidebar SkillIconColor="text-primary" />
-      <div className="container main-container bg-dark">
+      <div className="container main-container bg-dark pb-4 mb-5">
         <SidebarMobile SkillIconColor="text-primary" />
-        <div className="border border-white mt-5">
+        <div className="border border-white">
           <div className="row bg-dark pb-5 pt-4 mx-auto p-3 px-5">
             <div className="col-md-12 mx-auto">
               <h4 className="text-white text-decoration-underline my-4 text-center pb-4">

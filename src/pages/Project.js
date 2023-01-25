@@ -13,7 +13,8 @@ const Project = () => {
       <Sidebar ProjectIconColor="text-primary" />
       <div className="container main-container bg-dark">
         <SidebarMobile ProjectIconColor="text-primary" />
-        <div className="row mt-5 row-card mx-auto px-3">
+        <h5 className="text-decoration-underline text-white text-center pb-4">My Recent Projects</h5>
+        <div className="row row-card mx-auto px-3">
             <ProjectCard
               title="Glory Sports Bet"
               GithubLink="https://github.com/tinsaye-simeneh/Glory-sports_bet"

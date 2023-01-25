@@ -12,9 +12,9 @@ const Home = () => {
   return (
     <>
       <Sidebar HomeIconColor="text-primary" />
-      <div className="container main-container bg-dark">
+      <div className="container main-container bg-dark pb-3">
         <SidebarMobile HomeIconColor="text-primary" />
-        <div className="row py-4 mx-auto">
+        <div className="row py-4 mx-auto pb-5 mb-4">
           <div className="col-md-6 col-12 mx-auto">
             <img
               src={Image}
