@@ -22,9 +22,16 @@ const Navbar = () => {
   return (
     <Box bg={bgColor} px={4}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-        <Box fontWeight="bold" fontSize="xl">
-          <Link href="/">Tinsaye</Link>
-        </Box>
+        <HStack spacing={6}>
+          <Link href="/">Tinsaye's Portfolio</Link>
+          <Link as="a" href="/projects">
+            Projects
+          </Link>
+          <Link as="a" href="/blog" download>
+            Blog
+          </Link>
+        </HStack>
+
         <IconButton
           size={"md"}
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -32,16 +39,15 @@ const Navbar = () => {
           display={{ md: "none" }}
           onClick={isOpen ? onClose : onOpen}
         />
-        <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
-          <Button as="a" href="#contact" colorScheme="blue">
-            Contact Me
-          </Button>
-          <Button as="a" href="/resume.pdf" download colorScheme="teal">
-            Download Resume
-          </Button>
-        </HStack>
+
         <Flex alignItems={"center"}>
-          <HStack spacing={3}>
+          <HStack spacing={5}>
+            <Link as="a" href="/contact">
+              Contact Me
+            </Link>
+            <Link as="a" href="/resume.pdf" download>
+              My Resume
+            </Link>
             <IconButton
               as="a"
               href="https://github.com/your-github-username"
