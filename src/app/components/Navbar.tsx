@@ -82,7 +82,7 @@ const Navbar = () => {
       {isOpen && (
         <Box pb={4} display={{ md: "none" }}>
           <Stack as={"nav"} spacing={4}>
-            <Button as="a" href="#contact" colorScheme="blue">
+            <Button as="a" href="/contact" colorScheme="blue">
               Contact Me
             </Button>
             <Button as="a" href="/resume.pdf" download colorScheme="teal">
