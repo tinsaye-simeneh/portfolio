@@ -23,7 +23,7 @@ const Navbar = () => {
     <Box bg={bgColor} px={4}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <HStack spacing={6}>
-          <Link href="/">Tinsaye's Portfolio</Link>
+          <Link href="/">Tinsaye&apos;s Portfolio</Link>
           <Link as="a" href="/projects">
             Projects
           </Link>
@@ -42,10 +42,8 @@ const Navbar = () => {
 
         <Flex alignItems={"center"}>
           <HStack spacing={5}>
-            <Link as="a" href="/contact">
-              Contact Me
-            </Link>
-            <Link as="a" href="/resume.pdf" download>
+            <Link href="/contact">Contact Me</Link>
+            <Link href="/resume" download>
               My Resume
             </Link>
             <IconButton
