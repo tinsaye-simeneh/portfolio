@@ -1,4 +1,5 @@
-import { Box, Heading, VStack, Text, Button } from "@chakra-ui/react";
+"use client";
+import { Box, Heading, VStack, Button } from "@chakra-ui/react";
 import Hero from "./components/Hero";
 import ProjectCard from "./components/ProjectCard";
 
