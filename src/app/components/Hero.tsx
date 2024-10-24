@@ -13,7 +13,7 @@ const Hero = () => {
     <Flex direction="column" align="center" justify="center" h="80vh" px={4}>
       <VStack spacing={4}>
         <Heading as="h1" size="2xl">
-          Hi, I'm Tinsaye Simeneh
+          Hi, I&apos;m Tinsaye Simeneh
         </Heading>
         <Text fontSize="lg" textAlign="center" mt={5} mb={20}>
           A Passionate{" "}
