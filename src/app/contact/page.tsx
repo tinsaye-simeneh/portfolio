@@ -36,7 +36,7 @@ export default function ContactUs() {
   return (
     <Box
       w="95vw"
-      h="100vh"
+      h="90vh"
       display="flex"
       flexDirection="column"
       justifyContent="center"
