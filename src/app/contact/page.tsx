@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Button,
@@ -17,7 +18,9 @@ export default function ContactUs() {
     message: "",
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -25,26 +28,24 @@ export default function ContactUs() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formData);
   };
 
   return (
     <Box
-      w="100vw"
+      w="95vw"
       h="100vh"
       display="flex"
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      bg="gray.50"
       px={4}
     >
       <Box
-        w={{ base: "100%", md: "50%" }}
+        w={{ base: "100%", md: "40vw" }}
         p={8}
-        bg="white"
         boxShadow="lg"
         borderRadius="md"
       >
