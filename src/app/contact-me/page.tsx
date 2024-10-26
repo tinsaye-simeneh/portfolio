@@ -74,7 +74,12 @@ export default function Contact() {
                         _hover={{ border: "2px solid #1C6FEB" }}
                         leftIcon={<MdEmail color="#1970F1" size="20px" />}
                       >
-                        tinsayesimeneh608@gmail.com
+                        <a
+                          href="mailto: tinsayesimeneh608@gmail.com"
+                          target="_blank"
+                        >
+                          tinsayesimeneh608@gmail.com
+                        </a>
                       </Button>
                       <Button
                         size="md"
