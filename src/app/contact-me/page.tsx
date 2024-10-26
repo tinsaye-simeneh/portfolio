@@ -141,7 +141,7 @@ export default function Contact() {
                         </InputGroup>
                       </FormControl>
                       <FormControl id="email">
-                        <FormLabel>Mail</FormLabel>
+                        <FormLabel>E-mail</FormLabel>
                         <InputGroup borderColor="#E0E1E7">
                           <InputLeftElement pointerEvents="none">
                             <MdOutlineEmail color="gray.800" />
