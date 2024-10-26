@@ -38,7 +38,7 @@ const ProjectCard = ({
         <Heading fontSize="xl">{title}</Heading>
         <Text fontSize="sm">{description}</Text>
         <HStack spacing={2} wrap="wrap">
-          {languages.map((language) => (
+          {languages?.map((language) => (
             <Badge
               key={language}
               colorScheme="blue"
