@@ -67,7 +67,7 @@ const Navbar = () => {
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <HStack spacing={8} alignItems={"center"}>
             <Box fontSize={"2rem"} color={"blue.400"}>
-              Ts.
+              <a href="/">TSD.</a>
             </Box>
             <HStack
               as={"nav"}
