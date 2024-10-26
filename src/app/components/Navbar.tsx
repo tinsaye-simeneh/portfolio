@@ -85,7 +85,7 @@ const Navbar = () => {
             <HStack spacing={4}>
               <IconButton
                 as="a"
-                href="https://github.com/your-github-username"
+                href="https://github.com/tinsaye-simeneh"
                 target="_blank"
                 aria-label="GitHub"
                 icon={<FaGithub />}
@@ -95,7 +95,7 @@ const Navbar = () => {
               />
               <IconButton
                 as="a"
-                href="https://linkedin.com/in/your-linkedin-username"
+                href="https://linkedin.com/in/tinsayesimeneh"
                 target="_blank"
                 aria-label="LinkedIn"
                 icon={<FaLinkedin />}
