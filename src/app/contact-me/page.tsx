@@ -101,28 +101,34 @@ export default function Contact() {
                     px={5}
                   >
                     <IconButton
+                      as={"a"}
                       aria-label="facebook"
                       variant="ghost"
                       size="lg"
                       isRound={true}
                       _hover={{ bg: "#0D74FF" }}
                       icon={<BsLinkedin size="28px" color="white" />}
+                      href="https://www.linkedin.com/in/tinsayesimeneh/"
                     />
                     <IconButton
+                      as={"a"}
                       aria-label="github"
                       variant="ghost"
                       size="lg"
                       isRound={true}
                       _hover={{ bg: "#0D74FF" }}
                       icon={<BsGithub size="28px" color="white" />}
+                      href="https://www.github.com/tinsaye-simeneh"
                     />
                     <IconButton
+                      as={"a"}
                       aria-label="discord"
                       variant="ghost"
                       size="lg"
                       isRound={true}
                       _hover={{ bg: "#0D74FF" }}
                       icon={<BsTelegram size="28px" color="white" />}
+                      href="https://t.me/TinsayeSimeneh"
                     />
                   </HStack>
                 </Box>
