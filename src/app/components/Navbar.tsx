@@ -24,12 +24,12 @@ const Links = [
     href: "/my-resume",
   },
   {
-    lable: "Blog",
-    href: "/blog",
-  },
-  {
     lable: "Projects",
     href: "/projects",
+  },
+  {
+    lable: "Blog",
+    href: "/blog",
   },
   {
     lable: "Contact Me",
