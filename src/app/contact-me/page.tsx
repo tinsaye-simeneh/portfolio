@@ -1,97 +1,193 @@
 "use client";
+
 import {
+  Container,
+  Flex,
   Box,
+  Heading,
+  Text,
+  IconButton,
   Button,
+  VStack,
+  HStack,
+  Wrap,
+  WrapItem,
   FormControl,
   FormLabel,
   Input,
+  InputGroup,
+  InputLeftElement,
   Textarea,
-  Heading,
-  VStack,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
+import { BsGithub, BsTelegram, BsLinkedin, BsPerson } from "react-icons/bs";
 
-export default function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData);
-  };
-
+export default function Contact() {
   return (
-    <Box
-      w="95vw"
-      h="90vh"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      px={4}
+    <Container
+      maxW="95%"
+      mt={{ base: 10, sm: 10, md: 10, lg: 0 }}
+      mx={"auto"}
+      centerContent
+      overflow="hidden"
+      textAlign={{ base: "center", sm: "center", md: "center", lg: "left" }}
     >
-      <Box
-        w={{ base: "100%", md: "40vw" }}
-        p={8}
-        boxShadow="lg"
-        borderRadius="md"
-      >
-        <Heading as="h1" mb={6} textAlign="center">
-          Contact Us
-        </Heading>
-        <form onSubmit={handleSubmit}>
-          <VStack spacing={4}>
-            <FormControl id="name" isRequired>
-              <FormLabel>Name</FormLabel>
-              <Input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                placeholder="Your Name"
-              />
-            </FormControl>
-
-            <FormControl id="email" isRequired>
-              <FormLabel>Email</FormLabel>
-              <Input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="Your Email"
-              />
-            </FormControl>
-
-            <FormControl id="message" isRequired>
-              <FormLabel>Message</FormLabel>
-              <Textarea
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                placeholder="Your Message"
-              />
-            </FormControl>
-
-            <Button type="submit" colorScheme="blue" width="full">
-              Submit
-            </Button>
-          </VStack>
-        </form>
-      </Box>
-    </Box>
+      <Flex justifyContent={{ base: "center", md: "flex-start" }}>
+        <Box
+          bg="blue.700"
+          color="white"
+          borderRadius="lg"
+          m={{ sm: 4, md: 16, lg: 10 }}
+          p={{ sm: 5, md: 5, lg: 16 }}
+          w="100%"
+        >
+          <Box p={10}>
+            <Wrap
+              spacing={{ base: 5, sm: 3, md: 5, lg: 20 }}
+              justify={{ base: "center", md: "flex-start" }}
+            >
+              <WrapItem>
+                <Box textAlign="center" w="100%">
+                  <Heading>Contact Me</Heading>
+                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
+                    Fill up the form below to contact Me
+                  </Text>
+                  <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                    <VStack spacing={3} alignItems="center">
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="200px"
+                        variant="ghost"
+                        color="#DCE2FF"
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdPhone color="#1970F1" size="20px" />}
+                      >
+                        +251-983779803
+                      </Button>
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="300px"
+                        variant="ghost"
+                        color="#DCE2FF"
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                      >
+                        <a
+                          href="mailto: tinsayesimeneh608@gmail.com"
+                          target="_blank"
+                        >
+                          tinsayesimeneh608@gmail.com
+                        </a>
+                      </Button>
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="230px"
+                        variant="ghost"
+                        color="#DCE2FF"
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}
+                      >
+                        Addis Ababa, Ethiopia
+                      </Button>
+                    </VStack>
+                  </Box>
+                  <HStack
+                    mt={{ lg: 10, md: 10 }}
+                    spacing={5}
+                    justifyContent="center" // Center the icons on mobile
+                    px={5}
+                  >
+                    <IconButton
+                      as={"a"}
+                      aria-label="facebook"
+                      variant="ghost"
+                      size="lg"
+                      isRound={true}
+                      _hover={{ bg: "#0D74FF" }}
+                      icon={<BsLinkedin size="28px" color="white" />}
+                      href="https://www.linkedin.com/in/tinsayesimeneh/"
+                    />
+                    <IconButton
+                      as={"a"}
+                      aria-label="github"
+                      variant="ghost"
+                      size="lg"
+                      isRound={true}
+                      _hover={{ bg: "#0D74FF" }}
+                      icon={<BsGithub size="28px" color="white" />}
+                      href="https://www.github.com/tinsaye-simeneh"
+                    />
+                    <IconButton
+                      as={"a"}
+                      aria-label="discord"
+                      variant="ghost"
+                      size="lg"
+                      isRound={true}
+                      _hover={{ bg: "#0D74FF" }}
+                      icon={<BsTelegram size="28px" color="white" />}
+                      href="https://t.me/TinsayeSimeneh"
+                    />
+                  </HStack>
+                </Box>
+              </WrapItem>
+              <WrapItem>
+                <Box
+                  bg="white"
+                  borderRadius="lg"
+                  width={{ base: "95vw", lg: "450px" }}
+                  textAlign="left" // Ensure text inside this box aligns left
+                >
+                  <Box m={8} color="#0B0E3F">
+                    <VStack spacing={5}>
+                      <FormControl id="name">
+                        <FormLabel>Your Name</FormLabel>
+                        <InputGroup borderColor="#E0E1E7">
+                          <InputLeftElement pointerEvents="none">
+                            <BsPerson color="gray.800" />
+                          </InputLeftElement>
+                          <Input type="text" size="md" />
+                        </InputGroup>
+                      </FormControl>
+                      <FormControl id="email">
+                        <FormLabel>E-mail</FormLabel>
+                        <InputGroup borderColor="#E0E1E7">
+                          <InputLeftElement pointerEvents="none">
+                            <MdOutlineEmail color="gray.800" />
+                          </InputLeftElement>
+                          <Input type="text" size="md" />
+                        </InputGroup>
+                      </FormControl>
+                      <FormControl id="message">
+                        <FormLabel>Message</FormLabel>
+                        <Textarea
+                          borderColor="gray.300"
+                          _hover={{
+                            borderRadius: "gray.300",
+                          }}
+                          placeholder="message"
+                        />
+                      </FormControl>
+                      <FormControl id="submit" float="right">
+                        <Button
+                          variant="solid"
+                          bg="#0D74FF"
+                          color="white"
+                          _hover={{}}
+                        >
+                          Send Message
+                        </Button>
+                      </FormControl>
+                    </VStack>
+                  </Box>
+                </Box>
+              </WrapItem>
+            </Wrap>
+          </Box>
+        </Box>
+      </Flex>
+    </Container>
   );
 }
