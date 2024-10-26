@@ -21,7 +21,15 @@ const Navbar = () => {
   const bgColor = useColorModeValue("gray.100", "gray.900");
 
   return (
-    <Box bg={bgColor} px={4}>
+    <Box
+      bg={bgColor}
+      px={4}
+      position="sticky"
+      top={0}
+      width="100%"
+      zIndex={10}
+      boxShadow="md"
+    >
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <HStack spacing={6}>
           <Link href="/">Tinsaye&apos;s Portfolio</Link>
