@@ -1,12 +1,4 @@
-import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  VStack,
-  HStack,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, Button, VStack, HStack } from "@chakra-ui/react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 interface ProjectCardProps {
@@ -23,25 +15,10 @@ const ProjectCard = ({
   codeLink,
 }: ProjectCardProps) => {
   return (
-    <Box
-      p={6}
-      shadow="lg"
-      borderWidth="1px"
-      rounded="lg"
-      w="100%"
-      maxW="lg"
-      bg={useColorModeValue("white", "gray.800")}
-    >
+    <Box p={6} shadow="lg" borderWidth="1px" rounded="lg" w="100%" maxW="lg">
       <VStack align="start" spacing={4}>
-        <Heading
-          fontSize="2xl"
-          color={useColorModeValue("blue.600", "blue.300")}
-        >
-          {title}
-        </Heading>
-        <Text fontSize="md" color={useColorModeValue("gray.700", "gray.300")}>
-          {description}
-        </Text>
+        <Heading fontSize="2xl">{title}</Heading>
+        <Text fontSize="md">{description}</Text>
         <HStack spacing={4}>
           <Button
             as="a"
