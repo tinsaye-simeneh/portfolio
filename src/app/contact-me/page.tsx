@@ -48,7 +48,7 @@ export default function Contact() {
             >
               <WrapItem>
                 <Box textAlign="center" w="100%">
-                  <Heading>Contact</Heading>
+                  <Heading>Contact Me</Heading>
                   <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
                     Fill up the form below to contact Me
                   </Text>
