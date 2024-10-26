@@ -35,13 +35,14 @@ const ProjectCard = ({
       mx={"auto"}
     >
       <VStack align="start" spacing={4}>
-        <Heading fontSize="2xl">{title}</Heading>
-        <Text fontSize="md">{description}</Text>
+        <Heading fontSize="xl">{title}</Heading>
+        <Text fontSize="sm">{description}</Text>
         <HStack spacing={2} wrap="wrap">
           {languages.map((language) => (
             <Badge
               key={language}
               colorScheme="blue"
+              fontSize={"0.6rem"}
               py={1}
               px={2}
               border={1}
