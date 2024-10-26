@@ -26,17 +26,13 @@ export default function Contact() {
   return (
     <Container
       maxW="95%"
-      mt={{
-        base: 10,
-        sm: 10,
-        md: 10,
-        lg: 0,
-      }}
+      mt={{ base: 10, sm: 10, md: 10, lg: 0 }}
       mx={"auto"}
       centerContent
       overflow="hidden"
+      textAlign={{ base: "center", sm: "center", md: "center", lg: "left" }}
     >
-      <Flex>
+      <Flex justifyContent={{ base: "center", md: "flex-start" }}>
         <Box
           bg="blue.700"
           color="white"
@@ -44,19 +40,20 @@ export default function Contact() {
           m={{ sm: 4, md: 16, lg: 10 }}
           p={{ sm: 5, md: 5, lg: 16 }}
           w="100%"
-          mx={"auto"}
-          textAlign={"center"}
         >
-          <Box p={4}>
-            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+          <Box p={10}>
+            <Wrap
+              spacing={{ base: 5, sm: 3, md: 5, lg: 20 }}
+              justify={{ base: "center", md: "flex-start" }}
+            >
               <WrapItem>
-                <Box>
+                <Box textAlign="center" w="100%">
                   <Heading>Contact</Heading>
                   <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
                     Fill up the form below to contact Me
                   </Text>
                   <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                    <VStack pl={0} spacing={3} alignItems="flex-start">
+                    <VStack spacing={3} alignItems="center">
                       <Button
                         size="md"
                         height="48px"
@@ -95,8 +92,8 @@ export default function Contact() {
                   <HStack
                     mt={{ lg: 10, md: 10 }}
                     spacing={5}
+                    justifyContent="center" // Center the icons on mobile
                     px={5}
-                    alignItems="flex-start"
                   >
                     <IconButton
                       aria-label="facebook"
@@ -130,6 +127,7 @@ export default function Contact() {
                   bg="white"
                   borderRadius="lg"
                   width={{ base: "95vw", lg: "450px" }}
+                  textAlign="left" // Ensure text inside this box aligns left
                 >
                   <Box m={8} color="#0B0E3F">
                     <VStack spacing={5}>
@@ -142,7 +140,7 @@ export default function Contact() {
                           <Input type="text" size="md" />
                         </InputGroup>
                       </FormControl>
-                      <FormControl id="name">
+                      <FormControl id="email">
                         <FormLabel>Mail</FormLabel>
                         <InputGroup borderColor="#E0E1E7">
                           <InputLeftElement pointerEvents="none">
@@ -151,7 +149,7 @@ export default function Contact() {
                           <Input type="text" size="md" />
                         </InputGroup>
                       </FormControl>
-                      <FormControl id="name">
+                      <FormControl id="message">
                         <FormLabel>Message</FormLabel>
                         <Textarea
                           borderColor="gray.300"
@@ -161,7 +159,7 @@ export default function Contact() {
                           placeholder="message"
                         />
                       </FormControl>
-                      <FormControl id="name" float="right">
+                      <FormControl id="submit" float="right">
                         <Button
                           variant="solid"
                           bg="#0D74FF"
