@@ -63,7 +63,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Box bg={bgColor} px={10}>
+      <Box bg={bgColor} px={10} position="sticky" top={0} zIndex={10}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <HStack spacing={8} alignItems={"center"}>
             <Box fontSize={"2rem"} color={"blue.400"}>
