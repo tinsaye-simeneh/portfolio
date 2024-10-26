@@ -63,15 +63,8 @@ const Navbar = () => {
 
   return (
     <>
-      <Box bg={bgColor} px={4}>
+      <Box bg={bgColor} px={10}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <IconButton
-            size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-          />
           <HStack spacing={8} alignItems={"center"}>
             <Box fontSize={"2rem"} color={"blue.400"}>
               Ts.
@@ -89,7 +82,7 @@ const Navbar = () => {
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            <HStack spacing={5}>
+            <HStack spacing={4}>
               <IconButton
                 as="a"
                 href="https://github.com/your-github-username"
@@ -120,6 +113,13 @@ const Navbar = () => {
               />
             </HStack>
           </Flex>
+          <IconButton
+            size={"md"}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
+            onClick={isOpen ? onClose : onOpen}
+          />
         </Flex>
 
         {isOpen && (
