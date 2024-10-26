@@ -34,7 +34,7 @@ export default function Contact() {
     >
       <Flex justifyContent={{ base: "center", md: "flex-start" }}>
         <Box
-          bg="blue.700"
+          bg="gray.400"
           color="white"
           borderRadius="lg"
           m={{ sm: 4, md: 16, lg: 10 }}
@@ -49,7 +49,7 @@ export default function Contact() {
               <WrapItem>
                 <Box textAlign="center" w="100%">
                   <Heading>Contact Me</Heading>
-                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
+                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="blue.900">
                     Fill up the form below to contact Me
                   </Text>
                   <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
