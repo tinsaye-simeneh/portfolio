@@ -1,95 +1,140 @@
 "use client";
+
 import {
   Box,
   Flex,
   HStack,
   IconButton,
-  Button,
-  useColorMode,
-  useColorModeValue,
   useDisclosure,
+  useColorModeValue,
+  useColorMode,
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import Link from "next/link";
+
+interface NavLinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+const Links = [
+  {
+    lable: "My Resume",
+    href: "/my-resume",
+  },
+  {
+    lable: "Projects",
+    href: "/projects",
+  },
+  {
+    lable: "Blog",
+    href: "/blog",
+  },
+  {
+    lable: "Contact Me",
+    href: "/contact-me",
+  },
+];
+
+const NavLink = ({ href, children }: NavLinkProps) => {
+  return (
+    <Box
+      as="a"
+      px={2}
+      py={1}
+      rounded={"md"}
+      _hover={{
+        textDecoration: "none",
+        bg: useColorModeValue("gray.200", "gray.700"),
+      }}
+      href={href}
+    >
+      {children}
+    </Box>
+  );
+};
 
 const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
   const iconColor = useColorModeValue("gray.800", "white");
   const bgColor = useColorModeValue("gray.100", "gray.900");
 
   return (
-    <Box bg={bgColor} px={4}>
-      <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-        <HStack spacing={6}>
-          <Link href="/">Tinsaye&apos;s Portfolio</Link>
-          <Link href="/project">Projects</Link>
-          <Link href="/blog" download>
-            Blog
-          </Link>
-        </HStack>
-
-        <IconButton
-          size={"md"}
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label={"Open Menu"}
-          display={{ md: "none" }}
-          onClick={isOpen ? onClose : onOpen}
-        />
-
-        <Flex alignItems={"center"}>
-          <HStack spacing={5}>
-            <Link href="/contact">Contact Me</Link>
-            <Link href="/resume" download>
-              My Resume
-            </Link>
-            <IconButton
-              as="a"
-              href="https://github.com/your-github-username"
-              target="_blank"
-              aria-label="GitHub"
-              icon={<FaGithub />}
-              variant="ghost"
-              color={iconColor}
-              size="lg"
-            />
-            <IconButton
-              as="a"
-              href="https://linkedin.com/in/your-linkedin-username"
-              target="_blank"
-              aria-label="LinkedIn"
-              icon={<FaLinkedin />}
-              variant="ghost"
-              color={iconColor}
-              size="lg"
-            />
-            <IconButton
-              aria-label="Toggle Theme"
-              icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-              onClick={toggleColorMode}
-              variant="ghost"
-              size="lg"
-              color={iconColor}
-            />
+    <>
+      <Box bg={bgColor} px={10}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+          <HStack spacing={8} alignItems={"center"}>
+            <Box fontSize={"2rem"} color={"blue.400"}>
+              Ts.
+            </Box>
+            <HStack
+              as={"nav"}
+              spacing={4}
+              display={{ base: "none", md: "flex" }}
+            >
+              {Links.map((link) => (
+                <NavLink key={link.lable} href={link.href}>
+                  {link.lable}
+                </NavLink>
+              ))}
+            </HStack>
           </HStack>
+          <Flex alignItems={"center"}>
+            <HStack spacing={4}>
+              <IconButton
+                as="a"
+                href="https://github.com/your-github-username"
+                target="_blank"
+                aria-label="GitHub"
+                icon={<FaGithub />}
+                variant="ghost"
+                color={iconColor}
+                size="lg"
+              />
+              <IconButton
+                as="a"
+                href="https://linkedin.com/in/your-linkedin-username"
+                target="_blank"
+                aria-label="LinkedIn"
+                icon={<FaLinkedin />}
+                variant="ghost"
+                color={iconColor}
+                size="lg"
+              />
+              <IconButton
+                aria-label="Toggle Theme"
+                icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+                variant="ghost"
+                size="lg"
+                onClick={toggleColorMode}
+                color={iconColor}
+              />
+            </HStack>
+          </Flex>
+          <IconButton
+            size={"md"}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
+            onClick={isOpen ? onClose : onOpen}
+          />
         </Flex>
-      </Flex>
 
-      {isOpen && (
-        <Box pb={4} display={{ md: "none" }}>
-          <Stack as={"nav"} spacing={4}>
-            <Button as="a" href="/contact" colorScheme="blue">
-              Contact Me
-            </Button>
-            <Button as="a" href="/resume.pdf" download colorScheme="teal">
-              Download Resume
-            </Button>
-          </Stack>
-        </Box>
-      )}
-    </Box>
+        {isOpen && (
+          <Box pb={4} display={{ md: "none" }}>
+            <Stack as={"nav"} spacing={4}>
+              {Links.map((link) => (
+                <NavLink key={link.lable} href={link.href}>
+                  {link.lable}
+                </NavLink>
+              ))}
+            </Stack>
+          </Box>
+        )}
+      </Box>
+    </>
   );
 };
 
