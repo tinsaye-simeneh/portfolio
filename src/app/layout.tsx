@@ -3,6 +3,7 @@ import { ChakraProvider, Box } from "@chakra-ui/react";
 import theme from "./theme";
 import type { ReactNode } from "react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Box>
               <Navbar />
               {children}
+              <Footer />
             </Box>
           </body>
         </ChakraProvider>

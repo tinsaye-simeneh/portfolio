@@ -29,8 +29,8 @@ export default function ResumePage() {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          w="100%"
-          h="100%"
+          w="70vw"
+          h="100vh"
         >
           <Spinner size="xl" color="blue.500" />
         </Box>
