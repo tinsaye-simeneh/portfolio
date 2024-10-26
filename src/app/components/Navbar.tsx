@@ -25,10 +25,8 @@ const Navbar = () => {
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
         <HStack spacing={6}>
           <Link href="/">Tinsaye&apos;s Portfolio</Link>
-          <Link as="a" href="/projects">
-            Projects
-          </Link>
-          <Link as="a" href="/blog" download>
+          <Link href="/project">Projects</Link>
+          <Link href="/blog" download>
             Blog
           </Link>
         </HStack>
