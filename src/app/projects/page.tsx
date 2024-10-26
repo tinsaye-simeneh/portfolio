@@ -2,21 +2,220 @@ import { SimpleGrid, Container, Heading } from "@chakra-ui/react";
 import ProjectCard from "../components/ProjectCard";
 
 const projects = [
+  // Client System Based
   {
-    title: "Project One",
-    description:
-      "This is a description of project one. It is a very interesting project.",
-    demoLink: "https://project-one-demo.com",
-    codeLink: "https://github.com/user/project-one",
+    title: "Jiret",
+    demoLink: "https://jiret.com",
+    description: "A comprehensive client management system.",
+    codeLink: "https://github.comtinsaye-simeneh/jiret",
     languages: ["JavaScript", "React"],
   },
   {
-    title: "Project Two",
-    description:
-      "This is a description of project two. It is also a very interesting project.",
-    demoLink: "https://project-two-demo.com",
-    codeLink: "https://github.com/user/project-two",
-    languages: ["JavaScript", "TypeScript", "React"],
+    title: "Muyalogy",
+    demoLink: "https://muyalogy.com",
+    description: "An online learning management system.",
+    codeLink: "https://github.comtinsaye-simeneh/muyalogy",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Tin ET",
+    demoLink: "https://tin-et.vercel.app/",
+    description: "An engaging e-commerce platform.",
+    codeLink: "https://github.comtinsaye-simeneh/tin-et",
+    languages: ["JavaScript", "Next.js"],
+  },
+  {
+    title: "Keno2",
+    demoLink: "https://keno2.etvirtual.com",
+    description: "An interactive gaming platform.",
+    codeLink: "https://github.comtinsaye-simeneh/keno2",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Spin2",
+    demoLink: "https://spin2.etvirtual.com",
+    description: "A spin-the-wheel gaming application.",
+    codeLink: "https://github.comtinsaye-simeneh/spin2",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Retail2",
+    demoLink: "https://retail2.etvirtual.com",
+    description: "A retail management system.",
+    codeLink: "https://github.comtinsaye-simeneh/retail2",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Admin2",
+    demoLink: "https://admin2.etvirtual.com",
+    description: "An admin panel for managing users and data.",
+    codeLink: "https://github.comtinsaye-simeneh/admin2",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Bingo",
+    demoLink: "https://bingo.etvirtual.com",
+    description: "An online bingo game platform.",
+    codeLink: "https://github.comtinsaye-simeneh/bingo",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Bingo Finance",
+    demoLink: "https://bingofinance.etvirtual.com/",
+    description: "A finance management tool for bingo.",
+    codeLink: "https://github.comtinsaye-simeneh/bingofinance",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Bingo Admin",
+    demoLink: "https://bingoadmin.etvirtual.com/",
+    description: "Admin management for the bingo platform.",
+    codeLink: "https://github.comtinsaye-simeneh/bingoadmin",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Zagol New",
+    demoLink: "https://zagol-new.vercel.app/",
+    description: "A new version of the Zagol platform.",
+    codeLink: "https://github.comtinsaye-simeneh/zagol-new",
+    languages: ["JavaScript", "React"],
+  },
+
+  // Client Portfolio
+  {
+    title: "Dynamic Technologies",
+    demoLink: "https://dynamictehcnologieset.com",
+    description: "A portfolio showcasing tech solutions.",
+    codeLink: "https://github.comtinsaye-simeneh/dynamic-technologies",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "ET Construction",
+    demoLink: "https://et-construction.vercel.app/",
+    description: "A portfolio for construction services.",
+    codeLink: "https://github.comtinsaye-simeneh/et-construction",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Ruth Coffee",
+    demoLink: "https://ruth-coffee.vercel.app/",
+    description: "An online coffee shop portfolio.",
+    codeLink: "https://github.comtinsaye-simeneh/ruth-coffee",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "TNH Gaming",
+    demoLink: "https://tnh-gaming.vercel.app/",
+    description: "A gaming portfolio showcasing various games.",
+    codeLink: "https://github.comtinsaye-simeneh/tnh-gaming",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "GDSCAASTU",
+    demoLink: "https://gdscaastu.club/",
+    description: "A portfolio for a university student association.",
+    codeLink: "https://github.comtinsaye-simeneh/gdscaastu",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Charity Kappa",
+    demoLink: "https://charity-kappa.vercel.app/",
+    description: "A charity organization portfolio.",
+    codeLink: "https://github.comtinsaye-simeneh/charity-kappa",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Viva Update",
+    demoLink: "https://viva-update.vercel.app/",
+    description: "A news update platform portfolio.",
+    codeLink: "https://github.comtinsaye-simeneh/viva-update",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Elsam Technologies",
+    demoLink: "https://elsamtechnoglogies.com",
+    description: "A tech company portfolio.",
+    codeLink: "https://github.comtinsaye-simeneh/elsam-technologies",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Utopix Technologies",
+    demoLink: "https://utopixtechnologies.vercel.app/",
+    description: "A tech portfolio showcasing various services.",
+    codeLink: "https://github.comtinsaye-simeneh/utopix-technologies",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Portfolio 2",
+    demoLink: "https://portfolio2-eight-alpha.vercel.app/",
+    description: "A personal portfolio showcasing projects.",
+    codeLink: "https://github.comtinsaye-simeneh/portfolio2",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Backend Dev Portfolio",
+    demoLink: "https://backend-dev-portfolio.vercel.app/",
+    description: "A portfolio showcasing backend development skills.",
+    codeLink: "https://github.comtinsaye-simeneh/backend-dev-portfolio",
+    languages: ["JavaScript", "Node.js"],
+  },
+
+  // Learning
+  {
+    title: "Simple Design",
+    demoLink: "https://simple-design-pi.vercel.app/",
+    description: "A project for simple design learning.",
+    codeLink: "https://github.comtinsaye-simeneh/simple-design",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Uni Share",
+    demoLink: "https://uni-share.vercel.app/",
+    description: "A platform for sharing university resources.",
+    codeLink: "https://github.comtinsaye-simeneh/uni-share",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Kofi Nine",
+    demoLink: "https://kofi-nine.vercel.app/",
+    description: "An online payment solution.",
+    codeLink: "https://github.comtinsaye-simeneh/kofi-nine",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Weather App",
+    demoLink: "https://weather-app-cyan-three.vercel.app/",
+    description: "A weather forecast application.",
+    codeLink: "https://github.comtinsaye-simeneh/weather-app",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Currency Converter",
+    demoLink: "https://currency-converter-rho-azure.vercel.app/",
+    description: "An application to convert currencies.",
+    codeLink: "https://github.comtinsaye-simeneh/currency-converter",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Firebase Auth",
+    demoLink: "https://firebase-react-auth-wine.vercel.app/",
+    description: "A project demonstrating Firebase authentication.",
+    codeLink: "https://github.comtinsaye-simeneh/firebase-react-auth",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "API IP",
+    demoLink: "https://apiip.vercel.app/",
+    description: "A project to get IP address details.",
+    codeLink: "https://github.comtinsaye-simeneh/api-ip",
+    languages: ["JavaScript", "React"],
+  },
+  {
+    title: "Telegram OAuth",
+    demoLink: "https://telegram-oauth.vercel.app/",
+    description: "A project demonstrating OAuth with Telegram.",
+    codeLink: "https://github.comtinsaye-simeneh/telegram-oauth",
+    languages: ["JavaScript", "React"],
   },
 ];
 
@@ -24,7 +223,7 @@ export default function Projects() {
   return (
     <Container maxW="container.xl" py={10}>
       <Heading as="h1" mb={10} textAlign="center">
-        My Projects
+        My Projects (25+)
       </Heading>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={8}>
         {projects.map((project, index) => (
@@ -34,7 +233,7 @@ export default function Projects() {
             description={project.description}
             demoLink={project.demoLink}
             codeLink={project.codeLink}
-            languages={project.languages} // Passing languages property
+            languages={project.languages}
           />
         ))}
       </SimpleGrid>
