@@ -1,97 +1,166 @@
 "use client";
+
 import {
+  Container,
+  Flex,
   Box,
+  Heading,
+  Text,
+  IconButton,
   Button,
+  VStack,
+  HStack,
+  Wrap,
+  WrapItem,
   FormControl,
   FormLabel,
   Input,
+  InputGroup,
+  InputLeftElement,
   Textarea,
-  Heading,
-  VStack,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
+import { BsGithub, BsTelegram, BsLinkedin, BsPerson } from "react-icons/bs";
 
-export default function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData);
-  };
-
+export default function Contact() {
   return (
-    <Box
-      w="95vw"
-      h="90vh"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      px={4}
-    >
-      <Box
-        w={{ base: "100%", md: "40vw" }}
-        p={8}
-        boxShadow="lg"
-        borderRadius="md"
-      >
-        <Heading as="h1" mb={6} textAlign="center">
-          Contact Us
-        </Heading>
-        <form onSubmit={handleSubmit}>
-          <VStack spacing={4}>
-            <FormControl id="name" isRequired>
-              <FormLabel>Name</FormLabel>
-              <Input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                placeholder="Your Name"
-              />
-            </FormControl>
-
-            <FormControl id="email" isRequired>
-              <FormLabel>Email</FormLabel>
-              <Input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="Your Email"
-              />
-            </FormControl>
-
-            <FormControl id="message" isRequired>
-              <FormLabel>Message</FormLabel>
-              <Textarea
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                placeholder="Your Message"
-              />
-            </FormControl>
-
-            <Button type="submit" colorScheme="blue" width="full">
-              Submit
-            </Button>
-          </VStack>
-        </form>
-      </Box>
-    </Box>
+    <Container maxW="full" mt={0} centerContent overflow="hidden">
+      <Flex>
+        <Box
+          bg="blue.700"
+          color="white"
+          borderRadius="lg"
+          m={{ sm: 4, md: 16, lg: 10 }}
+          p={{ sm: 5, md: 5, lg: 16 }}
+        >
+          <Box p={4}>
+            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+              <WrapItem>
+                <Box>
+                  <Heading>Contact</Heading>
+                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
+                    Fill up the form below to contact Me
+                  </Text>
+                  <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                    <VStack pl={0} spacing={3} alignItems="flex-start">
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="200px"
+                        variant="ghost"
+                        color="#DCE2FF"
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdPhone color="#1970F1" size="20px" />}
+                      >
+                        +251-983779803
+                      </Button>
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="300px"
+                        variant="ghost"
+                        color="#DCE2FF"
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                      >
+                        tinsayesimeneh608@gmail.com
+                      </Button>
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="230px"
+                        variant="ghost"
+                        color="#DCE2FF"
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}
+                      >
+                        Addis Ababa, Ethiopia
+                      </Button>
+                    </VStack>
+                  </Box>
+                  <HStack
+                    mt={{ lg: 10, md: 10 }}
+                    spacing={5}
+                    px={5}
+                    alignItems="flex-start"
+                  >
+                    <IconButton
+                      aria-label="facebook"
+                      variant="ghost"
+                      size="lg"
+                      isRound={true}
+                      _hover={{ bg: "#0D74FF" }}
+                      icon={<BsLinkedin size="28px" color="white" />}
+                    />
+                    <IconButton
+                      aria-label="github"
+                      variant="ghost"
+                      size="lg"
+                      isRound={true}
+                      _hover={{ bg: "#0D74FF" }}
+                      icon={<BsGithub size="28px" color="white" />}
+                    />
+                    <IconButton
+                      aria-label="discord"
+                      variant="ghost"
+                      size="lg"
+                      isRound={true}
+                      _hover={{ bg: "#0D74FF" }}
+                      icon={<BsTelegram size="28px" color="white" />}
+                    />
+                  </HStack>
+                </Box>
+              </WrapItem>
+              <WrapItem>
+                <Box bg="white" borderRadius="lg">
+                  <Box m={8} color="#0B0E3F">
+                    <VStack spacing={5}>
+                      <FormControl id="name">
+                        <FormLabel>Your Name</FormLabel>
+                        <InputGroup borderColor="#E0E1E7">
+                          <InputLeftElement pointerEvents="none">
+                            <BsPerson color="gray.800" />
+                          </InputLeftElement>
+                          <Input type="text" size="md" />
+                        </InputGroup>
+                      </FormControl>
+                      <FormControl id="name">
+                        <FormLabel>Mail</FormLabel>
+                        <InputGroup borderColor="#E0E1E7">
+                          <InputLeftElement pointerEvents="none">
+                            <MdOutlineEmail color="gray.800" />
+                          </InputLeftElement>
+                          <Input type="text" size="md" />
+                        </InputGroup>
+                      </FormControl>
+                      <FormControl id="name">
+                        <FormLabel>Message</FormLabel>
+                        <Textarea
+                          borderColor="gray.300"
+                          _hover={{
+                            borderRadius: "gray.300",
+                          }}
+                          placeholder="message"
+                        />
+                      </FormControl>
+                      <FormControl id="name" float="right">
+                        <Button
+                          variant="solid"
+                          bg="#0D74FF"
+                          color="white"
+                          _hover={{}}
+                        >
+                          Send Message
+                        </Button>
+                      </FormControl>
+                    </VStack>
+                  </Box>
+                </Box>
+              </WrapItem>
+            </Wrap>
+          </Box>
+        </Box>
+      </Flex>
+    </Container>
   );
 }
