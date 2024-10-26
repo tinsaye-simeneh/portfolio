@@ -8,6 +8,7 @@ const projects = [
       "This is a description of project one. It is a very interesting project.",
     demoLink: "https://project-one-demo.com",
     codeLink: "https://github.com/user/project-one",
+    languages: ["JavaScript", "React"],
   },
   {
     title: "Project Two",
@@ -15,6 +16,7 @@ const projects = [
       "This is a description of project two. It is also a very interesting project.",
     demoLink: "https://project-two-demo.com",
     codeLink: "https://github.com/user/project-two",
+    languages: ["JavaScript", "TypeScript", "React"],
   },
 ];
 
@@ -32,6 +34,7 @@ export default function Projects() {
             description={project.description}
             demoLink={project.demoLink}
             codeLink={project.codeLink}
+            languages={project.languages} // Passing languages property
           />
         ))}
       </SimpleGrid>
