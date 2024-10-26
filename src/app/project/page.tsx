@@ -1,4 +1,4 @@
-import { SimpleGrid, Container } from "@chakra-ui/react";
+import { SimpleGrid, Container, Heading } from "@chakra-ui/react";
 import ProjectCard from "../components/ProjectCard";
 
 const projects = [
@@ -21,6 +21,9 @@ const projects = [
 export default function Projects() {
   return (
     <Container maxW="container.xl" py={10}>
+      <Heading as="h1" mb={10} textAlign="center">
+        My Projects
+      </Heading>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={8}>
         {projects.map((project, index) => (
           <ProjectCard
