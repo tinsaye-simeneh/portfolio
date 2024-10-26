@@ -61,6 +61,7 @@ const ProjectCard = ({
             colorScheme="blue"
             rightIcon={<FaExternalLinkAlt />}
             cursor={"pointer"}
+            fontSize={"0.8rem"}
           >
             View Demo
           </Button>
@@ -73,6 +74,7 @@ const ProjectCard = ({
             variant="outline"
             rightIcon={<FaGithub />}
             cursor={"pointer"}
+            fontSize={"0.8rem"}
           >
             View Code
           </Button>
