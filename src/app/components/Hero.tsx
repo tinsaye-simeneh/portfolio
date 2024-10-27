@@ -22,7 +22,7 @@ export default function CallToActionWithIllustration() {
           </Text>
         </Heading>
         <Text color={"gray.500"} maxW={"3xl"}>
-          A web developer and UI/UX designer with 4+ years of experience.
+          A web developer and UI/UX designer with 3-4 years of experience.
           I&apos;ve built 30+ websites, focusing on seamless, user-centric
           experiences. My stack includes React.js, Next.js, TypeScript,
           JavaScript, Supabase, and Tailwind CSS, along with Bootstrap, Mantine,
