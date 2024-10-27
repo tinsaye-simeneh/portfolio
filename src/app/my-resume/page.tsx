@@ -11,7 +11,7 @@ export default function ResumePage() {
 
   return (
     <Box
-      w="95vw"
+      w="100vw"
       h="100vh"
       display="flex"
       flexDirection="column"
@@ -39,10 +39,11 @@ export default function ResumePage() {
       <Box
         as="iframe"
         src="https://docs.google.com/document/d/e/2PACX-1vQMgPneXaqOhVcbDnfI-RkF6xMYQIrL6j4PeKbqFCPU1KvjO1xO9rbP4ZZ4N6yEw-VgeCQcMUFYNuPF/pub?embedded=true"
-        width="70vw"
+        width={{ base: "90vw", sm: "80vw", md: "70vw", lg: "60vw", xl: "50vw" }}
         height="80vh"
-        border="2px solid"
+        border="1px solid"
         onLoad={handleLoad}
+        textAlign={"center"}
       />
     </Box>
   );
