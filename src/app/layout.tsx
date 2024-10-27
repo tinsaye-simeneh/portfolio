@@ -1,4 +1,3 @@
-"use client";
 import { ChakraProvider, Box } from "@chakra-ui/react";
 import theme from "./theme";
 import type { ReactNode } from "react";
@@ -12,15 +11,19 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Your website description" />
+        <title>TSD Portfolio</title>
+      </head>
       <body>
         <ChakraProvider theme={theme}>
-          <body>
-            <Box>
-              <Navbar />
-              {children}
-              <Footer />
-            </Box>
-          </body>
+          <Box>
+            <Navbar />
+            {children}
+            <Footer />
+          </Box>
         </ChakraProvider>
       </body>
     </html>
