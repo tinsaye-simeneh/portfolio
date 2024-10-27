@@ -18,7 +18,7 @@ export default function CallToActionWithIllustration() {
         >
           Hi there! <br />
           <Text as={"span"} color={"blue.400"}>
-            I&apos;m Tinsaye Simeneh
+            I&apos;m Tinsaye S. Dessie
           </Text>
         </Heading>
         <Text color={"gray.500"} maxW={"3xl"}>
