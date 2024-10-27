@@ -21,8 +21,22 @@ import {
 } from "@chakra-ui/react";
 import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import { BsGithub, BsTelegram, BsLinkedin, BsPerson } from "react-icons/bs";
+import { useState } from "react";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSendMessage = () => {
+    const mailtoLink = `mailto:tinsayesimeneh608@gmail.com?subject=Contact%20from%20${encodeURIComponent(
+      name
+    )}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(
+      email
+    )}%0AMessage:%20${encodeURIComponent(message)}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <Container
       maxW="95%"
@@ -148,7 +162,12 @@ export default function Contact() {
                           <InputLeftElement pointerEvents="none">
                             <BsPerson color="gray.800" />
                           </InputLeftElement>
-                          <Input type="text" size="md" />
+                          <Input
+                            type="text"
+                            size="md"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                          />
                         </InputGroup>
                       </FormControl>
                       <FormControl id="email">
@@ -157,7 +176,12 @@ export default function Contact() {
                           <InputLeftElement pointerEvents="none">
                             <MdOutlineEmail color="gray.800" />
                           </InputLeftElement>
-                          <Input type="text" size="md" />
+                          <Input
+                            type="text"
+                            size="md"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                          />
                         </InputGroup>
                       </FormControl>
                       <FormControl id="message">
@@ -168,6 +192,8 @@ export default function Contact() {
                             borderRadius: "gray.300",
                           }}
                           placeholder="message"
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
                         />
                       </FormControl>
                       <FormControl id="submit" float="right">
@@ -176,6 +202,7 @@ export default function Contact() {
                           bg="#0D74FF"
                           color="white"
                           _hover={{}}
+                          onClick={handleSendMessage}
                         >
                           Send Message
                         </Button>
