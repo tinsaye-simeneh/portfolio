@@ -18,22 +18,26 @@ export default function Home() {
       title: "Jiret",
       demoLink: "https://jiret.com",
       description: "A comprehensive client management system.",
-      codeLink: "https://github.comtinsaye-simeneh/jiret",
-      languages: ["JavaScript", "React"],
+      languages: ["JavaScript", "React", "Next.js", "Mantine", "Tailwind CSS"],
     },
     {
       title: "Muyalogy",
       demoLink: "https://muyalogy.com",
       description: "An online learning management system.",
-      codeLink: "https://github.comtinsaye-simeneh/muyalogy",
-      languages: ["JavaScript", "React"],
+      languages: [
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Mantine",
+        "Supabase",
+        "Tailwind CSS",
+      ],
     },
     {
       title: "Tin ET",
       demoLink: "https://tin-et.vercel.app/",
       description: "An engaging e-commerce platform.",
-      codeLink: "https://github.comtinsaye-simeneh/tin-et",
-      languages: ["JavaScript", "Next.js"],
+      languages: ["JavaScript", "HTML", "CSS", "Bootstrap"],
     },
   ];
 
@@ -70,7 +74,6 @@ export default function Home() {
                   title={project.title}
                   description={project.description}
                   demoLink={project.demoLink}
-                  codeLink={project.codeLink}
                   languages={project.languages}
                 />
               ))}

@@ -7,21 +7,19 @@ import {
   HStack,
   Badge,
 } from "@chakra-ui/react";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   demoLink: string;
-  codeLink: string;
-  languages: string[]; // Added languages property
+  languages: string[];
 }
 
 const ProjectCard = ({
   title,
   description,
   demoLink,
-  codeLink,
   languages,
 }: ProjectCardProps) => {
   return (
@@ -64,19 +62,6 @@ const ProjectCard = ({
             fontSize={"0.8rem"}
           >
             View Demo
-          </Button>
-          <Button
-            as="a"
-            href={codeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            colorScheme="gray"
-            variant="outline"
-            rightIcon={<FaGithub />}
-            cursor={"pointer"}
-            fontSize={"0.8rem"}
-          >
-            View Code
           </Button>
         </HStack>
       </VStack>
