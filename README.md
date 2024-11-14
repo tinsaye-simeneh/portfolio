@@ -12,5 +12,5 @@ This is my personal portfolio built with **Next.js 15** and **Chakra UI**. The p
 ## Tech Stack
 
 - **Next.js 15**
-- **React**
+- **React.js**
 - **Chakra UI** 
