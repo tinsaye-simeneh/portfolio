@@ -2,8 +2,8 @@ import {
   Container,
   Heading,
   Box,
-  List,
-  ListItem,
+  Grid,
+  GridItem,
   Link,
   Text,
   VStack,
@@ -26,19 +26,19 @@ const PortfolioLinks = () => {
         { url: "https://et-cash.vercel.app", label: "ET Cash" },
         {
           url: "https://et-admin2.vercel.app",
-          label: "ET Admin 2 (un: admin.test0, pass: @thghwe1234)",
+          label: "ET Admin 2 (username: admin.test0, pass: @thghwe1234)",
         },
         {
           url: "https://bingo-cash2.vercel.app",
-          label: "Bingo Cash 2 (un: cross.cashier, pass: 123456)",
+          label: "Bingo Cash 2 (username: cross.cashier, password: 123456)",
         },
         {
           url: "https://bingo-finance2.vercel.app",
-          label: "Bingo Finance 2 (un: cross.finance, pass: 123456)",
+          label: "Bingo Finance 2 (username: cross.finance, password: 123456)",
         },
         {
           url: "https://bingo-admin2.vercel.app",
-          label: "Bingo Admin 2 (un: cross.admin, pass: 123456)",
+          label: "Bingo Admin 2 (username: cross.admin, password: 123456)",
         },
         { url: "https://zagol-new.vercel.app/", label: "Zagol New" },
       ],
@@ -171,9 +171,24 @@ const PortfolioLinks = () => {
             <Text mb={4} fontSize="md" color="gray.700">
               {section.description}
             </Text>
-            <List spacing={4}>
+            {/* Grid System to display links in columns */}
+            <Grid
+              templateColumns={{
+                base: "repeat(1, 1fr)",
+                md: "repeat(2, 1fr)",
+                lg: "repeat(3, 1fr)",
+              }}
+              gap={6}
+            >
               {section.links.map((link, linkIndex) => (
-                <ListItem key={linkIndex}>
+                <GridItem
+                  key={linkIndex}
+                  bg="white"
+                  p={4}
+                  borderRadius="md"
+                  boxShadow="md"
+                  _hover={{ boxShadow: "xl" }}
+                >
                   <Link
                     href={link.url}
                     isExternal
@@ -182,9 +197,9 @@ const PortfolioLinks = () => {
                   >
                     <FaExternalLinkAlt /> {link.label}
                   </Link>
-                </ListItem>
+                </GridItem>
               ))}
-            </List>
+            </Grid>
           </Box>
         ))}
       </VStack>
