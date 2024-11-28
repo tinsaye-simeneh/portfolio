@@ -178,7 +178,6 @@ const PortfolioLinks = () => {
             <Text mb={4} fontSize="md" color="gray.700">
               {section.description}
             </Text>
-            {/* Grid System to display links in columns */}
             <Grid
               templateColumns={{
                 base: "repeat(1, 1fr)",
