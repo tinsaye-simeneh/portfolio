@@ -32,6 +32,10 @@ const Links = [
     href: "/blog",
   },
   {
+    lable: "Links",
+    href: "/links",
+  },
+  {
     lable: "Contact Me",
     href: "/contact-me",
   },
