@@ -19,9 +19,18 @@ const PortfolioLinks = () => {
         { url: "https://jiret.com", label: "Jiret" },
         { url: "https://muyalogy.com", label: "Muyalogy" },
         { url: "https://tin-et.vercel.app/", label: "Tin ET" },
-        { url: "https://et-keno2.vercel.app", label: "ET Keno 2" },
-        { url: "https://et-spin2.vercel.app", label: "ET Spin 2" },
-        { url: "https://et-cash.vercel.app", label: "ET Cash" },
+        {
+          url: "https://et-keno2.vercel.app",
+          label: "ET Keno 2 (username: test.shop, pass: 12345678)",
+        },
+        {
+          url: "https://et-spin2.vercel.app",
+          label: "ET Spin 2 (username: test.shop, pass: 12345678)",
+        },
+        {
+          url: "https://et-cash.vercel.app",
+          label: "ET Cashier (username: test.cashier, pass: 12345678)",
+        },
         {
           url: "https://et-admin2.vercel.app",
           label: "ET Admin 2 (username: admin.test, pass: 12345678)",
