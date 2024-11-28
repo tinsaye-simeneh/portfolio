@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from "react";
 import {
   Container,
   Flex,
@@ -12,11 +13,19 @@ import {
   HStack,
   Wrap,
   WrapItem,
+  Spinner,
 } from "@chakra-ui/react";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { BsGithub, BsTelegram, BsLinkedin } from "react-icons/bs";
 
 export default function Contact() {
+  const [isLoading, setIsLoading] = useState(true);
+  const isMobile = window.innerWidth < 768;
+
+  const handleIframeLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
     <Container
       maxW="95%"
@@ -91,12 +100,12 @@ export default function Contact() {
                   <HStack
                     mt={{ lg: 10, md: 10 }}
                     spacing={5}
-                    justifyContent="center" // Center the icons on mobile
+                    justifyContent="center"
                     px={5}
                   >
                     <IconButton
                       as={"a"}
-                      aria-label="facebook"
+                      aria-label="linkedin"
                       variant="ghost"
                       size="lg"
                       isRound={true}
@@ -116,7 +125,7 @@ export default function Contact() {
                     />
                     <IconButton
                       as={"a"}
-                      aria-label="discord"
+                      aria-label="telegram"
                       variant="ghost"
                       size="lg"
                       isRound={true}
@@ -128,13 +137,33 @@ export default function Contact() {
                 </Box>
               </WrapItem>
 
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLScZ2tGwNNTRUIBSo3DjeoH-gNXFbCfEgDO7C2uEwq1pOwTvnA/viewform?embedded=true"
-                width="640"
-                height="auto"
-              >
-                Loading…
-              </iframe>
+              <WrapItem>
+                <Box textAlign="center">
+                  {isLoading && (
+                    <Box textAlign="center" mt={5}>
+                      <Spinner
+                        size="lg"
+                        thickness="4px"
+                        speed="0.65s"
+                        color="blue.500"
+                        emptyColor="gray.200"
+                      />
+                      <Text mt={3}>Loading form, please wait...</Text>
+                    </Box>
+                  )}
+
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScZ2tGwNNTRUIBSo3DjeoH-gNXFbCfEgDO7C2uEwq1pOwTvnA/viewform?embedded=true"
+                    style={{
+                      width: isMobile ? "100vw" : "600px",
+                      height: "500px",
+                      border: "none",
+                      display: isLoading ? "none" : "block",
+                    }}
+                    onLoad={handleIframeLoad}
+                  />
+                </Box>
+              </WrapItem>
             </Wrap>
           </Box>
         </Box>
