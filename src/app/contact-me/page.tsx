@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Flex,
@@ -18,9 +18,26 @@ import {
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { BsGithub, BsTelegram, BsLinkedin } from "react-icons/bs";
 
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  return isMobile;
+};
+
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(true);
-  const isMobile = window.innerWidth < 768;
+  const isMobile = useIsMobile();
 
   const handleIframeLoad = () => {
     setIsLoading(false);
@@ -148,7 +165,10 @@ export default function Contact() {
                         color="blue.500"
                         emptyColor="gray.200"
                       />
-                      <Text mt={3}>Loading form, please wait...</Text>
+                      <Text mt={3}>Loading Contact form, please wait...</Text>
+                      <Button mt={3} onClick={handleIframeLoad}>
+                        Reload
+                      </Button>
                     </Box>
                   )}
 
