@@ -1,4 +1,4 @@
-# My Personal Portfolio: tinsayesimeneh.vercel.app
+# My Personal Portfolio site: tinsayesimeneh.vercel.app
 
 This is my personal portfolio built with **Next.js 15** and styled by **Chakra UI**. The project leverages modern technologies to create a fast, responsive, and visually appealing portfolio to showcase my work and skills.
 
