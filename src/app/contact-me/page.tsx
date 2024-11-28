@@ -12,31 +12,11 @@ import {
   HStack,
   Wrap,
   WrapItem,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  Textarea,
 } from "@chakra-ui/react";
-import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
-import { BsGithub, BsTelegram, BsLinkedin, BsPerson } from "react-icons/bs";
-import { useState } from "react";
+import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
+import { BsGithub, BsTelegram, BsLinkedin } from "react-icons/bs";
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSendMessage = () => {
-    const mailtoLink = `mailto:tinsayesimeneh608@gmail.com?subject=Contact%20from%20${encodeURIComponent(
-      name
-    )}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(
-      email
-    )}%0AMessage:%20${encodeURIComponent(message)}`;
-    window.location.href = mailtoLink;
-  };
-
   return (
     <Container
       maxW="95%"
@@ -147,18 +127,14 @@ export default function Contact() {
                   </HStack>
                 </Box>
               </WrapItem>
-              <WrapItem>
-                <Box
-                  bg="white"
-                  borderRadius="lg"
-                  width={{ base: "95vw", lg: "450px" }}
-                  textAlign="left"
-                >
-                  <Box m={8} color="#0B0E3F">
-                    <VStack spacing={5}></VStack>
-                  </Box>
-                </Box>
-              </WrapItem>
+
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLScZ2tGwNNTRUIBSo3DjeoH-gNXFbCfEgDO7C2uEwq1pOwTvnA/viewform?embedded=true"
+                width="640"
+                height="auto"
+              >
+                Loading…
+              </iframe>
             </Wrap>
           </Box>
         </Box>
