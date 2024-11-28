@@ -8,15 +8,13 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { FaExternalLinkAlt } from "react-icons/fa"; // Import React Icon for the external link icon
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const PortfolioLinks = () => {
-  // Portfolio categories with descriptions and links
   const sections = [
     {
-      title: "Client System Based",
-      description:
-        "These are the client system-based projects I have worked on.",
+      title: "Client Systems",
+      description: "These are the client system projects I have worked on.",
       links: [
         { url: "https://jiret.com", label: "Jiret" },
         { url: "https://muyalogy.com", label: "Muyalogy" },
