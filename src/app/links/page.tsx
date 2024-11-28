@@ -24,7 +24,7 @@ const PortfolioLinks = () => {
         { url: "https://et-cash.vercel.app", label: "ET Cash" },
         {
           url: "https://et-admin2.vercel.app",
-          label: "ET Admin 2 (username: admin.test0, pass: @thghwe1234)",
+          label: "ET Admin 2 (username: admin.test, pass: 12345678)",
         },
         {
           url: "https://bingo-cash2.vercel.app",
