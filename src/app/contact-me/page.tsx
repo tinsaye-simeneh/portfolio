@@ -152,62 +152,10 @@ export default function Contact() {
                   bg="white"
                   borderRadius="lg"
                   width={{ base: "95vw", lg: "450px" }}
-                  textAlign="left" // Ensure text inside this box aligns left
+                  textAlign="left"
                 >
                   <Box m={8} color="#0B0E3F">
-                    <VStack spacing={5}>
-                      <FormControl id="name">
-                        <FormLabel>Your Name</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement pointerEvents="none">
-                            <BsPerson color="gray.800" />
-                          </InputLeftElement>
-                          <Input
-                            type="text"
-                            size="md"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                          />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id="email">
-                        <FormLabel>E-mail</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement pointerEvents="none">
-                            <MdOutlineEmail color="gray.800" />
-                          </InputLeftElement>
-                          <Input
-                            type="text"
-                            size="md"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                          />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id="message">
-                        <FormLabel>Message</FormLabel>
-                        <Textarea
-                          borderColor="gray.300"
-                          _hover={{
-                            borderRadius: "gray.300",
-                          }}
-                          placeholder="message"
-                          value={message}
-                          onChange={(e) => setMessage(e.target.value)}
-                        />
-                      </FormControl>
-                      <FormControl id="submit" float="right">
-                        <Button
-                          variant="solid"
-                          bg="#0D74FF"
-                          color="white"
-                          _hover={{}}
-                          onClick={handleSendMessage}
-                        >
-                          Send Message
-                        </Button>
-                      </FormControl>
-                    </VStack>
+                    <VStack spacing={5}></VStack>
                   </Box>
                 </Box>
               </WrapItem>
