@@ -43,7 +43,7 @@ export default function CallToActionWithIllustration() {
             rounded={"full"}
             px={6}
             as={"a"}
-            href={"/projects"}
+            href={"/links"}
             bg={"white"}
             color={"gray.800"}
             _hover={{ bg: "gray.50" }}

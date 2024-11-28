@@ -79,7 +79,7 @@ export default function Home() {
               ))}
             </SimpleGrid>
 
-            <Link href="/projects">
+            <Link href="/links">
               <Button alignSelf="center" colorScheme="teal" size="lg">
                 View All Projects
               </Button>

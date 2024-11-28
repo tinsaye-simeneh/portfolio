@@ -24,10 +24,6 @@ const Links = [
     href: "/my-resume",
   },
   {
-    lable: "Projects",
-    href: "/projects",
-  },
-  {
     lable: "Blog",
     href: "/blog",
   },
