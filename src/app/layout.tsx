@@ -1,4 +1,5 @@
 import { ChakraProvider, Box } from "@chakra-ui/react";
+import Script from "next/script";
 import theme from "./theme";
 import type { ReactNode } from "react";
 import Navbar from "./components/Navbar";
@@ -7,6 +8,8 @@ import Footer from "./components/Footer";
 type RootLayoutProps = {
   children: ReactNode;
 };
+
+const GA_TRACKING_ID = "G-E3KRQF74CG";
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -19,12 +22,35 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body>
         <ChakraProvider theme={theme}>
-          <Box>
+          <Box minH="100vh" display="flex" flexDirection="column">
             <Navbar />
-            {children}
+            <Box flex="1">{children}</Box>
             <Footer />
           </Box>
         </ChakraProvider>
+
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_TRACKING_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
       </body>
     </html>
   );
