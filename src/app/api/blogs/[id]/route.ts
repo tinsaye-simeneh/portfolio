@@ -24,7 +24,7 @@ export async function GET(
 
   try {
     const { data, error } = await supabase
-      .from("posts") // Consistent table name; adjust to "blogs" if needed
+      .from("blogs")
       .select("*")
       .eq("id", id)
       .single();
@@ -47,7 +47,7 @@ export async function GET(
 }
 
 export async function PUT(
-  req: NextRequest, // Use NextRequest for consistency
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   const { id } = params;
@@ -56,7 +56,7 @@ export async function PUT(
 
   try {
     const { data, error } = await supabase
-      .from("posts")
+      .from("blogs")
       .update(body)
       .eq("id", id)
       .select()
