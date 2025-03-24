@@ -33,7 +33,7 @@ export default function BlogDetailPage({ params }: { params: { id: string } }) {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`/api/blogs/${params.id}`, {
+        const response = await fetch(`/api/blogs/get-blog?id=${params.id}`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -64,7 +64,7 @@ export default function BlogDetailPage({ params }: { params: { id: string } }) {
     setHeartCount(newHeartCount);
 
     try {
-      const response = await fetch(`/api/blogs/${params.id}`, {
+      const response = await fetch(`/api/blogs/update-blog?id=${post.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
