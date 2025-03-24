@@ -10,9 +10,7 @@ const Footer = () => {
         mx="auto"
         px={4}
       >
-        <Text fontSize="sm">
-          © {new Date().getFullYear()} Tinsaye Simeneh. All rights reserved.
-        </Text>
+        <Text fontSize="sm">© {new Date().getFullYear()} Tinsaye Simeneh.</Text>
         <Text fontSize="sm">
           Built with{" "}
           <Link
