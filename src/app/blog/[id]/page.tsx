@@ -112,28 +112,32 @@ export default function BlogDetailPage({ params }: { params: { id: string } }) {
         className="bg-white hover:shadow-2xl transition-shadow duration-300"
       >
         <CardHeader bg="gray.50" p={6}>
-          <Heading as="h1" size="xl" color="gray.800">
-            {post.title}
-          </Heading>
+          <Flex align="center" gap={3} wrap="nowrap">
+            <Heading as="h1" size="xl" color="gray.800">
+              {post.title}
+            </Heading>
+            <Flex gap={2} wrap="nowrap" overflowX="auto">
+              {post.tags.map((tag) => (
+                <Badge
+                  key={tag}
+                  colorScheme="teal"
+                  px={3}
+                  py={1}
+                  borderRadius="full"
+                  className="shadow-sm"
+                  whiteSpace="nowrap"
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </Flex>
+          </Flex>
         </CardHeader>
-        <CardBody p={6}>
-          <Text fontSize="lg" color="gray.600" mb={6}>
+
+        <CardBody p={6} pt={2}>
+          <Text fontSize="lg" color="gray.600" mb={5}>
             {post.description}
           </Text>
-          <Flex gap={3} mb={6} wrap="wrap">
-            {post.tags.map((tag) => (
-              <Badge
-                key={tag}
-                colorScheme="teal"
-                px={3}
-                py={1}
-                borderRadius="full"
-                className="shadow-sm"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </Flex>
           <Flex justify="space-between" align="center" mb={6}>
             <Flex gap={4}>
               <Text fontSize="md" color="gray.500">
