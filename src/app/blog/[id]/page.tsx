@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
 import {
   Box,
   Card,
@@ -31,7 +30,6 @@ export default function BlogDetailPage({ params }: { params: { id: string } }) {
   const [error, setError] = useState<string | null>(null);
   const [heartCount, setHeartCount] = useState(0);
 
-  // Fetch post data on mount
   useEffect(() => {
     const fetchPost = async () => {
       try {
@@ -158,7 +156,7 @@ export default function BlogDetailPage({ params }: { params: { id: string } }) {
           </Flex>
           <Button
             as={Link}
-            href="/blogs"
+            href="/blog"
             colorScheme="blue"
             variant="ghost"
             className="hover:bg-blue-50"

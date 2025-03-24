@@ -12,17 +12,19 @@ type Post = {
   updated_at?: string;
 };
 
-export async function GET(req: NextRequest) {
+export async function GET(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const { id } = params;
+
+  if (!id) {
+    return NextResponse.json({ error: "Missing post ID" }, { status: 400 });
+  }
+
   try {
-    const { searchParams } = new URL(req.url);
-    const id = searchParams.get("id");
-
-    if (!id) {
-      return NextResponse.json({ error: "Missing post ID" }, { status: 400 });
-    }
-
     const { data, error } = await supabase
-      .from("blogs")
+      .from("posts") // Consistent table name; adjust to "blogs" if needed
       .select("*")
       .eq("id", id)
       .single();
@@ -45,26 +47,37 @@ export async function GET(req: NextRequest) {
 }
 
 export async function PUT(
-  request: Request,
+  req: NextRequest, // Use NextRequest for consistency
   { params }: { params: { id: string } }
 ) {
   const { id } = params;
   const body: Partial<Omit<Post, "id" | "created_at" | "updated_at">> =
-    await request.json();
+    await req.json();
 
-  const { data, error } = await supabase
-    .from("posts")
-    .update(body)
-    .eq("id", id)
-    .select()
-    .single();
+  try {
+    const { data, error } = await supabase
+      .from("posts")
+      .update(body)
+      .eq("id", id)
+      .select()
+      .single();
 
-  if (error || !data) {
+    if (error || !data) {
+      return NextResponse.json(
+        { error: "Post not found or update failed" },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json(data as Post, { status: 200 });
+  } catch (error) {
+    console.error("Error updating blog post:", error);
     return NextResponse.json(
-      { error: "Post not found or update failed" },
-      { status: 404 }
+      {
+        error: "Failed to update post",
+        details: error instanceof Error ? error.message : String(error),
+      },
+      { status: 500 }
     );
   }
-
-  return NextResponse.json(data as Post);
 }
