@@ -84,9 +84,16 @@ export default function BlogsPage() {
   return (
     <Box maxW="container.xl" mx="auto" py={10} px={4}>
       <Flex justify="space-between" align="center" mb={6}>
-        <Text fontSize="3xl" fontWeight="bold" color="gray.800">
+        <Text fontSize="xl" fontWeight="bold" color="gray.800">
           Available Blogs
         </Text>
+        <Button
+          colorScheme="blue"
+          onClick={() => window.location.reload()}
+          size="sm"
+        >
+          Refresh
+        </Button>
       </Flex>
 
       {posts.length === 0 ? (
