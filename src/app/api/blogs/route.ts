@@ -24,27 +24,3 @@ export async function GET() {
 
   return NextResponse.json(data as Post[]);
 }
-
-export async function POST(request: Request) {
-  const body: Omit<Post, "id" | "created_at" | "updated_at"> =
-    await request.json();
-
-  if (!body.title || !body.description || !body.read_time) {
-    return NextResponse.json(
-      { error: "Missing required fields" },
-      { status: 400 }
-    );
-  }
-
-  const { data, error } = await supabase
-    .from("blogs")
-    .insert(body)
-    .select()
-    .single();
-
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
-
-  return NextResponse.json(data as Post, { status: 201 });
-}
