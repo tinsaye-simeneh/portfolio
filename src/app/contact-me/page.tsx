@@ -32,8 +32,6 @@ import {
 import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
-
-
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
@@ -111,7 +109,6 @@ export default function Contact() {
     <Box minH="100vh" py={10}>
       <Container maxW="container.xl">
         <VStack spacing={8} align="stretch">
-          {/* Header */}
           <VStack spacing={6} textAlign="center">
             <Button
               leftIcon={<Icon as={FaArrowLeft} />}
