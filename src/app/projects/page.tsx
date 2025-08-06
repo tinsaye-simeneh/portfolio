@@ -1,3 +1,5 @@
+"use client";
+
 import { SimpleGrid, Container, Heading } from "@chakra-ui/react";
 import ProjectCard from "../components/ProjectCard";
 
