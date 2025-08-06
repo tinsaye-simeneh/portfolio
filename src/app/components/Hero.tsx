@@ -1,58 +1,208 @@
 "use client";
 
-import { Container, Heading, Stack, Text, Button } from "@chakra-ui/react";
+import { 
+  Container, 
+  Heading,
+  Text, 
+  Button, 
+  Box,
+  useColorModeValue,
+  VStack,
+  HStack,
+  Icon,
+  Flex
+} from "@chakra-ui/react";
+import { FaDownload, FaEye, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function CallToActionWithIllustration() {
+  const bgGradient = useColorModeValue(
+    "linear(to-r, blue.50, purple.50, pink.50)",
+    "linear(to-r, blue.900, purple.900, pink.900)"
+  );
+  
+  const techPillBg = useColorModeValue("white", "gray.700");
+  const techPillBorder = useColorModeValue("gray.200", "gray.600");
+  const techPillColor = useColorModeValue("gray.700", "gray.300");
+  
   return (
-    <Container maxW={"5xl"}>
-      <Stack
-        textAlign={"center"}
-        align={"center"}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 24 }}
-      >
-        <Heading
-          fontWeight={600}
-          fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"110%"}
+    <Box
+      bgGradient={bgGradient}
+      minH="100vh"
+      display="flex"
+      alignItems="center"
+      position="relative"
+      overflow="hidden"
+    >
+      <Box
+        position="absolute"
+        top="10%"
+        right="10%"
+        width="300px"
+        height="300px"
+        borderRadius="full"
+        bg="blue.100"
+        opacity={0.3}
+        filter="blur(100px)"
+      />
+      <Box
+        position="absolute"
+        bottom="10%"
+        left="10%"
+        width="200px"
+        height="200px"
+        borderRadius="full"
+        bg="purple.100"
+        opacity={0.3}
+        filter="blur(80px)"
+      />
+      
+      <Container maxW={"6xl"} zIndex={1}>
+        <VStack
+          textAlign={"center"}
+          spacing={{ base: 8, md: 12 }}
+          py={{ base: 20, md: 28 }}
         >
-          Hi there! <br />
-          <Text as={"span"} color={"blue.400"}>
-            I&apos;m Tinsaye S. Dessie
+          <Box
+            bg={useColorModeValue("white", "gray.800")}
+            px={4}
+            py={2}
+            borderRadius="full"
+            border="1px"
+            borderColor={useColorModeValue("gray.200", "gray.600")}
+            shadow="sm"
+          >
+            <Text fontSize="sm" color={useColorModeValue("gray.600", "gray.400")}>
+              👋 Welcome to my portfolio
+            </Text>
+          </Box>
+
+          <VStack spacing={4}>
+            <Heading
+              fontWeight={700}
+              fontSize={{ base: "4xl", sm: "5xl", md: "7xl" }}
+              lineHeight={"95%"}
+              letterSpacing="-0.02em"
+            >
+              Hi there! <br />
+              <Text 
+                as={"span"} 
+                bgGradient="linear(to-r, blue.400, purple.500, pink.400)"
+                bgClip="text"
+                fontWeight={800}
+              >
+                I&apos;m Tinsaye S. Dessie
+              </Text>
+            </Heading>
+            
+            <Text 
+              fontSize={{ base: "xl", md: "2xl" }}
+              fontWeight={500}
+              color={useColorModeValue("blue.600", "blue.300")}
+            >
+              Full-Stack Developer & UI/UX Designer
+            </Text>
+          </VStack>
+
+          <Text 
+            color={useColorModeValue("gray.600", "gray.300")} 
+            maxW={"4xl"}
+            fontSize={{ base: "lg", md: "xl" }}
+            lineHeight="1.8"
+          >
+            A passionate web developer and UI/UX designer with 3-4 years of experience
+            crafting digital experiences. I&apos;ve built 30+ websites, focusing on seamless, 
+            user-centric solutions using modern technologies like React.js, Next.js, 
+            TypeScript, and more.
           </Text>
-        </Heading>
-        <Text color={"gray.500"} maxW={"3xl"}>
-          A web developer and UI/UX designer with 3-4 years of experience.
-          I&apos;ve built 30+ websites, focusing on seamless, user-centric
-          experiences. My stack includes React.js, Next.js, TypeScript,
-          JavaScript, Supabase, and Tailwind CSS, along with Bootstrap, Mantine,
-          Chakra, and Material UI for styling.
-        </Text>
-        <Stack spacing={6} direction={"row"}>
-          <Button
-            rounded={"full"}
-            px={6}
-            colorScheme={"green"}
-            _hover={{ bg: "green.500" }}
-            as={"a"}
-            href={"/my-resume"}
-          >
-            Resume
-          </Button>
-          <Button
-            rounded={"full"}
-            px={6}
-            as={"a"}
-            href={"/links"}
-            bg={"white"}
-            color={"gray.800"}
-            _hover={{ bg: "gray.50" }}
-            border={"1px"}
-          >
-            My Projects
-          </Button>
-        </Stack>
-      </Stack>
-    </Container>
+
+          <Flex wrap="wrap" justify="center" gap={2} maxW="2xl">
+            {["React.js", "Next.js", "TypeScript", "Supabase", "Tailwind CSS"].map((tech) => (
+              <Box
+                key={tech}
+                px={3}
+                py={1}
+                bg={techPillBg}
+                borderRadius="full"
+                fontSize="sm"
+                border="1px"
+                borderColor={techPillBorder}
+                color={techPillColor}
+              >
+                {tech}
+              </Box>
+            ))}
+          </Flex>
+
+          <HStack spacing={4} pt={4}>
+            <Button
+              size="lg"
+              rounded={"full"}
+              px={8}
+              py={6}
+              colorScheme={"blue"}
+              bgGradient="linear(to-r, blue.400, blue.600)"
+              _hover={{ 
+                bgGradient: "linear(to-r, blue.500, blue.700)",
+                transform: "translateY(-2px)",
+                shadow: "xl"
+              }}
+              _active={{ transform: "translateY(0)" }}
+              transition="all 0.3s ease"
+              leftIcon={<Icon as={FaDownload} />}
+              as={"a"}
+              href={"/my-resume"}
+            >
+              Download Resume
+            </Button>
+            <Button
+              size="lg"
+              rounded={"full"}
+              px={8}
+              py={6}
+              variant="outline"
+              borderWidth={2}
+              borderColor={useColorModeValue("gray.300", "gray.600")}
+              bg={useColorModeValue("white", "gray.800")}
+              color={useColorModeValue("gray.800", "white")}
+              _hover={{ 
+                bg: useColorModeValue("gray.50", "gray.700"),
+                transform: "translateY(-2px)",
+                shadow: "lg"
+              }}
+              _active={{ transform: "translateY(0)" }}
+              transition="all 0.3s ease"
+              leftIcon={<Icon as={FaEye} />}
+              as={"a"}
+              href={"/links"}
+            >
+              View Projects
+            </Button>
+          </HStack>
+
+          <HStack spacing={4} pt={6}>
+            <Button
+              as="a"
+              href="#"
+              variant="ghost"
+              size="sm"
+              leftIcon={<Icon as={FaGithub} />}
+              _hover={{ color: "blue.500" }}
+            >
+              GitHub
+            </Button>
+            <Button
+              as="a"
+              href="#"
+              variant="ghost"
+              size="sm"
+              leftIcon={<Icon as={FaLinkedin} />}
+              _hover={{ color: "blue.500" }}
+            >
+              LinkedIn
+            </Button>
+          </HStack>
+        </VStack>
+      </Container>
+    </Box>
   );
 }
