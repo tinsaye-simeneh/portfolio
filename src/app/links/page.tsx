@@ -163,7 +163,6 @@ const PortfolioLinks = () => {
     <Box minH="100vh" py={10}>
       <Container maxW="container.xl">
         <VStack spacing={8} align="stretch">
-          {/* Header */}
           <VStack spacing={6} textAlign="center">
             <Button
               leftIcon={<Icon as={FaArrowLeft} />}
@@ -195,7 +194,6 @@ const PortfolioLinks = () => {
             </Text>
           </VStack>
 
-          {/* Stats */}
           <HStack justify="center" spacing={8} py={6}>
             <VStack>
               <Text fontSize="2xl" fontWeight="bold" color="blue.500">
@@ -213,7 +211,6 @@ const PortfolioLinks = () => {
             </VStack>
           </HStack>
 
-          {/* Sections */}
           {sections.map((section, index) => (
             <Box 
               key={index} 
@@ -225,7 +222,6 @@ const PortfolioLinks = () => {
               borderColor={borderColor}
             >
               <VStack align="stretch" spacing={6}>
-                {/* Section Header */}
                 <HStack spacing={4}>
                   <Box
                     p={3}
@@ -254,7 +250,6 @@ const PortfolioLinks = () => {
                   </Badge>
                 </HStack>
 
-                {/* Projects Grid */}
                 <SimpleGrid 
                   columns={{ base: 1, md: 2, lg: 3 }} 
                   spacing={4}
