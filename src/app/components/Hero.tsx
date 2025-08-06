@@ -133,12 +133,19 @@ export default function CallToActionWithIllustration() {
             ))}
           </Flex>
 
-          <HStack spacing={4} pt={4}>
+          <Flex 
+            direction={{ base: "column", sm: "row" }}
+            gap={4} 
+            pt={4} 
+            w="full"
+            justify="center"
+          >
             <Button
               size="lg"
               rounded={"full"}
               px={8}
               py={6}
+              w={{ base: "full", sm: "auto" }}
               colorScheme={"blue"}
               bgGradient="linear(to-r, blue.400, blue.600)"
               _hover={{ 
@@ -159,6 +166,7 @@ export default function CallToActionWithIllustration() {
               rounded={"full"}
               px={8}
               py={6}
+              w={{ base: "full", sm: "auto" }}
               variant="outline"
               borderWidth={2}
               borderColor={useColorModeValue("gray.300", "gray.600")}
@@ -177,7 +185,7 @@ export default function CallToActionWithIllustration() {
             >
               View Projects
             </Button>
-          </HStack>
+          </Flex>
 
           <HStack spacing={4} pt={6}>
             <Button
