@@ -126,7 +126,6 @@ export default function BlogsPage() {
     <Box minH="100vh" py={10}>
       <Container maxW="container.xl">
         <VStack spacing={8} align="stretch">
-          {/* Header */}
           <VStack spacing={6} textAlign="center">
             <Button
               leftIcon={<Icon as={FaArrowLeft} />}
@@ -158,7 +157,6 @@ export default function BlogsPage() {
               </Text>
             </VStack>
 
-            {/* Stats and Actions */}
             <HStack spacing={8} flexWrap="wrap" justify="center">
               <VStack spacing={1}>
                 <Text fontSize="2xl" fontWeight="bold" color="blue.500">
@@ -193,7 +191,6 @@ export default function BlogsPage() {
 
           <Divider />
 
-          {/* Blog Posts */}
           {posts.length === 0 ? (
             <VStack spacing={6} py={20} textAlign="center">
               <Icon as={FaBookOpen} boxSize={20} color="gray.300" />
@@ -320,7 +317,6 @@ export default function BlogsPage() {
                       )}
                     </Flex>
 
-                    {/* Meta Info */}
                     <HStack justify="space-between" pt={2}>
                       <HStack spacing={4} fontSize="sm" color={textColor}>
                         <HStack spacing={1}>
@@ -334,7 +330,6 @@ export default function BlogsPage() {
                       </HStack>
                     </HStack>
 
-                    {/* Action Button */}
                     <Button
                       as={Link}
                       href={`/blog/${post.id}`}
@@ -360,8 +355,7 @@ export default function BlogsPage() {
             </SimpleGrid>
           )}
 
-          {/* Footer CTA */}
-          {posts.length > 0 && (
+         {posts.length > 0 && (
             <VStack spacing={4} textAlign="center" pt={8}>
               <Text color={textColor} fontSize="lg">
                 Want to stay updated with my latest posts?
