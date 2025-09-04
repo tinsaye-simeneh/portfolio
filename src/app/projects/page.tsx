@@ -5,10 +5,36 @@ import ProjectCard from "../components/ProjectCard";
 
 const projects = [
   {
-    title: "Jiret",
+    title: "Jiret (Management Side) - Saas",
     demoLink: "https://jiret.com",
     description: "A comprehensive client management system.",
     languages: ["JavaScript", "React", "Next.js", "Mantine", "Tailwind CSS"],
+  },
+  {
+    title: "Guzo School Management System - Saas",
+    demoLink: "https://guzo-sms.vercel.app",
+    description: "A saas school management system",
+    languages: [
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Mantine",
+      "Tailwind CSS",
+      "Supabase",
+    ],
+  },
+  {
+    title: "Specter systems portal - Saas",
+    demoLink: "https://portal.spectersystems.io",
+    description: "A saas school management system",
+    languages: [
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Mantine",
+      "Tailwind CSS",
+      "Supabase",
+    ],
   },
   {
     title: "Muyalogy",
@@ -24,31 +50,25 @@ const projects = [
     ],
   },
   {
-    title: "Tin ET",
-    demoLink: "https://tin-et.vercel.app/",
-    description: "An engaging e-commerce platform.",
-    languages: ["JavaScript", "HTML", "CSS", "Bootstrap"],
-  },
-  {
-    title: "Keno2",
+    title: "Keno Retail Game",
     demoLink: "https://keno2.etvirtual.com",
     description: "An interactive gaming platform.",
     languages: ["JavaScript", "React.js"],
   },
   {
-    title: "Spin2",
+    title: "Spin Retail Game",
     demoLink: "https://spin2.etvirtual.com",
     description: "A spin-the-wheel gaming application.",
     languages: ["JavaScript", "React.js", "Tailwind CSS"],
   },
   {
-    title: "Retail2",
+    title: "Cashier Retail",
     demoLink: "https://retail2.etvirtual.com",
     description: "A retail management system.",
     languages: ["JavaScript", "React", "Tailwind CSS"],
   },
   {
-    title: "Admin2",
+    title: "Game Admins",
     demoLink: "https://admin2.etvirtual.com",
     description: "An admin panel for managing users and data.",
     languages: ["JavaScript", "React", "Tailwind CSS"],
@@ -70,6 +90,12 @@ const projects = [
     demoLink: "https://bingoadmin.etvirtual.com/",
     description: "Admin management for the bingo platform.",
     languages: ["JavaScript", "React", "Tailwind CSS"],
+  },
+  {
+    title: "Tin ET",
+    demoLink: "https://tin-et.vercel.app/",
+    description: "An engaging Business License platform.",
+    languages: ["JavaScript", "HTML", "CSS", "Bootstrap"],
   },
   {
     title: "Zagol New",

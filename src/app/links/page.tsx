@@ -15,21 +15,21 @@ import {
   SimpleGrid,
   Tooltip,
 } from "@chakra-ui/react";
-import { 
-  FaExternalLinkAlt, 
-  FaDesktop, 
-  FaUser, 
-  FaGraduationCap, 
+import {
+  FaExternalLinkAlt,
+  FaDesktop,
+  FaUser,
+  FaGraduationCap,
   FaCube,
   FaLock,
   FaEye,
-  FaArrowLeft
+  FaArrowLeft,
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
 const PortfolioLinks = () => {
   const router = useRouter();
-  
+
   const sectionBg = useColorModeValue("white", "gray.800");
   const cardBg = useColorModeValue("gray.50", "gray.700");
   const borderColor = useColorModeValue("gray.200", "gray.600");
@@ -40,100 +40,210 @@ const PortfolioLinks = () => {
   const sections = [
     {
       title: "Client Systems",
-      description: "Complex web applications and management systems built for clients.",
+      description:
+        "Complex web applications and management systems built for clients.",
       icon: FaDesktop,
       color: "blue",
       links: [
-        { url: "https://jiret.com", label: "Jiret", description: "Client management system" },
-        { url: "https://muyalogy.com", label: "Muyalogy", description: "Learning management platform" },
-        { url: "https://tin-et.vercel.app/", label: "Tin ET", description: "E-commerce platform" },
         {
-          url: "https://et-keno2.vercel.app",
-          label: "ET Keno 2",
-          description: "Gaming platform",
-          credentials: "test.shop / 12345678",
-          hasAuth: true
+          title: "Muyalogy - Private",
+          demoLink: "https://muyalogy.com",
+          description: "An online learning management system.",
+          hasAuth: true,
         },
         {
-          url: "https://et-spin2.vercel.app",
-          label: "ET Spin 2",
-          description: "Gaming platform",
-          credentials: "test.shop / 12345678",
-          hasAuth: true
+          label: "Jiret (Management Side) - Saas",
+          url: "https://jiret.com",
+          description: "A comprehensive client management system.",
         },
         {
-          url: "https://et-cash.vercel.app",
-          label: "ET Cashier",
-          description: "Cashier management",
+          label: "Guzo School Management System - Saas (Private)",
+          url: "https://guzo-sms.vercel.app",
+          description: "A saas school management system",
+          hasAuth: true,
+        },
+        {
+          label: "Specter systems portal - Saas",
+          demoLink: "https://portal.spectersystems.io",
+          description: "A saas school management system",
+        },
+        {
+          label: "Keno Retail Game",
+          url: "https://keno2.etvirtual.com",
+          description: "An interactive gaming platform.",
+          credentials: "test.shop / 12345678",
+          hasAuth: true,
+        },
+        {
+          label: "Spin Retail Game",
+          url: "https://spin2.etvirtual.com",
+          description: "A spin-the-wheel gaming application.",
+          credentials: "test.shop / 12345678",
+          hasAuth: true,
+        },
+        {
+          label: "Cashier Retail",
+          url: "https://retail2.etvirtual.com",
+          description: "A retail management system.",
           credentials: "test.cashier / 12345678",
-          hasAuth: true
+          hasAuth: true,
         },
         {
-          url: "https://et-admin2.vercel.app",
-          label: "ET Admin 2",
-          description: "Admin dashboard",
-          credentials: "admin.test / 12345678",
-          hasAuth: true
+          label: "Game Admins",
+          url: "https://admin2.etvirtual.com",
+          description: "An admin panel for managing users and data.",
+          credentials: "admin.test0 / 123456",
+          hasAuth: true,
         },
         {
           url: "https://bingo-cash2.vercel.app",
-          label: "Bingo Cash 2",
+          label: "Bingo Cash",
           description: "Cashier system",
           credentials: "cross.cashier / 123456",
-          hasAuth: true
+          hasAuth: true,
         },
         {
           url: "https://bingo-finance2.vercel.app",
-          label: "Bingo Finance 2",
+          label: "Bingo Finance",
           description: "Finance management",
           credentials: "cross.finance / 123456",
-          hasAuth: true
+          hasAuth: true,
         },
         {
           url: "https://bingo-admin2.vercel.app",
-          label: "Bingo Admin 2",
+          label: "Bingo Admin",
           description: "Admin panel",
           credentials: "cross.admin / 123456",
-          hasAuth: true
+          hasAuth: true,
         },
-        { url: "https://zagol-new.vercel.app/", label: "Zagol New", description: "Business platform" },
+        {
+          url: "https://zagol-new.vercel.app/",
+          label: "Zagol New",
+          description: "Business platform",
+        },
       ],
     },
     {
       title: "Client Portfolio",
-      description: "Professional websites and portfolios created for various clients.",
+      description:
+        "Professional websites and portfolios created for various clients.",
       icon: FaUser,
       color: "purple",
       links: [
-        { url: "https://dynamictehcnologieset.com", label: "Dynamic Technologies", description: "Tech company website" },
-        { url: "https://et-construction.vercel.app/", label: "ET Construction", description: "Construction company site" },
-        { url: "https://ruth-coffee.vercel.app/", label: "Ruth Coffee", description: "Coffee shop website" },
-        { url: "https://tnh-gaming.vercel.app/", label: "TNH Gaming", description: "Gaming community site" },
-        { url: "https://gdscaastu.club/", label: "GDSC AASTU Club", description: "Student developer community" },
-        { url: "https://charity-kappa.vercel.app/", label: "Charity Kappa", description: "Non-profit organization" },
-        { url: "https://viva-update.vercel.app/", label: "Viva Update", description: "News and updates platform" },
-        { url: "https://elsamtechnoglogies.com", label: "Elsam Technologies", description: "Technology solutions" },
-        { url: "https://utopixtechnologies.vercel.app/", label: "Utopix Technologies", description: "Tech startup website" },
-        { url: "https://portfolio2-eight-alpha.vercel.app/", label: "Portfolio 2 Eight Alpha", description: "Personal portfolio" },
-        { url: "https://backend-dev-portfolio.vercel.app/", label: "Backend Dev Portfolio", description: "Developer showcase" },
+        {
+          url: "https://dynamictehcnologieset.com",
+          label: "Dynamic Technologies",
+          description: "Tech company website",
+        },
+        {
+          url: "https://et-construction.vercel.app/",
+          label: "ET Construction",
+          description: "Construction company site",
+        },
+        {
+          url: "https://ruth-coffee.vercel.app/",
+          label: "Ruth Coffee",
+          description: "Coffee shop website",
+        },
+        {
+          url: "https://tnh-gaming.vercel.app/",
+          label: "TNH Gaming",
+          description: "Gaming community site",
+        },
+        {
+          url: "https://gdscaastu.club/",
+          label: "GDSC AASTU Club",
+          description: "Student developer community",
+        },
+        {
+          url: "https://charity-kappa.vercel.app/",
+          label: "Charity Kappa",
+          description: "Non-profit organization",
+        },
+        {
+          url: "https://viva-update.vercel.app/",
+          label: "Viva Update",
+          description: "News and updates platform",
+        },
+        {
+          url: "https://elsamtechnoglogies.com",
+          label: "Elsam Technologies",
+          description: "Technology solutions",
+        },
+        {
+          url: "https://utopixtechnologies.vercel.app/",
+          label: "Utopix Technologies",
+          description: "Tech startup website",
+        },
+        {
+          url: "https://portfolio2-eight-alpha.vercel.app/",
+          label: "Portfolio 2 Eight Alpha",
+          description: "Personal portfolio",
+        },
+        {
+          url: "https://backend-dev-portfolio.vercel.app/",
+          label: "Backend Dev Portfolio",
+          description: "Developer showcase",
+        },
       ],
     },
     {
       title: "Learning Projects",
-      description: "Experimental projects and learning exercises to master new technologies.",
+      description:
+        "Experimental projects and learning exercises to master new technologies.",
       icon: FaGraduationCap,
       color: "green",
       links: [
-        { url: "https://life-kit-gamma.vercel.app", label: "Life Kit Gamma", description: "Productivity tools" },
-        { url: "https://minim-url.vercel.app", label: "Minim URL", description: "URL shortener service" },
-        { url: "https://simple-design-pi.vercel.app/", label: "Simple Design Pi", description: "Minimalist design showcase" },
-        { url: "https://uni-share.vercel.app/", label: "Uni Share", description: "University resource sharing" },
-        { url: "https://kofi-nine.vercel.app/", label: "Kofi Nine", description: "Coffee ordering app" },
-        { url: "https://weather-app-cyan-three.vercel.app/", label: "Weather App Cyan", description: "Weather forecast tool" },
-        { url: "https://currency-converter-rho-azure.vercel.app/", label: "Currency Converter Rho", description: "Real-time currency exchange" },
-        { url: "https://firebase-react-auth-wine.vercel.app/", label: "Firebase React Auth Wine", description: "Authentication system" },
-        { url: "https://apiip.vercel.app/", label: "API IP", description: "IP address lookup tool" },
-        { url: "https://telegram-oauth.vercel.app/", label: "Telegram OAuth", description: "Telegram integration" },
+        {
+          url: "https://life-kit-gamma.vercel.app",
+          label: "Life Kit Gamma",
+          description: "Productivity tools",
+        },
+        {
+          url: "https://minim-url.vercel.app",
+          label: "Minim URL",
+          description: "URL shortener service",
+        },
+        {
+          url: "https://simple-design-pi.vercel.app/",
+          label: "Simple Design Pi",
+          description: "Minimalist design showcase",
+        },
+        {
+          url: "https://uni-share.vercel.app/",
+          label: "Uni Share",
+          description: "University resource sharing",
+        },
+        {
+          url: "https://kofi-nine.vercel.app/",
+          label: "Kofi Nine",
+          description: "Coffee ordering app",
+        },
+        {
+          url: "https://weather-app-cyan-three.vercel.app/",
+          label: "Weather App Cyan",
+          description: "Weather forecast tool",
+        },
+        {
+          url: "https://currency-converter-rho-azure.vercel.app/",
+          label: "Currency Converter Rho",
+          description: "Real-time currency exchange",
+        },
+        {
+          url: "https://firebase-react-auth-wine.vercel.app/",
+          label: "Firebase React Auth Wine",
+          description: "Authentication system",
+        },
+        {
+          url: "https://apiip.vercel.app/",
+          label: "API IP",
+          description: "IP address lookup tool",
+        },
+        {
+          url: "https://telegram-oauth.vercel.app/",
+          label: "Telegram OAuth",
+          description: "Telegram integration",
+        },
       ],
     },
     {
@@ -142,19 +252,71 @@ const PortfolioLinks = () => {
       icon: FaCube,
       color: "orange",
       links: [
-        { url: "https://m-square-login.vercel.app/", label: "M-Square Login", description: "Login component" },
-        { url: "https://m-square-login-2.vercel.app/", label: "M-Square Login 2", description: "Alternative login design" },
-        { url: "https://m-square-signup.vercel.app/", label: "M-Square Signup", description: "Registration component" },
-        { url: "https://m-square-footer.vercel.app/", label: "M-Square Footer", description: "Footer component" },
-        { url: "https://pricing-card-black.vercel.app/", label: "Pricing Card Black", description: "Pricing table component" },
-        { url: "https://simple-responsive-survey-form.vercel.app/", label: "Responsive Survey Form", description: "Form component" },
-        { url: "https://fm-card-component-eight.vercel.app/", label: "FM Card Component", description: "Card design" },
-        { url: "https://fm-notification.vercel.app/", label: "FM Notification", description: "Notification system" },
-        { url: "https://fm-expenses-chart.vercel.app/", label: "FM Expenses Chart", description: "Data visualization" },
-        { url: "https://fm-rating-component-one.vercel.app/", label: "FM Rating Component", description: "Rating system" },
-        { url: "https://fm-loopstudios-landing-three.vercel.app/", label: "FM Loop Studios Landing", description: "Landing page" },
-        { url: "https://fm-order-summary-rose.vercel.app/", label: "FM Order Summary", description: "Order summary UI" },
-        { url: "https://fm-landing.vercel.app/", label: "FM Landing", description: "Landing page template" },
+        {
+          url: "https://m-square-login.vercel.app/",
+          label: "M-Square Login",
+          description: "Login component",
+        },
+        {
+          url: "https://m-square-login-2.vercel.app/",
+          label: "M-Square Login 2",
+          description: "Alternative login design",
+        },
+        {
+          url: "https://m-square-signup.vercel.app/",
+          label: "M-Square Signup",
+          description: "Registration component",
+        },
+        {
+          url: "https://m-square-footer.vercel.app/",
+          label: "M-Square Footer",
+          description: "Footer component",
+        },
+        {
+          url: "https://pricing-card-black.vercel.app/",
+          label: "Pricing Card Black",
+          description: "Pricing table component",
+        },
+        {
+          url: "https://simple-responsive-survey-form.vercel.app/",
+          label: "Responsive Survey Form",
+          description: "Form component",
+        },
+        {
+          url: "https://fm-card-component-eight.vercel.app/",
+          label: "FM Card Component",
+          description: "Card design",
+        },
+        {
+          url: "https://fm-notification.vercel.app/",
+          label: "FM Notification",
+          description: "Notification system",
+        },
+        {
+          url: "https://fm-expenses-chart.vercel.app/",
+          label: "FM Expenses Chart",
+          description: "Data visualization",
+        },
+        {
+          url: "https://fm-rating-component-one.vercel.app/",
+          label: "FM Rating Component",
+          description: "Rating system",
+        },
+        {
+          url: "https://fm-loopstudios-landing-three.vercel.app/",
+          label: "FM Loop Studios Landing",
+          description: "Landing page",
+        },
+        {
+          url: "https://fm-order-summary-rose.vercel.app/",
+          label: "FM Order Summary",
+          description: "Order summary UI",
+        },
+        {
+          url: "https://fm-landing.vercel.app/",
+          label: "FM Landing",
+          description: "Landing page template",
+        },
       ],
     },
   ];
@@ -168,52 +330,61 @@ const PortfolioLinks = () => {
               leftIcon={<Icon as={FaArrowLeft} />}
               variant="ghost"
               alignSelf="flex-start"
-              onClick={() => router.push('/')}
+              onClick={() => router.push("/")}
               mb={4}
             >
               Back to Home
             </Button>
-            
-            <Heading 
-              as="h1" 
-              size="2xl" 
+
+            <Heading
+              as="h1"
+              size="2xl"
               color={headingColor}
               bgGradient="linear(to-r, blue.400, purple.500, pink.400)"
               bgClip="text"
             >
               Complete Portfolio Collection
             </Heading>
-            <Text 
-              fontSize="xl" 
-              color={textColor} 
-              maxW="3xl"
-              lineHeight="1.6"
-            >
-              Explore my comprehensive collection of projects, from complex client systems 
-              to learning experiments and reusable components.
+            <Text fontSize="xl" color={textColor} maxW="3xl" lineHeight="1.6">
+              Explore my comprehensive collection of projects, from complex
+              client systems to learning experiments and reusable components.
             </Text>
           </VStack>
 
           <HStack justify="center" spacing={8} py={6}>
             <VStack>
               <Text fontSize="2xl" fontWeight="bold" color="blue.500">
-                {sections.reduce((acc, section) => acc + section.links.length, 0)}+
+                {sections.reduce(
+                  (acc, section) => acc + section.links.length,
+                  0
+                )}
+                +
               </Text>
-              <Text fontSize="sm" color={textColor}>Total Projects</Text>
+              <Text fontSize="sm" color={textColor}>
+                Total Projects
+              </Text>
             </VStack>
             <VStack>
-              <Text fontSize="2xl" fontWeight="bold" color="purple.500">4</Text>
-              <Text fontSize="sm" color={textColor}>Categories</Text>
+              <Text fontSize="2xl" fontWeight="bold" color="purple.500">
+                4
+              </Text>
+              <Text fontSize="sm" color={textColor}>
+                Categories
+              </Text>
             </VStack>
             <VStack>
-              <Text fontSize="2xl" fontWeight="bold" color="green.500">100%</Text>
-              <Text fontSize="sm" color={textColor}>Functional</Text>
+              <Text fontSize="2xl" fontWeight="bold" color="green.500">
+                100%
+              </Text>
+              <Text fontSize="sm" color={textColor}>
+                Functional
+              </Text>
             </VStack>
           </HStack>
 
           {sections.map((section, index) => (
-            <Box 
-              key={index} 
+            <Box
+              key={index}
               bg={sectionBg}
               borderRadius="2xl"
               p={8}
@@ -239,8 +410,8 @@ const PortfolioLinks = () => {
                       {section.description}
                     </Text>
                   </VStack>
-                  <Badge 
-                    colorScheme={section.color} 
+                  <Badge
+                    colorScheme={section.color}
                     variant="subtle"
                     px={3}
                     py={1}
@@ -250,10 +421,7 @@ const PortfolioLinks = () => {
                   </Badge>
                 </HStack>
 
-                <SimpleGrid 
-                  columns={{ base: 1, md: 2, lg: 3 }} 
-                  spacing={4}
-                >
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
                   {section.links.map((link, linkIndex) => (
                     <Box
                       key={linkIndex}
@@ -267,14 +435,14 @@ const PortfolioLinks = () => {
                       _hover={{
                         transform: "translateY(-4px)",
                         shadow: "lg",
-                        borderColor: `${section.color}.300`
+                        borderColor: `${section.color}.300`,
                       }}
                     >
                       <VStack align="stretch" spacing={3}>
                         <HStack justify="space-between" align="start">
                           <VStack align="start" spacing={1} flex={1}>
-                            <Text 
-                              fontWeight="bold" 
+                            <Text
+                              fontWeight="bold"
                               color={headingColor}
                               fontSize="md"
                               noOfLines={1}
@@ -282,8 +450,8 @@ const PortfolioLinks = () => {
                               {link.label}
                             </Text>
                             {link.description && (
-                              <Text 
-                                fontSize="sm" 
+                              <Text
+                                fontSize="sm"
                                 color={textColor}
                                 noOfLines={2}
                               >
@@ -294,7 +462,11 @@ const PortfolioLinks = () => {
                           {link.hasAuth && (
                             <Tooltip label="Requires login credentials">
                               <Box>
-                                <Icon as={FaLock} color="orange.400" boxSize={3} />
+                                <Icon
+                                  as={FaLock}
+                                  color="orange.400"
+                                  boxSize={3}
+                                />
                               </Box>
                             </Tooltip>
                           )}
