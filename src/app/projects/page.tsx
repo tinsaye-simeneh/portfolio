@@ -103,13 +103,6 @@ const projects = [
     description: "A new version of the Zagol platform.",
     languages: ["JavaScript", "React", "Tailwind CSS"],
   },
-
-  {
-    title: "Dynamic Technologies",
-    demoLink: "https://dynamictehcnologieset.com",
-    description: "A portfolio showcasing tech solutions.",
-    languages: ["JavaScript", "React", "Tailwind CSS"],
-  },
   {
     title: "ET Construction",
     demoLink: "https://et-construction.vercel.app/",
@@ -157,6 +150,12 @@ const projects = [
     demoLink: "https://utopixtechnologies.vercel.app/",
     description: "A tech portfolio showcasing various services.",
     languages: ["JavaScript", "Bootstrap", "HTML5", "CSS3"],
+  },
+  {
+    title: "Dynamic Technologies",
+    demoLink: "https://dynamictehcnologieset.com",
+    description: "A portfolio showcasing tech solutions.",
+    languages: ["JavaScript", "React", "Tailwind CSS"],
   },
   {
     title: "Portfolio 2",
