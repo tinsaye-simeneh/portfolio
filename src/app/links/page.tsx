@@ -46,8 +46,8 @@ const PortfolioLinks = () => {
       color: "blue",
       links: [
         {
-          title: "Muyalogy - Private",
-          demoLink: "https://muyalogy.com",
+          label: "Muyalogy - Private",
+          url: "https://muyalogy.com",
           description: "An online learning management system.",
           hasAuth: true,
         },
@@ -132,11 +132,6 @@ const PortfolioLinks = () => {
       color: "purple",
       links: [
         {
-          url: "https://dynamictehcnologieset.com",
-          label: "Dynamic Technologies",
-          description: "Tech company website",
-        },
-        {
           url: "https://et-construction.vercel.app/",
           label: "ET Construction",
           description: "Construction company site",
@@ -152,14 +147,14 @@ const PortfolioLinks = () => {
           description: "Gaming community site",
         },
         {
-          url: "https://gdscaastu.club/",
-          label: "GDSC AASTU Club",
-          description: "Student developer community",
-        },
-        {
           url: "https://charity-kappa.vercel.app/",
           label: "Charity Kappa",
           description: "Non-profit organization",
+        },
+        {
+          url: "https://dynamictehcnologieset.com",
+          label: "Dynamic Technologies",
+          description: "Tech company website",
         },
         {
           url: "https://viva-update.vercel.app/",
@@ -170,6 +165,11 @@ const PortfolioLinks = () => {
           url: "https://elsamtechnoglogies.com",
           label: "Elsam Technologies",
           description: "Technology solutions",
+        },
+        {
+          url: "https://gdscaastu.club/",
+          label: "GDSC AASTU Club",
+          description: "Student developer community",
         },
         {
           url: "https://utopixtechnologies.vercel.app/",
