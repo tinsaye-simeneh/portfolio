@@ -66,6 +66,7 @@ const PortfolioLinks = () => {
           label: "Specter systems portal - Saas",
           demoLink: "https://portal.spectersystems.io",
           description: "A saas school management system",
+          hasAuth: true,
         },
         {
           label: "Keno Retail Game",
