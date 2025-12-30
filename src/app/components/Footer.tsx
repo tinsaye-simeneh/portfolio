@@ -232,7 +232,7 @@ const Footer = () => {
                       fontWeight="bold"
                       boxShadow="md"
                     >
-                      ✨ Available for freelance work
+                      ✨ Open for collaboration and employment
                     </Badge>
                   </motion.div>
                 </VStack>
@@ -435,7 +435,6 @@ const Footer = () => {
                     <motion.div
                       whileHover={{ x: 4, scale: 1.02 }}
                       transition={{ duration: 0.2 }}
-                      w="full"
                     >
                       <Box
                         as="a"
@@ -478,7 +477,6 @@ const Footer = () => {
                     <motion.div
                       whileHover={{ x: 4, scale: 1.02 }}
                       transition={{ duration: 0.2 }}
-                      w="full"
                     >
                       <Box
                         as="a"

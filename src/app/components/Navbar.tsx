@@ -98,8 +98,8 @@ const Navbar = () => {
   const pathname = usePathname();
   
   const iconColor = useColorModeValue("gray.700", "gray.300");
-  const bgColor = useColorModeValue("rgba(255, 255, 255, 0.95)", "rgba(26, 32, 44, 0.95)");
-  const borderColor = useColorModeValue("rgba(0, 0, 0, 0.15)", "rgba(255, 255, 255, 0.2)");
+  const bgColor = useColorModeValue("rgba(255, 255, 255, 0.3)", "rgba(26, 32, 44, 0.3)");
+  const borderColor = useColorModeValue("rgba(255, 255, 255, 0.4)", "rgba(255, 255, 255, 0.2)");
   const hoverColor = useColorModeValue("orange.500", "orange.400");
 
   const socialLinks = [
@@ -126,7 +126,8 @@ const Navbar = () => {
   return (
     <Box
       bg={bgColor}
-      backdropFilter="blur(40px) saturate(180%)"
+      backdropFilter="blur(60px) saturate(200%)"
+      WebkitBackdropFilter="blur(60px) saturate(200%)"
       position="sticky"
       top={0}
       zIndex={1000}
@@ -135,7 +136,21 @@ const Navbar = () => {
       borderRadius="xl"
       border="2px solid"
       borderColor={borderColor}
-      boxShadow="0 8px 32px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1) inset, 0 0 30px rgba(0, 0, 0, 0.1)"
+      boxShadow="0 8px 32px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.2) inset, 0 0 50px rgba(255, 255, 255, 0.15)"
+      overflow="hidden"
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        height: "1px",
+        background: useColorModeValue(
+          "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent)",
+          "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)"
+        ),
+        pointerEvents: "none",
+      }}
     >
       <Box maxW="container.xl" mx="auto" px={6}>
         <Flex h={20} alignItems="center" justifyContent="space-between">

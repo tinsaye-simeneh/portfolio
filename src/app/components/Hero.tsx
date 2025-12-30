@@ -163,7 +163,7 @@ export default function CallToActionWithIllustration() {
                   as={motion.span}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
+                  transition="all 0.8s cubic-bezier(0.25, 1, 0.5, 1) 0.4s"
                   display="inline-block"
                   bgGradient="linear(to-r, orange.400, red.500, yellow.400)"
                   bgClip="text"
