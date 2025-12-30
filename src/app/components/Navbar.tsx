@@ -15,7 +15,8 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
-import {  usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 interface NavLinkProps {
   href: string;
@@ -44,31 +45,50 @@ const Links = [
 
 const NavLink = ({ href, children, isActive }: NavLinkProps) => {
   const linkBg = useColorModeValue("gray.100", "gray.700");
-  const activeBg = useColorModeValue("blue.50", "blue.900");
-  const activeColor = useColorModeValue("blue.600", "blue.300");
+  const activeBg = useColorModeValue("orange.50", "orange.900");
+  const activeColor = useColorModeValue("orange.600", "orange.300");
+  const hoverBg = useColorModeValue("orange.100", "orange.800");
   
   return (
-    <Button
-      as="a"
-      href={href}
-      variant="ghost"
-      size="sm"
-      fontWeight={isActive ? "bold" : "medium"}
-      color={isActive ? activeColor : undefined}
-      bg={isActive ? activeBg : "transparent"}
-      _hover={{
-        bg: isActive ? activeBg : linkBg,
-        transform: "translateY(-1px)",
-      }}
-      _active={{
-        transform: "translateY(0)",
-      }}
-      transition="all 0.2s ease"
-      borderRadius="full"
-      px={4}
+    <motion.div
+      whileHover={{ y: -2 }}
+      whileTap={{ y: 0 }}
     >
-      {children}
-    </Button>
+      <Button
+        as="a"
+        href={href}
+        variant="ghost"
+        size="sm"
+        fontWeight={isActive ? "bold" : "semibold"}
+        color={isActive ? activeColor : undefined}
+        bg={isActive ? activeBg : "transparent"}
+        _hover={{
+          bg: isActive ? activeBg : hoverBg,
+          color: isActive ? activeColor : "orange.600",
+        }}
+        _active={{
+          transform: "scale(0.95)",
+        }}
+        transition="all 0.2s ease"
+        borderRadius="full"
+        px={5}
+        position="relative"
+      >
+        {children}
+        {isActive && (
+          <Box
+            position="absolute"
+            bottom="-2px"
+            left="50%"
+            transform="translateX(-50%)"
+            width="6px"
+            height="6px"
+            borderRadius="full"
+            bg="orange.500"
+          />
+        )}
+      </Button>
+    </motion.div>
   );
 };
 
@@ -78,8 +98,9 @@ const Navbar = () => {
   const pathname = usePathname();
   
   const iconColor = useColorModeValue("gray.700", "gray.300");
-  const bgColor = useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)");
-  const borderColor = useColorModeValue("gray.200", "gray.700");
+  const bgColor = useColorModeValue("rgba(255, 255, 255, 0.95)", "rgba(26, 32, 44, 0.95)");
+  const borderColor = useColorModeValue("rgba(0, 0, 0, 0.15)", "rgba(255, 255, 255, 0.2)");
+  const hoverColor = useColorModeValue("orange.500", "orange.400");
 
   const socialLinks = [
     {
@@ -105,40 +126,51 @@ const Navbar = () => {
   return (
     <Box
       bg={bgColor}
-      backdropFilter="blur(10px)"
-      borderBottom="1px"
-      borderColor={borderColor}
+      backdropFilter="blur(40px) saturate(180%)"
       position="sticky"
       top={0}
       zIndex={1000}
-      shadow="sm"
+      mx={{ base: 6, md: 10, lg: 16 }}
+      mt={4}
+      borderRadius="xl"
+      border="2px solid"
+      borderColor={borderColor}
+      boxShadow="0 8px 32px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1) inset, 0 0 30px rgba(0, 0, 0, 0.1)"
     >
       <Box maxW="container.xl" mx="auto" px={6}>
-        <Flex h={16} alignItems="center" justifyContent="space-between">
+        <Flex h={20} alignItems="center" justifyContent="space-between">
          
           <HStack spacing={8} alignItems="center">
-            <Button
-              as="a"
-              href="/"
-              variant="ghost"
-              p={0}
-              _hover={{ transform: "scale(1.05)" }}
-              transition="transform 0.2s ease"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <Text
-                fontSize="2xl"
-                fontWeight="bold"
-                bgGradient="linear(to-r, blue.400, purple.500, pink.400)"
-                bgClip="text"
-                letterSpacing="-0.02em"
+              <Button
+                as="a"
+                href="/"
+                variant="ghost"
+                p={0}
+                _hover={{ bg: "transparent" }}
               >
-                TSD.
-              </Text>
-            </Button>
+                <Text
+                  fontSize="2xl"
+                  fontWeight="bold"
+                  bgGradient={useColorModeValue(
+                    "linear(to-r, orange.400, red.500, yellow.400)",
+                    "linear(to-r, orange.300, red.400, yellow.300)"
+                  )}
+                  bgClip="text"
+                  letterSpacing="-0.02em"
+                  cursor="pointer"
+                >
+                  TSD.
+                </Text>
+              </Button>
+            </motion.div>
             
             <HStack
               as="nav"
-              spacing={2}
+              spacing={1}
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
@@ -154,92 +186,145 @@ const Navbar = () => {
           </HStack>
 
           <HStack spacing={2} display={{ base: "none", md: "flex" }}>
-          
             {socialLinks.map((social) => (
-              <IconButton
+              <motion.div
                 key={social.label}
-                as="a"
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                icon={<social.icon />}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <IconButton
+                  as="a"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  icon={<social.icon />}
+                  variant="ghost"
+                  size="md"
+                  color={iconColor}
+                  borderRadius="full"
+                  _hover={{
+                    color: hoverColor,
+                    bg: useColorModeValue("orange.50", "orange.900"),
+                  }}
+                  transition="all 0.2s ease"
+                />
+              </motion.div>
+            ))}
+            
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 15 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <IconButton
+                aria-label="Toggle Theme"
+                icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
                 variant="ghost"
-                size="sm"
+                size="md"
+                onClick={toggleColorMode}
                 color={iconColor}
+                borderRadius="full"
                 _hover={{
-                  color: social.color,
-                  transform: "translateY(-1px)",
+                  color: hoverColor,
+                  bg: useColorModeValue("orange.50", "orange.900"),
                 }}
                 transition="all 0.2s ease"
               />
-            ))}
-            
-            <IconButton
-              aria-label="Toggle Theme"
-              icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-              variant="ghost"
-              size="sm"
-              onClick={toggleColorMode}
-              color={iconColor}
-              _hover={{
-                transform: "translateY(-1px)",
-              }}
-              transition="all 0.2s ease"
-            />
+            </motion.div>
           </HStack>
 
           <IconButton
-            size="sm"
+            size="md"
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label="Toggle Menu"
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
             variant="ghost"
+            color={iconColor}
+            borderRadius="full"
+            _hover={{
+              color: hoverColor,
+              bg: useColorModeValue("orange.50", "orange.900"),
+            }}
           />
         </Flex>
 
         <Collapse in={isOpen} animateOpacity>
-          <Box pb={4} display={{ md: "none" }}>
-            <VStack spacing={4} align="stretch">
+          <Box pb={6} display={{ md: "none" }}>
+            <VStack spacing={3} align="stretch">
               {Links.map((link) => (
-                <Button
+                <motion.div
                   key={link.label}
-                  as="a"
-                  href={link.href}
-                  variant="ghost"
-                  justifyContent="flex-start"
-                  fontWeight={pathname === link.href ? "bold" : "medium"}
-                  color={pathname === link.href ? "blue.500" : undefined}
-                  onClick={onClose}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  {link.label}
-                </Button>
+                  <Button
+                    as="a"
+                    href={link.href}
+                    variant="ghost"
+                    justifyContent="flex-start"
+                    fontWeight={pathname === link.href ? "bold" : "semibold"}
+                    color={pathname === link.href ? "orange.500" : undefined}
+                    bg={pathname === link.href ? useColorModeValue("orange.50", "orange.900") : "transparent"}
+                    onClick={onClose}
+                    borderRadius="lg"
+                    px={4}
+                    py={6}
+                    _hover={{
+                      bg: useColorModeValue("orange.50", "orange.900"),
+                      color: "orange.500",
+                    }}
+                    transition="all 0.2s ease"
+                  >
+                    {link.label}
+                  </Button>
+                </motion.div>
               ))}
               
               <HStack spacing={4} justify="center" pt={4}>
                 {socialLinks.map((social) => (
-                  <IconButton
+                  <motion.div
                     key={social.label}
-                    as="a"
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                    icon={<social.icon />}
+                    whileHover={{ scale: 1.15, y: -3 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <IconButton
+                      as="a"
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      icon={<social.icon />}
+                      variant="ghost"
+                      size="lg"
+                      color={iconColor}
+                      borderRadius="full"
+                      _hover={{
+                        color: hoverColor,
+                        bg: useColorModeValue("orange.50", "orange.900"),
+                      }}
+                      transition="all 0.2s ease"
+                    />
+                  </motion.div>
+                ))}
+                <motion.div
+                  whileHover={{ scale: 1.15, rotate: 15 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <IconButton
+                    aria-label="Toggle Theme"
+                    icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
                     variant="ghost"
                     size="lg"
+                    onClick={toggleColorMode}
                     color={iconColor}
+                    borderRadius="full"
+                    _hover={{
+                      color: hoverColor,
+                      bg: useColorModeValue("orange.50", "orange.900"),
+                    }}
+                    transition="all 0.2s ease"
                   />
-                ))}
-                <IconButton
-                  aria-label="Toggle Theme"
-                  icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-                  variant="ghost"
-                  size="lg"
-                  onClick={toggleColorMode}
-                  color={iconColor}
-                />
+                </motion.div>
               </HStack>
             </VStack>
           </Box>

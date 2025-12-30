@@ -4,6 +4,8 @@ import theme from "./theme";
 import type { ReactNode } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Snow from "./components/Snow";
+import PageContainer from "./components/PageContainer";
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -22,9 +24,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body>
         <ChakraProvider theme={theme}>
+          <Snow />
           <Box minH="100vh" display="flex" flexDirection="column">
             <Navbar />
-            <Box flex="1">{children}</Box>
+            <PageContainer>{children}</PageContainer>
             <Footer />
           </Box>
         </ChakraProvider>
