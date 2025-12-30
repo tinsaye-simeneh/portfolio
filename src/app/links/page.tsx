@@ -65,63 +65,72 @@ const PortfolioLinks = () => {
           hasAuth: true,
         },
         {
-          label: "Specter systems portal - Saas",
-          demoLink: "https://portal.spectersystems.io",
-          description: "A saas school management system",
+          label: "Bunna Bank Onboarding Systems",
+          description: "A Bunna Bank onboarding system including agent, customer and admin systems",
+          languages: ["JavaScript", "React", "Tailwind CSS"],
           hasAuth: true,
         },
         {
+          label: "Specter systems portal - Saas",
+          url: "https://portal.spectersystems.io",
+          description: "A saas school management system",
+          languages: [
+            "JavaScript",
+            "React",
+            "Next.js",
+            "Mantine",
+            "Tailwind CSS",
+            "Supabase",
+          ],
+        },
+        {
+          label: "Precise ethiopia Consulting site",
+          description: "A Precise ethiop Consulting site",
+          languages: ["JavaScript", "React", "Tailwind CSS"],
+        },
+        {
+          label: "Lucy Delala",
+          description: "A Lucy Delala website",
+          languages: ["JavaScript", "React", "Next.js", "Tailwind CSS"],
+        },
+        {
           label: "Keno Retail Game",
-          url: "https://et-keno2.vercel.app",
           description: "An interactive gaming platform.",
-          credentials: "test.shop / 12345678",
           hasAuth: true,
         },
         {
           label: "Spin Retail Game",
-          url: "https://et-spin2.vercel.app",
           description: "A spin-the-wheel gaming application.",
-          credentials: "test.shop / 12345678",
           hasAuth: true,
         },
         {
           label: "Cashier Retail",
-          url: "https://et-cash.vercel.app",
           description: "A retail management system.",
-          credentials: "test.cashier / 12345678",
           hasAuth: true,
         },
         {
           label: "Game Admins",
-          url: "https://et-admin2.vercel.app",
           description: "An admin panel for managing users and data.",
-          credentials: "admin.test0 / 123456",
           hasAuth: true,
         },
         {
-          url: "https://bingo-cashier2.vercel.app",
           label: "Bingo Cash",
           description: "Cashier system",
-          credentials: "cross.cashier / 123456",
           hasAuth: true,
         },
         {
-          url: "https://bingo-finance2.vercel.app",
           label: "Bingo Finance",
           description: "Finance management",
-          credentials: "cross.finance / 123456",
           hasAuth: true,
         },
         {
-          url: "https://bingo-admin2.vercel.app",
           label: "Bingo Admin",
           description: "Admin panel",
-          credentials: "cross.admin / 123456",
           hasAuth: true,
         },
         {
           url: "https://zagol-new.vercel.app/",
-          label: "Zagol New",
+          label: "Zagol",
           description: "Business platform",
         },
       ],
@@ -522,7 +531,7 @@ const PortfolioLinks = () => {
                           )}
                         </HStack>
 
-                        {link.credentials && (
+                        {link.hasAuth && (
                           <Box
                             bg={credentialsBg}
                             p={2}
@@ -530,7 +539,7 @@ const PortfolioLinks = () => {
                             fontSize="xs"
                           >
                             <Text color="orange.600" fontWeight="medium">
-                              Login: {link.credentials}
+                              Login required
                             </Text>
                           </Box>
                         )}

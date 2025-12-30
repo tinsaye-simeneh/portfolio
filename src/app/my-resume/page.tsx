@@ -267,8 +267,6 @@ export default function ResumePage() {
                 display={isLoading ? "none" : "block"}
               />
             </Box>
-          </Box>
-
             </Box>
           </motion.div>
 

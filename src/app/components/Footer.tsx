@@ -155,9 +155,9 @@ const Footer = () => {
 
       <Container maxW="container.xl" py={16} position="relative" zIndex={1}>
         <VStack spacing={12}>
-          {/* Top Section - Brand and Social with Cards */}
-          <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8} w="full">
-            {/* Brand Section - Card Style */}
+          {/* All Cards in One Row */}
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6} w="full">
+            {/* Brand Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -165,16 +165,27 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
             >
               <Box
-                bg={cardBg}
-                p={8}
+                bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                backdropFilter="blur(30px) saturate(180%)"
+                p={6}
                 borderRadius="2xl"
-                border="1px solid"
-                borderColor={cardBorder}
-                shadow="lg"
+                border="2px solid"
+                borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                shadow="xl"
                 position="relative"
                 overflow="hidden"
-                _hover={{ shadow: "xl", transform: "translateY(-4px)" }}
+                h="full"
+                _hover={{ shadow: "2xl", transform: "translateY(-4px)" }}
                 transition="all 0.3s ease"
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "4px",
+                  bgGradient: "linear(to-r, orange.400, red.500, yellow.400)",
+                }}
               >
                 <Box
                   position="absolute"
@@ -187,13 +198,13 @@ const Footer = () => {
                   filter="blur(60px)"
                   opacity={0.3}
                 />
-                <VStack align="start" spacing={5} position="relative" zIndex={1}>
+                <VStack align={{ base: "center", md: "start" }} spacing={4} position="relative" zIndex={1}>
                   <motion.div
                     whileHover={{ scale: 1.05, rotate: [0, -2, 2, 0] }}
                     transition={{ duration: 0.5 }}
                   >
                     <Text
-                      fontSize="4xl"
+                      fontSize="3xl"
                       fontWeight="bold"
                       bgGradient={useColorModeValue(
                         "linear(to-r, orange.400, red.500, yellow.400)",
@@ -202,17 +213,18 @@ const Footer = () => {
                       bgClip="text"
                       letterSpacing="-0.02em"
                       cursor="pointer"
+                      textAlign={{ base: "center", md: "left" }}
                     >
                       TSD.
                     </Text>
                   </motion.div>
                   <Text 
                     color={textColor} 
-                    fontSize="md" 
-                    lineHeight="1.8"
-                    maxW="md"
+                    fontSize="sm" 
+                    lineHeight="1.7"
+                    textAlign={{ base: "center", md: "left" }}
                   >
-                  Web Developer & UI/UX Designer passionate about creating 
+                    Web Developer & UI/UX Designer passionate about creating 
                     exceptional digital experiences.
                   </Text>
                   <motion.div
@@ -225,21 +237,21 @@ const Footer = () => {
                         "linear(to-r, orange.500, red.600)"
                       )}
                       color="white"
-                      px={5}
-                      py={2}
+                      px={4}
+                      py={1.5}
                       borderRadius="full"
                       fontSize="xs"
                       fontWeight="bold"
                       boxShadow="md"
                     >
-                      ✨ Open for collaboration and employment
+                      ✨ Open for collaboration
                     </Badge>
                   </motion.div>
                 </VStack>
               </Box>
             </motion.div>
 
-            {/* Social Icons - Card Style */}
+            {/* Quick Links Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -247,110 +259,29 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <Box
-                bg={cardBg}
-                p={8}
-                borderRadius="2xl"
-                border="1px solid"
-                borderColor={cardBorder}
-                shadow="lg"
-                position="relative"
-                overflow="hidden"
-                _hover={{ shadow: "xl", transform: "translateY(-4px)" }}
-                transition="all 0.3s ease"
-              >
-                <Box
-                  position="absolute"
-                  bottom="-50px"
-                  left="-50px"
-                  width="150px"
-                  height="150px"
-                  borderRadius="full"
-                  bgGradient="linear(to-br, yellow.200, orange.200)"
-                  filter="blur(60px)"
-                  opacity={0.3}
-                />
-                <VStack align={{ base: "center", lg: "start" }} spacing={5} position="relative" zIndex={1}>
-                  <Heading 
-                    size="md" 
-                    color={headingColor} 
-                    fontWeight="bold"
-                    bgGradient={useColorModeValue(
-                      "linear(to-r, orange.400, red.500)",
-                      "linear(to-r, orange.300, red.400)"
-                    )}
-                    bgClip="text"
-                  >
-                    Connect With Me
-                  </Heading>
-                  <HStack spacing={4} flexWrap="wrap" justify={{ base: "center", lg: "flex-start" }}>
-                    {socialLinks.map((social, index) => (
-                      <motion.div
-                        key={social.label}
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
-                        whileHover={{ scale: 1.2, y: -5, rotate: [0, -10, 10, 0] }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <Box
-                          as="a"
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          p={4}
-                          borderRadius="xl"
-                          bgGradient={useColorModeValue(
-                            "linear(to-br, orange.50, red.50)",
-                            "linear(to-br, orange.900, red.900)"
-                          )}
-                          border="2px solid"
-                          borderColor={useColorModeValue("orange.200", "orange.700")}
-                          color={linkColor}
-                          display="flex"
-                          alignItems="center"
-                          justifyContent="center"
-                          _hover={{
-                            bgGradient: useColorModeValue(
-                              "linear(to-br, orange.100, red.100)",
-                              "linear(to-br, orange.800, red.800)"
-                            ),
-                            borderColor: linkColor,
-                            transform: "translateY(-3px)",
-                            boxShadow: "lg",
-                          }}
-                          transition="all 0.3s ease"
-                        >
-                          <social.icon size="24px" />
-                        </Box>
-                      </motion.div>
-                    ))}
-                  </HStack>
-                </VStack>
-              </Box>
-            </motion.div>
-          </SimpleGrid>
-
-          {/* Middle Section - Links and Contact with Cards */}
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
-            {/* Quick Links - Card Style */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Box
-                bg={cardBg}
+                bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                backdropFilter="blur(30px) saturate(180%)"
                 p={6}
                 borderRadius="2xl"
-                border="1px solid"
-                borderColor={cardBorder}
-                shadow="md"
-                _hover={{ shadow: "lg" }}
+                border="2px solid"
+                borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                shadow="xl"
+                _hover={{ shadow: "2xl", transform: "translateY(-4px)" }}
                 transition="all 0.3s ease"
+                h="full"
+                position="relative"
+                overflow="hidden"
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "4px",
+                  bgGradient: "linear(to-r, orange.400, red.500, yellow.400)",
+                }}
               >
-                <VStack align="start" spacing={5}>
+                <VStack align="start" spacing={4} h="full">
                   <Heading 
                     size="md" 
                     color={headingColor} 
@@ -363,7 +294,7 @@ const Footer = () => {
                   >
                     Quick Links
                   </Heading>
-                  <SimpleGrid columns={2} spacing={4} w="full">
+                  <VStack spacing={3} w="full" align="stretch">
                     {quickLinks.map((link, index) => (
                       <motion.div
                         key={link.label}
@@ -396,172 +327,41 @@ const Footer = () => {
                         </Link>
                       </motion.div>
                     ))}
-                  </SimpleGrid>
-                </VStack>
-              </Box>
-            </motion.div>
-
-            {/* Contact Info - Card Style */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <Box
-                bg={cardBg}
-                p={6}
-                borderRadius="2xl"
-                border="1px solid"
-                borderColor={cardBorder}
-                shadow="md"
-                _hover={{ shadow: "lg" }}
-                transition="all 0.3s ease"
-              >
-                <VStack align="start" spacing={5}>
-                  <Heading 
-                    size="md" 
-                    color={headingColor} 
-                    fontWeight="bold"
-                    bgGradient={useColorModeValue(
-                      "linear(to-r, orange.400, red.500)",
-                      "linear(to-r, orange.300, red.400)"
-                    )}
-                    bgClip="text"
-                  >
-                    Get in Touch
-                  </Heading>
-                  <VStack align="start" spacing={4} w="full">
-                    <motion.div
-                      whileHover={{ x: 4, scale: 1.02 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Box
-                        as="a"
-                        href="mailto:tinsayesimeneh608@gmail.com"
-                        display="flex"
-                        alignItems="center"
-                        p={4}
-                        borderRadius="xl"
-                        bg={useColorModeValue("gray.50", "gray.700")}
-                        border="1px solid"
-                        borderColor={cardBorder}
-                        _hover={{
-                          bg: hoverBg,
-                          borderColor: linkColor,
-                          transform: "translateX(4px)",
-                        }}
-                        transition="all 0.2s ease"
-                        w="full"
-                      >
-                        <Box
-                          p={3}
-                          borderRadius="lg"
-                          bgGradient="linear(to-br, orange.400, red.500)"
-                          color="white"
-                          mr={4}
-                        >
-                          <FaEnvelope size="18px" />
-                        </Box>
-                        <Text
-                          color={textColor}
-                          fontSize="sm"
-                          fontWeight="medium"
-                          flex={1}
-                        >
-                          tinsayesimeneh608@gmail.com
-                        </Text>
-                      </Box>
-                    </motion.div>
-                    
-                    <motion.div
-                      whileHover={{ x: 4, scale: 1.02 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Box
-                        as="a"
-                        href="tel:+251983779803"
-                        display="flex"
-                        alignItems="center"
-                        p={4}
-                        borderRadius="xl"
-                        bg={useColorModeValue("gray.50", "gray.700")}
-                        border="1px solid"
-                        borderColor={cardBorder}
-                        _hover={{
-                          bg: hoverBg,
-                          borderColor: linkColor,
-                          transform: "translateX(4px)",
-                        }}
-                        transition="all 0.2s ease"
-                        w="full"
-                      >
-                        <Box
-                          p={3}
-                          borderRadius="lg"
-                          bgGradient="linear(to-br, red.400, orange.500)"
-                          color="white"
-                          mr={4}
-                        >
-                          <FaPhone size="18px" />
-                        </Box>
-                        <Text
-                          color={textColor}
-                          fontSize="sm"
-                          fontWeight="medium"
-                          flex={1}
-                        >
-                          +251-983779803
-                        </Text>
-                      </Box>
-                    </motion.div>
-                    
-                    <Box
-                      display="flex"
-                      alignItems="center"
-                      p={4}
-                      borderRadius="xl"
-                      bg={useColorModeValue("gray.50", "gray.700")}
-                      border="1px solid"
-                      borderColor={cardBorder}
-                      w="full"
-                    >
-                      <Box
-                        p={3}
-                        borderRadius="lg"
-                        bgGradient="linear(to-br, yellow.400, orange.500)"
-                        color="white"
-                        mr={4}
-                      >
-                        <Text fontSize="18px">📍</Text>
-                      </Box>
-                      <Text color={textColor} fontSize="sm" fontWeight="medium">
-                        Addis Ababa, Ethiopia
-                      </Text>
-                    </Box>
                   </VStack>
                 </VStack>
               </Box>
             </motion.div>
-          </SimpleGrid>
 
-          {/* Tech Stack - Enhanced */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            style={{ width: "100%" }}
-          >
-            <Box
-              bg={cardBg}
-              p={6}
-              borderRadius="2xl"
-              border="1px solid"
-              borderColor={cardBorder}
-              shadow="md"
-              w="full"
+            {/* Tech Stack Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
+              <Box
+                bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                backdropFilter="blur(30px) saturate(180%)"
+                p={6}
+                borderRadius="2xl"
+                border="2px solid"
+                borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                shadow="xl"
+                _hover={{ shadow: "2xl", transform: "translateY(-4px)" }}
+                transition="all 0.3s ease"
+                h="full"
+                position="relative"
+                overflow="hidden"
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "4px",
+                  bgGradient: "linear(to-r, orange.400, red.500, yellow.400)",
+                }}
+              >
               <VStack spacing={4} align={{ base: "center", md: "start" }}>
                 <Text 
                   color={headingColor} 
@@ -612,8 +412,9 @@ const Footer = () => {
                   ))}
                 </HStack>
               </VStack>
-            </Box>
-          </motion.div>
+              </Box>
+            </motion.div>
+          </SimpleGrid>
         </VStack>
 
         <Box
