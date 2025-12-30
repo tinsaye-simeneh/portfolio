@@ -27,13 +27,17 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { chakra } from "@chakra-ui/react";
 
 const PortfolioLinks = () => {
   const router = useRouter();
 
-  const sectionBg = useColorModeValue("white", "gray.800");
   const cardBg = useColorModeValue("gray.50", "gray.700");
+  const headingGradient = useColorModeValue(
+    "linear(to-r, orange.400, red.500, yellow.400)",
+    "linear(to-r, orange.300, red.400, yellow.300)"
+  );
+  const cardBgValue = useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)");
+  const cardBorderValue = useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)");
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const textColor = useColorModeValue("gray.600", "gray.300");
   const headingColor = useColorModeValue("gray.800", "white");
@@ -357,10 +361,7 @@ const PortfolioLinks = () => {
                 as="h1"
                 size="2xl"
                 color={headingColor}
-                bgGradient={useColorModeValue(
-                  "linear(to-r, orange.400, red.500, yellow.400)",
-                  "linear(to-r, orange.300, red.400, yellow.300)"
-                )}
+                bgGradient={headingGradient}
                 bgClip="text"
               >
                 Complete Portfolio Collection
@@ -432,13 +433,13 @@ const PortfolioLinks = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Box
-                bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                bg={cardBgValue}
                 backdropFilter="blur(30px) saturate(180%)"
                 borderRadius="2xl"
                 p={8}
                 shadow="xl"
                 border="2px solid"
-                borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                borderColor={cardBorderValue}
                 position="relative"
                 overflow="hidden"
                 _before={{

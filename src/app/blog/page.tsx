@@ -29,7 +29,6 @@ import {
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { chakra } from "@chakra-ui/react";
 
 type Post = {
   id: string;
@@ -48,10 +47,21 @@ export default function BlogsPage() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  const sectionBg = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.600");
   const textColor = useColorModeValue("gray.600", "gray.300");
   const headingColor = useColorModeValue("gray.800", "white");
+  const headingGradient = useColorModeValue(
+    "linear(to-r, orange.400, red.500, yellow.400)",
+    "linear(to-r, orange.300, red.400, yellow.300)"
+  );
+  const buttonBorderColor = useColorModeValue("orange.300", "orange.600");
+  const buttonColor = useColorModeValue("orange.600", "orange.400");
+  const buttonHoverBg = useColorModeValue("orange.50", "orange.900");
+  const cardBg = useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)");
+  const cardBorder = useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)");
+  const cardHoverBorder = useColorModeValue("orange.300", "orange.600");
+  const subscribeButtonBorder = useColorModeValue("orange.300", "orange.600");
+  const subscribeButtonColor = useColorModeValue("orange.600", "orange.400");
+  const subscribeButtonHoverBg = useColorModeValue("orange.50", "orange.900");
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -156,10 +166,7 @@ export default function BlogsPage() {
                   as="h1" 
                   size="2xl" 
                   color={headingColor}
-                  bgGradient={useColorModeValue(
-                    "linear(to-r, orange.400, red.500, yellow.400)",
-                    "linear(to-r, orange.300, red.400, yellow.300)"
-                  )}
+                  bgGradient={headingGradient}
                   bgClip="text"
                 >
                   My Blog Posts
@@ -208,12 +215,12 @@ export default function BlogsPage() {
                 <Button
                   leftIcon={<Icon as={FaRedo} />}
                   variant="outline"
-                  borderColor={useColorModeValue("orange.300", "orange.600")}
-                  color={useColorModeValue("orange.600", "orange.400")}
+                  borderColor={buttonBorderColor}
+                  color={buttonColor}
                   onClick={handleRefresh}
                   borderRadius="full"
                   _hover={{
-                    bg: useColorModeValue("orange.50", "orange.900"),
+                    bg: buttonHoverBg,
                     transform: "translateY(-2px)",
                     shadow: "lg"
                   }}
@@ -264,12 +271,12 @@ export default function BlogsPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Box
-                    bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                    bg={cardBg}
                     backdropFilter="blur(30px) saturate(180%)"
                     borderRadius="2xl"
                     shadow="xl"
                     border="2px solid"
-                    borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                    borderColor={cardBorder}
                     overflow="hidden"
                     transition="all 0.3s ease"
                     position="relative"
@@ -286,7 +293,7 @@ export default function BlogsPage() {
                     _hover={{
                       transform: "translateY(-8px)",
                       shadow: "2xl",
-                      borderColor: useColorModeValue("orange.300", "orange.600")
+                      borderColor: cardHoverBorder
                     }}
                   >
                   {post.cover_image ? (
@@ -439,13 +446,13 @@ export default function BlogsPage() {
               </Button>
               <Button
                 variant="outline"
-                borderColor={useColorModeValue("orange.300", "orange.600")}
-                color={useColorModeValue("orange.600", "orange.400")}
+                borderColor={subscribeButtonBorder}
+                color={subscribeButtonColor}
                 size="lg"
                 onClick={() => router.push('/links')}
                 borderRadius="full"
                 _hover={{
-                  bg: useColorModeValue("orange.50", "orange.900"),
+                  bg: subscribeButtonHoverBg,
                   transform: "translateY(-2px)",
                   shadow: "lg"
                 }}

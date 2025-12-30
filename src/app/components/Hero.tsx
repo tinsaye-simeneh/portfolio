@@ -15,7 +15,7 @@ import {
   Badge,
   SimpleGrid
 } from "@chakra-ui/react";
-import { FaDownload, FaEye, FaGithub, FaLinkedin, FaCode, FaPalette, FaRocket, FaCheckCircle, FaStar, FaUsers } from "react-icons/fa";
+import { FaDownload, FaEye, FaGithub, FaLinkedin, FaCode, FaPalette, FaRocket, FaCheckCircle, FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function CallToActionWithIllustration() {
@@ -27,6 +27,23 @@ export default function CallToActionWithIllustration() {
   const techPillBg = useColorModeValue("white", "gray.700");
   const techPillBorder = useColorModeValue("gray.200", "gray.600");
   const techPillColor = useColorModeValue("gray.700", "gray.300");
+  const welcomeBoxBg = useColorModeValue("white", "gray.800");
+  const welcomeBoxBorder = useColorModeValue("gray.200", "gray.600");
+  const welcomeTextColor = useColorModeValue("gray.600", "gray.400");
+  const subtitleColor = useColorModeValue("orange.600", "orange.300");
+  const cardBg = useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)");
+  const cardBorder = useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)");
+  const descriptionColor = useColorModeValue("gray.700", "gray.200");
+  const accentColor = useColorModeValue("orange.600", "orange.400");
+  const featureBg = useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.05)");
+  const featureBorder = useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(255, 255, 255, 0.1)");
+  const featureHoverBg = useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(255, 255, 255, 0.1)");
+  const featureHoverBorder = useColorModeValue("orange.300", "orange.600");
+  const featureTextColor = useColorModeValue("gray.700", "gray.300");
+  const buttonBorder = useColorModeValue("gray.300", "gray.600");
+  const buttonBg = useColorModeValue("white", "gray.800");
+  const buttonColor = useColorModeValue("gray.800", "white");
+  const buttonHoverBg = useColorModeValue("gray.50", "gray.700");
   
   return (
     <Box
@@ -134,15 +151,15 @@ export default function CallToActionWithIllustration() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <Box
-              bg={useColorModeValue("white", "gray.800")}
+              bg={welcomeBoxBg}
               px={4}
               py={2}
               borderRadius="full"
               border="1px"
-              borderColor={useColorModeValue("gray.200", "gray.600")}
+              borderColor={welcomeBoxBorder}
               shadow="sm"
             >
-              <Text fontSize="sm" color={useColorModeValue("gray.600", "gray.400")}>
+              <Text fontSize="sm" color={welcomeTextColor}>
                 👋 Welcome to my portfolio
               </Text>
             </Box>
@@ -183,7 +200,7 @@ export default function CallToActionWithIllustration() {
                 <Text 
                   fontSize={{ base: "xl", md: "2xl" }}
                   fontWeight={500}
-                  color={useColorModeValue("orange.600", "orange.300")}
+                  color={subtitleColor}
                 >
                   Web Developer & UI/UX Designer
                 </Text>
@@ -203,12 +220,12 @@ export default function CallToActionWithIllustration() {
               position="relative"
             >
               <Box
-                bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                bg={cardBg}
                 backdropFilter="blur(30px) saturate(180%)"
                 borderRadius="2xl"
                 p={{ base: 5, md: 7 }}
                 border="2px solid"
-                borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                borderColor={cardBorder}
                 boxShadow="0 20px 60px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2) inset"
                 position="relative"
                 overflow="hidden"
@@ -310,7 +327,7 @@ export default function CallToActionWithIllustration() {
                   
                   {/* Main Description */}
                   <Text 
-                    color={useColorModeValue("gray.700", "gray.200")} 
+                    color={descriptionColor} 
                     fontSize={{ base: "md", md: "lg" }}
                     lineHeight="1.8"
                     fontWeight={500}
@@ -346,7 +363,7 @@ export default function CallToActionWithIllustration() {
                     {" "}dedicated to crafting exceptional digital experiences. 
                     With a focus on{" "}
                     <chakra.span
-                      color={useColorModeValue("orange.600", "orange.400")}
+                      color={accentColor}
                       fontWeight="bold"
                       position="relative"
                       _after={{
@@ -384,12 +401,12 @@ export default function CallToActionWithIllustration() {
                           spacing={3}
                           p={3}
                           borderRadius="xl"
-                          bg={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.05)")}
+                          bg={featureBg}
                           border="1px solid"
-                          borderColor={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(255, 255, 255, 0.1)")}
+                          borderColor={featureBorder}
                           _hover={{
-                            bg: useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(255, 255, 255, 0.1)"),
-                            borderColor: useColorModeValue("orange.300", "orange.600"),
+                            bg: featureHoverBg,
+                            borderColor: featureHoverBorder,
                             transform: "translateY(-2px)",
                           }}
                           transition="all 0.2s ease"
@@ -405,7 +422,7 @@ export default function CallToActionWithIllustration() {
                           </Box>
                           <Text 
                             fontSize="sm" 
-                            color={useColorModeValue("gray.700", "gray.300")} 
+                            color={featureTextColor} 
                             fontWeight="semibold"
                           >
                             {feature.label}
@@ -501,11 +518,11 @@ export default function CallToActionWithIllustration() {
                   w={{ base: "full", sm: "auto" }}
                   variant="outline"
                   borderWidth={2}
-                  borderColor={useColorModeValue("gray.300", "gray.600")}
-                  bg={useColorModeValue("white", "gray.800")}
-                  color={useColorModeValue("gray.800", "white")}
+                  borderColor={buttonBorder}
+                  bg={buttonBg}
+                  color={buttonColor}
                   _hover={{ 
-                    bg: useColorModeValue("gray.50", "gray.700"),
+                    bg: buttonHoverBg,
                     shadow: "lg"
                   }}
                   _active={{ transform: "translateY(0)" }}

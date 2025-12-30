@@ -12,8 +12,7 @@ import {
   useColorModeValue,
   Icon,
   Badge,
-  Divider,
-  chakra
+  Divider
 } from "@chakra-ui/react";
 import { 
   FaArrowLeft, 

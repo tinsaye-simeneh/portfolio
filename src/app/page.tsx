@@ -11,10 +11,8 @@ import {
   Icon,
   useColorModeValue,
   Badge,
-  Flex,
   Grid,
-  GridItem,
-  Stack
+  GridItem
 } from "@chakra-ui/react";
 import { 
   FaEnvelope, 
@@ -67,6 +65,19 @@ export default function Home() {
   const textColor = useColorModeValue("gray.600", "gray.300");
   const headingColor = useColorModeValue("gray.800", "white");
   const accentColor = useColorModeValue("orange.500", "orange.400");
+  const statsBgGradient = useColorModeValue(
+    "linear(to-r, orange.500, red.500, yellow.500)",
+    "linear(to-r, orange.600, red.600, yellow.600)"
+  );
+  const cardBorder = useColorModeValue("gray.200", "gray.700");
+  const projectsHeadingGradient = useColorModeValue(
+    "linear(to-r, orange.400, red.500)",
+    "linear(to-r, orange.300, red.400)"
+  );
+  const ctaBgGradient = useColorModeValue(
+    "linear(to-r, orange.50, red.50, yellow.50)",
+    "linear(to-r, orange.900, red.900, yellow.900)"
+  );
 
   const stats = [
     { value: "30+", label: "Projects", icon: FaRocket, color: "orange.500" },
@@ -99,10 +110,7 @@ export default function Home() {
     <Box>
       <Hero />
       <Box 
-        bgGradient={useColorModeValue(
-          "linear(to-r, orange.500, red.500, yellow.500)",
-          "linear(to-r, orange.600, red.600, yellow.600)"
-        )}
+        bgGradient={statsBgGradient}
         py={16}
         position="relative"
         overflow="hidden"
@@ -248,7 +256,7 @@ export default function Home() {
                         borderRadius="2xl"
                         shadow="lg"
                         border="1px"
-                        borderColor={useColorModeValue("gray.200", "gray.700")}
+                        borderColor={cardBorder}
                         h="100%"
                         position="relative"
                         overflow="hidden"
@@ -324,10 +332,7 @@ export default function Home() {
                   as="h2" 
                   size="2xl" 
                   color={headingColor}
-                  bgGradient={useColorModeValue(
-                    "linear(to-r, orange.400, red.500)",
-                    "linear(to-r, orange.300, red.400)"
-                  )}
+                  bgGradient={projectsHeadingGradient}
                   bgClip="text"
                 >
                   Projects That Make a Difference
@@ -383,10 +388,7 @@ export default function Home() {
               style={{ width: "100%" }}
             >
               <Box
-                bgGradient={useColorModeValue(
-                  "linear(to-r, orange.50, red.50, yellow.50)",
-                  "linear(to-r, orange.900, red.900, yellow.900)"
-                )}
+                bgGradient={ctaBgGradient}
                 borderRadius="3xl"
                 p={12}
                 textAlign="center"

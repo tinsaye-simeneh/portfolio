@@ -44,7 +44,6 @@ const Links = [
 ];
 
 const NavLink = ({ href, children, isActive }: NavLinkProps) => {
-  const linkBg = useColorModeValue("gray.100", "gray.700");
   const activeBg = useColorModeValue("orange.50", "orange.900");
   const activeColor = useColorModeValue("orange.600", "orange.300");
   const hoverBg = useColorModeValue("orange.100", "orange.800");
@@ -101,6 +100,16 @@ const Navbar = () => {
   const bgColor = useColorModeValue("rgba(255, 255, 255, 0.3)", "rgba(26, 32, 44, 0.3)");
   const borderColor = useColorModeValue("rgba(255, 255, 255, 0.4)", "rgba(255, 255, 255, 0.2)");
   const hoverColor = useColorModeValue("orange.500", "orange.400");
+  const gradientBg = useColorModeValue(
+    "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent)",
+    "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)"
+  );
+  const logoGradient = useColorModeValue(
+    "linear(to-r, orange.400, red.500, yellow.400)",
+    "linear(to-r, orange.300, red.400, yellow.300)"
+  );
+  const iconHoverBg = useColorModeValue("orange.50", "orange.900");
+  const mobileLinkBg = useColorModeValue("orange.50", "orange.900");
 
   const socialLinks = [
     {
@@ -144,10 +153,7 @@ const Navbar = () => {
         left: 0,
         right: 0,
         height: "1px",
-        background: useColorModeValue(
-          "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent)",
-          "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)"
-        ),
+        background: gradientBg,
         pointerEvents: "none",
       }}
     >
@@ -169,10 +175,7 @@ const Navbar = () => {
                 <Text
                   fontSize="2xl"
                   fontWeight="bold"
-                  bgGradient={useColorModeValue(
-                    "linear(to-r, orange.400, red.500, yellow.400)",
-                    "linear(to-r, orange.300, red.400, yellow.300)"
-                  )}
+                  bgGradient={logoGradient}
                   bgClip="text"
                   letterSpacing="-0.02em"
                   cursor="pointer"
@@ -219,7 +222,7 @@ const Navbar = () => {
                   borderRadius="full"
                   _hover={{
                     color: hoverColor,
-                    bg: useColorModeValue("orange.50", "orange.900"),
+                    bg: iconHoverBg,
                   }}
                   transition="all 0.2s ease"
                 />
@@ -278,13 +281,13 @@ const Navbar = () => {
                     justifyContent="flex-start"
                     fontWeight={pathname === link.href ? "bold" : "semibold"}
                     color={pathname === link.href ? "orange.500" : undefined}
-                    bg={pathname === link.href ? useColorModeValue("orange.50", "orange.900") : "transparent"}
+                    bg={pathname === link.href ? mobileLinkBg : "transparent"}
                     onClick={onClose}
                     borderRadius="lg"
                     px={4}
                     py={6}
                     _hover={{
-                      bg: useColorModeValue("orange.50", "orange.900"),
+                      bg: iconHoverBg,
                       color: "orange.500",
                     }}
                     transition="all 0.2s ease"
@@ -314,7 +317,7 @@ const Navbar = () => {
                       borderRadius="full"
                       _hover={{
                         color: hoverColor,
-                        bg: useColorModeValue("orange.50", "orange.900"),
+                        bg: iconHoverBg,
                       }}
                       transition="all 0.2s ease"
                     />
@@ -334,7 +337,7 @@ const Navbar = () => {
                     borderRadius="full"
                     _hover={{
                       color: hoverColor,
-                      bg: useColorModeValue("orange.50", "orange.900"),
+                      bg: iconHoverBg,
                     }}
                     transition="all 0.2s ease"
                   />

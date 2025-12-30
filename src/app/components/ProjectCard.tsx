@@ -12,10 +12,8 @@ import {
   Icon,
   Flex,
   Image,
-  AspectRatio,
-  Stack,
 } from "@chakra-ui/react";
-import { FaExternalLinkAlt, FaGithub, FaCode, FaArrowRight } from "react-icons/fa";
+import { FaGithub, FaCode, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 interface ProjectCardProps {
@@ -36,8 +34,8 @@ const ProjectCard = ({
   imageUrl,
 }: ProjectCardProps) => {
   const cardBg = useColorModeValue("white", "gray.800");
-  const textColor = useColorModeValue("gray.600", "gray.300");
   const headingColor = useColorModeValue("gray.800", "white");
+  const badgeBorder = useColorModeValue("gray.200", "gray.600");
   const overlayBg = useColorModeValue("rgba(255, 255, 255, 0.95)", "rgba(26, 32, 44, 0.95)");
   
   // Orange theme gradients
@@ -207,7 +205,7 @@ const ProjectCard = ({
                   backdropFilter="blur(10px)"
                   color={headingColor}
                   border="1px solid"
-                  borderColor={useColorModeValue("gray.200", "gray.600")}
+                  borderColor={badgeBorder}
                   boxShadow="lg"
                   textTransform="uppercase"
                   letterSpacing="wide"
@@ -227,7 +225,7 @@ const ProjectCard = ({
                 backdropFilter="blur(10px)"
                 color={headingColor}
                 border="1px solid"
-                borderColor={useColorModeValue("gray.200", "gray.600")}
+                borderColor={badgeBorder}
                 boxShadow="lg"
               >
                 +{languages.length - 4}

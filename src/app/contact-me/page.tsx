@@ -32,7 +32,6 @@ import {
 import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { chakra } from "@chakra-ui/react";
 
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +42,10 @@ export default function Contact() {
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const textColor = useColorModeValue("gray.600", "gray.300");
   const headingColor = useColorModeValue("gray.800", "white");
-  const accentColor = useColorModeValue("orange.600", "orange.400");
+  const headingGradient = useColorModeValue(
+    "linear(to-r, orange.400, red.500, yellow.400)",
+    "linear(to-r, orange.300, red.400, yellow.300)"
+  );
 
   const handleIframeLoad = () => {
     setIsLoading(false);
@@ -131,10 +133,7 @@ export default function Contact() {
                 as="h1" 
                 size="2xl" 
                 color={headingColor}
-                bgGradient={useColorModeValue(
-                  "linear(to-r, orange.400, red.500, yellow.400)",
-                  "linear(to-r, orange.300, red.400, yellow.300)"
-                )}
+                bgGradient={headingGradient}
                 bgClip="text"
               >
                 Let&apos;s Work Together
