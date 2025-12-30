@@ -127,7 +127,6 @@ const Navbar = () => {
     <Box
       bg={bgColor}
       backdropFilter="blur(60px) saturate(200%)"
-      WebkitBackdropFilter="blur(60px) saturate(200%)"
       position="sticky"
       top={0}
       zIndex={1000}

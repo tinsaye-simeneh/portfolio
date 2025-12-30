@@ -1,11 +1,8 @@
-import { ChakraProvider, Box } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import Script from "next/script";
 import theme from "./theme";
 import type { ReactNode } from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Snow from "./components/Snow";
-import PageContainer from "./components/PageContainer";
+import AppWrapper from "./components/AppWrapper";
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -22,14 +19,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="description" content="TSD Portfolio" />
         <title>TSD Portfolio</title>
       </head>
-      <body>
+      <body style={{ margin: 0, padding: 0 }}>
         <ChakraProvider theme={theme}>
-          <Snow />
-          <Box minH="100vh" display="flex" flexDirection="column">
-            <Navbar />
-            <PageContainer>{children}</PageContainer>
-            <Footer />
-          </Box>
+          <AppWrapper>{children}</AppWrapper>
         </ChakraProvider>
 
         {process.env.NODE_ENV === "production" && (

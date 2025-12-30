@@ -98,8 +98,6 @@ export default function Home() {
   return (
     <Box>
       <Hero />
-
-      {/* Stats Section - Full Width Banner */}
       <Box 
         bgGradient={useColorModeValue(
           "linear(to-r, orange.500, red.500, yellow.500)",
