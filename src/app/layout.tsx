@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import Script from "next/script";
 import theme from "./theme";
 import type { ReactNode } from "react";
@@ -20,6 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <title>TSD Portfolio</title>
       </head>
       <body style={{ margin: 0, padding: 0 }}>
+        <ColorModeScript initialColorMode="dark" />
         <ChakraProvider theme={theme}>
           <AppWrapper>{children}</AppWrapper>
         </ChakraProvider>
