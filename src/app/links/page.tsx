@@ -26,6 +26,8 @@ import {
   FaArrowLeft,
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { chakra } from "@chakra-ui/react";
 
 const PortfolioLinks = () => {
   const router = useRouter();
@@ -337,62 +339,109 @@ const PortfolioLinks = () => {
               Back to Home
             </Button>
 
-            <Heading
-              as="h1"
-              size="2xl"
-              color={headingColor}
-              bgGradient="linear(to-r, blue.400, purple.500, pink.400)"
-              bgClip="text"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              Complete Portfolio Collection
-            </Heading>
+              <Heading
+                as="h1"
+                size="2xl"
+                color={headingColor}
+                bgGradient={useColorModeValue(
+                  "linear(to-r, orange.400, red.500, yellow.400)",
+                  "linear(to-r, orange.300, red.400, yellow.300)"
+                )}
+                bgClip="text"
+              >
+                Complete Portfolio Collection
+              </Heading>
+            </motion.div>
             <Text fontSize="xl" color={textColor} maxW="3xl" lineHeight="1.6">
               Explore my comprehensive collection of projects, from complex
               client systems to learning experiments and reusable components.
             </Text>
           </VStack>
 
-          <HStack justify="center" spacing={8} py={6}>
-            <VStack>
-              <Text fontSize="2xl" fontWeight="bold" color="blue.500">
-                {sections.reduce(
-                  (acc, section) => acc + section.links.length,
-                  0
-                )}
-                +
-              </Text>
-              <Text fontSize="sm" color={textColor}>
-                Total Projects
-              </Text>
-            </VStack>
-            <VStack>
-              <Text fontSize="2xl" fontWeight="bold" color="purple.500">
-                4
-              </Text>
-              <Text fontSize="sm" color={textColor}>
-                Categories
-              </Text>
-            </VStack>
-            <VStack>
-              <Text fontSize="2xl" fontWeight="bold" color="green.500">
-                100%
-              </Text>
-              <Text fontSize="sm" color={textColor}>
-                Functional
-              </Text>
-            </VStack>
-          </HStack>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <HStack justify="center" spacing={8} py={6} flexWrap="wrap">
+              <VStack>
+                <Text 
+                  fontSize="2xl" 
+                  fontWeight="bold" 
+                  bgGradient="linear(to-r, orange.400, red.500)"
+                  bgClip="text"
+                >
+                  {sections.reduce(
+                    (acc, section) => acc + section.links.length,
+                    0
+                  )}
+                  +
+                </Text>
+                <Text fontSize="sm" color={textColor}>
+                  Total Projects
+                </Text>
+              </VStack>
+              <VStack>
+                <Text 
+                  fontSize="2xl" 
+                  fontWeight="bold" 
+                  bgGradient="linear(to-r, red.400, yellow.500)"
+                  bgClip="text"
+                >
+                  4
+                </Text>
+                <Text fontSize="sm" color={textColor}>
+                  Categories
+                </Text>
+              </VStack>
+              <VStack>
+                <Text 
+                  fontSize="2xl" 
+                  fontWeight="bold" 
+                  bgGradient="linear(to-r, yellow.400, orange.500)"
+                  bgClip="text"
+                >
+                  100%
+                </Text>
+                <Text fontSize="sm" color={textColor}>
+                  Functional
+                </Text>
+              </VStack>
+            </HStack>
+          </motion.div>
 
           {sections.map((section, index) => (
-            <Box
+            <motion.div
               key={index}
-              bg={sectionBg}
-              borderRadius="2xl"
-              p={8}
-              shadow="lg"
-              border="1px"
-              borderColor={borderColor}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
+              <Box
+                bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                backdropFilter="blur(30px) saturate(180%)"
+                borderRadius="2xl"
+                p={8}
+                shadow="xl"
+                border="2px solid"
+                borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                position="relative"
+                overflow="hidden"
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "4px",
+                  bgGradient: "linear(to-r, orange.400, red.500, yellow.400)",
+                }}
+              >
               <VStack align="stretch" spacing={6}>
                 <HStack spacing={4}>
                   <Box
@@ -505,7 +554,8 @@ const PortfolioLinks = () => {
                   ))}
                 </SimpleGrid>
               </VStack>
-            </Box>
+              </Box>
+            </motion.div>
           ))}
         </VStack>
       </Container>

@@ -326,7 +326,7 @@ export default function CallToActionWithIllustration() {
                         fontWeight="bold"
                         fontSize="1.1em"
                       >
-                        Full-Stack Developer
+                        Web Developer
                       </chakra.span>
                     </motion.span>
                     {" "}and{" "}

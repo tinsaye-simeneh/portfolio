@@ -63,7 +63,6 @@ const ProjectCard = ({
         overflow="hidden"
         shadow="2xl"
         bg={cardBg}
-        group
         cursor="pointer"
         onClick={() => window.open(demoLink, "_blank")}
       >

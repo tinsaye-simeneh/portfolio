@@ -28,6 +28,8 @@ import {
   FaRedo,
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { chakra } from "@chakra-ui/react";
 
 type Post = {
   id: string;
@@ -86,7 +88,7 @@ export default function BlogsPage() {
     return (
       <Box minH="100vh" display="flex" alignItems="center" justifyContent="center">
         <VStack spacing={4}>
-          <Spinner size="xl" thickness="4px" speed="0.65s" color="blue.500" />
+          <Spinner size="xl" thickness="4px" speed="0.65s" color="orange.500" />
           <Text color={textColor} fontWeight="medium">
             Loading blog posts...
           </Text>
@@ -109,11 +111,18 @@ export default function BlogsPage() {
             </Text>
           </VStack>
           <Button
-            colorScheme="blue"
+            bgGradient="linear(to-r, orange.400, orange.600)"
+            color="white"
             size="lg"
             onClick={handleRefresh}
             leftIcon={<Icon as={FaRedo} />}
             borderRadius="full"
+            _hover={{
+              bgGradient: "linear(to-r, orange.500, orange.700)",
+              transform: "translateY(-2px)",
+              shadow: "xl"
+            }}
+            transition="all 0.3s ease"
           >
             Try Again
           </Button>
@@ -138,15 +147,24 @@ export default function BlogsPage() {
             </Button>
             
             <VStack spacing={4}>
-              <Heading 
-                as="h1" 
-                size="2xl" 
-                color={headingColor}
-                bgGradient="linear(to-r, blue.400, purple.500, pink.400)"
-                bgClip="text"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
               >
-                My Blog Posts
-              </Heading>
+                <Heading 
+                  as="h1" 
+                  size="2xl" 
+                  color={headingColor}
+                  bgGradient={useColorModeValue(
+                    "linear(to-r, orange.400, red.500, yellow.400)",
+                    "linear(to-r, orange.300, red.400, yellow.300)"
+                  )}
+                  bgClip="text"
+                >
+                  My Blog Posts
+                </Heading>
+              </motion.div>
               <Text 
                 fontSize="xl" 
                 color={textColor} 
@@ -157,36 +175,54 @@ export default function BlogsPage() {
               </Text>
             </VStack>
 
-            <HStack spacing={8} flexWrap="wrap" justify="center">
-              <VStack spacing={1}>
-                <Text fontSize="2xl" fontWeight="bold" color="blue.500">
-                  {posts.length}
-                </Text>
-                <Text fontSize="sm" color={textColor}>
-                  {posts.length === 1 ? 'Article' : 'Articles'}
-                </Text>
-              </VStack>
-              <VStack spacing={1}>
-                <Text fontSize="2xl" fontWeight="bold" color="purple.500">
-                  {posts.reduce((acc, post) => acc + (post.reactions.heart || 0), 0)}
-                </Text>
-                <Text fontSize="sm" color={textColor}>Total Hearts</Text>
-              </VStack>
-              <Button
-                leftIcon={<Icon as={FaRedo} />}
-                variant="outline"
-                colorScheme="blue"
-                onClick={handleRefresh}
-                borderRadius="full"
-                _hover={{
-                  transform: "translateY(-2px)",
-                  shadow: "lg"
-                }}
-                transition="all 0.3s ease"
-              >
-                Refresh
-              </Button>
-            </HStack>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <HStack spacing={8} flexWrap="wrap" justify="center">
+                <VStack spacing={1}>
+                  <Text 
+                    fontSize="2xl" 
+                    fontWeight="bold" 
+                    bgGradient="linear(to-r, orange.400, red.500)"
+                    bgClip="text"
+                  >
+                    {posts.length}
+                  </Text>
+                  <Text fontSize="sm" color={textColor}>
+                    {posts.length === 1 ? 'Article' : 'Articles'}
+                  </Text>
+                </VStack>
+                <VStack spacing={1}>
+                  <Text 
+                    fontSize="2xl" 
+                    fontWeight="bold" 
+                    bgGradient="linear(to-r, red.400, yellow.500)"
+                    bgClip="text"
+                  >
+                    {posts.reduce((acc, post) => acc + (post.reactions.heart || 0), 0)}
+                  </Text>
+                  <Text fontSize="sm" color={textColor}>Total Hearts</Text>
+                </VStack>
+                <Button
+                  leftIcon={<Icon as={FaRedo} />}
+                  variant="outline"
+                  borderColor={useColorModeValue("orange.300", "orange.600")}
+                  color={useColorModeValue("orange.600", "orange.400")}
+                  onClick={handleRefresh}
+                  borderRadius="full"
+                  _hover={{
+                    bg: useColorModeValue("orange.50", "orange.900"),
+                    transform: "translateY(-2px)",
+                    shadow: "lg"
+                  }}
+                  transition="all 0.3s ease"
+                >
+                  Refresh
+                </Button>
+              </HStack>
+            </motion.div>
           </VStack>
 
           <Divider />
@@ -203,32 +239,56 @@ export default function BlogsPage() {
                 </Text>
               </VStack>
               <Button
-                colorScheme="blue"
+                bgGradient="linear(to-r, orange.400, orange.600)"
+                color="white"
                 size="lg"
                 onClick={() => router.push('/contact-me')}
                 borderRadius="full"
+                _hover={{
+                  bgGradient: "linear(to-r, orange.500, orange.700)",
+                  transform: "translateY(-2px)",
+                  shadow: "xl"
+                }}
+                transition="all 0.3s ease"
               >
                 Get Notified
               </Button>
             </VStack>
           ) : (
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-              {posts.map((post) => (
-                <Box
+              {posts.map((post, index) => (
+                <motion.div
                   key={post.id}
-                  bg={sectionBg}
-                  borderRadius="2xl"
-                  shadow="lg"
-                  border="1px"
-                  borderColor={borderColor}
-                  overflow="hidden"
-                  transition="all 0.3s ease"
-                  _hover={{
-                    transform: "translateY(-8px)",
-                    shadow: "xl",
-                    borderColor: "blue.300"
-                  }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
+                  <Box
+                    bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                    backdropFilter="blur(30px) saturate(180%)"
+                    borderRadius="2xl"
+                    shadow="xl"
+                    border="2px solid"
+                    borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                    overflow="hidden"
+                    transition="all 0.3s ease"
+                    position="relative"
+                    _before={{
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: "4px",
+                      bgGradient: "linear(to-r, orange.400, red.500, yellow.400)",
+                      zIndex: 1,
+                    }}
+                    _hover={{
+                      transform: "translateY(-8px)",
+                      shadow: "2xl",
+                      borderColor: useColorModeValue("orange.300", "orange.600")
+                    }}
+                  >
                   {post.cover_image ? (
                     <Box
                       h="200px"
@@ -333,14 +393,14 @@ export default function BlogsPage() {
                     <Button
                       as={Link}
                       href={`/blog/${post.id}`}
-                      colorScheme="blue"
-                      variant="outline"
+                      bgGradient="linear(to-r, orange.400, orange.600)"
+                      color="white"
+                      variant="solid"
                       size="sm"
                       rightIcon={<Icon as={FaEye} />}
                       borderRadius="full"
                       _hover={{
-                        bg: "blue.500",
-                        color: "white",
+                        bgGradient: "linear(to-r, orange.500, orange.700)",
                         textDecoration: "none",
                         transform: "translateY(-1px)",
                         shadow: "md"
@@ -350,7 +410,8 @@ export default function BlogsPage() {
                       Read Article
                     </Button>
                   </VStack>
-                </Box>
+                  </Box>
+                </motion.div>
               ))}
             </SimpleGrid>
           )}
@@ -361,23 +422,37 @@ export default function BlogsPage() {
                 Want to stay updated with my latest posts?
               </Text>
               <HStack spacing={4}>
-                <Button
-                  colorScheme="blue"
-                  size="lg"
-                  onClick={() => router.push('/contact-me')}
-                  borderRadius="full"
-                >
-                  Subscribe
-                </Button>
-                <Button
-                  variant="outline"
-                  colorScheme="blue"
-                  size="lg"
-                  onClick={() => router.push('/links')}
-                  borderRadius="full"
-                >
-                  View Projects
-                </Button>
+              <Button
+                bgGradient="linear(to-r, orange.400, orange.600)"
+                color="white"
+                size="lg"
+                onClick={() => router.push('/contact-me')}
+                borderRadius="full"
+                _hover={{
+                  bgGradient: "linear(to-r, orange.500, orange.700)",
+                  transform: "translateY(-2px)",
+                  shadow: "xl"
+                }}
+                transition="all 0.3s ease"
+              >
+                Subscribe
+              </Button>
+              <Button
+                variant="outline"
+                borderColor={useColorModeValue("orange.300", "orange.600")}
+                color={useColorModeValue("orange.600", "orange.400")}
+                size="lg"
+                onClick={() => router.push('/links')}
+                borderRadius="full"
+                _hover={{
+                  bg: useColorModeValue("orange.50", "orange.900"),
+                  transform: "translateY(-2px)",
+                  shadow: "lg"
+                }}
+                transition="all 0.3s ease"
+              >
+                View Projects
+              </Button>
               </HStack>
             </VStack>
           )}

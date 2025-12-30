@@ -4,11 +4,18 @@ import { SimpleGrid, Container, Heading } from "@chakra-ui/react";
 import ProjectCard from "../components/ProjectCard";
 
 const projects = [
-  {
-    title: "Jiret (Management Side) - Saas",
-    demoLink: "https://jiret.com",
-    description: "A comprehensive client management system.",
-    languages: ["JavaScript", "React", "Next.js", "Mantine", "Tailwind CSS"],
+   {
+    title: "Muyalogy",
+    demoLink: "https://muyalogy.com",
+    description: "An online learning management system.",
+    languages: [
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Mantine",
+      "Supabase",
+      "Tailwind CSS",
+    ],
   },
   {
     title: "Guzo School Management System - Saas",
@@ -24,6 +31,17 @@ const projects = [
     ],
   },
   {
+    title: "Jiret (Management Side) - Saas",
+    demoLink: "https://jiret.com",
+    description: "A comprehensive client management system.",
+    languages: ["JavaScript", "React", "Next.js", "Mantine", "Tailwind CSS"],
+  },
+  {
+    title: "Bunna Bank Onboarding Systems",
+    description: "A Bunna Bank onboarding system including agent, customer and admin systems",
+    languages: ["JavaScript", "React", "Tailwind CSS"],
+  },
+  {
     title: "Specter systems portal - Saas",
     demoLink: "https://portal.spectersystems.io",
     description: "A saas school management system",
@@ -37,39 +55,32 @@ const projects = [
     ],
   },
   {
-    title: "Muyalogy",
-    demoLink: "https://muyalogy.com",
-    description: "An online learning management system.",
-    languages: [
-      "JavaScript",
-      "React",
-      "Next.js",
-      "Mantine",
-      "Supabase",
-      "Tailwind CSS",
-    ],
+    title: "Precise ethiopia Consulting site",
+    description: "A Precise ethiop Consulting site",
+    languages: ["JavaScript", "React", "Tailwind CSS"],
+  },
+  {
+    title: "Lucy Delala",
+    description: "A Lucy Delala website",
+    languages: ["JavaScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
     title: "Keno Retail Game",
-    demoLink: "https://keno2.etvirtual.com",
     description: "An interactive gaming platform.",
     languages: ["JavaScript", "React.js"],
   },
   {
     title: "Spin Retail Game",
-    demoLink: "https://spin2.etvirtual.com",
     description: "A spin-the-wheel gaming application.",
     languages: ["JavaScript", "React.js", "Tailwind CSS"],
   },
   {
     title: "Cashier Retail",
-    demoLink: "https://retail2.etvirtual.com",
     description: "A retail management system.",
     languages: ["JavaScript", "React", "Tailwind CSS"],
   },
   {
     title: "Game Admins",
-    demoLink: "https://admin2.etvirtual.com",
     description: "An admin panel for managing users and data.",
     languages: ["JavaScript", "React", "Tailwind CSS"],
   },
@@ -232,7 +243,7 @@ export default function Projects() {
             key={index}
             title={project.title}
             description={project.description}
-            demoLink={project.demoLink}
+            demoLink={project.demoLink || ""}
             languages={project.languages}
           />
         ))}

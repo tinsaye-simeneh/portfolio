@@ -31,6 +31,8 @@ import {
 } from "react-icons/bs";
 import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { chakra } from "@chakra-ui/react";
 
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,7 +43,7 @@ export default function Contact() {
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const textColor = useColorModeValue("gray.600", "gray.300");
   const headingColor = useColorModeValue("gray.800", "white");
-  const accentColor = useColorModeValue("blue.600", "blue.400");
+  const accentColor = useColorModeValue("orange.600", "orange.400");
 
   const handleIframeLoad = () => {
     setIsLoading(false);
@@ -120,15 +122,24 @@ export default function Contact() {
               Back to Home
             </Button>
             
-            <Heading 
-              as="h1" 
-              size="2xl" 
-              color={headingColor}
-              bgGradient="linear(to-r, blue.400, purple.500, pink.400)"
-              bgClip="text"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              Let&apos;s Work Together
-            </Heading>
+              <Heading 
+                as="h1" 
+                size="2xl" 
+                color={headingColor}
+                bgGradient={useColorModeValue(
+                  "linear(to-r, orange.400, red.500, yellow.400)",
+                  "linear(to-r, orange.300, red.400, yellow.300)"
+                )}
+                bgClip="text"
+              >
+                Let&apos;s Work Together
+              </Heading>
+            </motion.div>
             <Text 
               fontSize="xl" 
               color={textColor} 
@@ -143,23 +154,40 @@ export default function Contact() {
           <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={12} alignItems="start">
             
             <VStack spacing={8} align="stretch">
-              <Box
-                bg={sectionBg}
-                p={8}
-                borderRadius="2xl"
-                shadow="lg"
-                border="1px"
-                borderColor={borderColor}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <VStack spacing={6} align="stretch">
-                  <VStack spacing={2} align="start">
-                    <Heading size="lg" color={headingColor}>
-                      Contact Information
-                    </Heading>
-                    <Text color={textColor}>
-                      Feel free to reach out through any of these channels
-                    </Text>
-                  </VStack>
+                <Box
+                  bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                  backdropFilter="blur(30px) saturate(180%)"
+                  p={8}
+                  borderRadius="2xl"
+                  shadow="xl"
+                  border="2px solid"
+                  borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                  position="relative"
+                  overflow="hidden"
+                  _before={{
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "4px",
+                    bgGradient: "linear(to-r, orange.400, red.500, yellow.400)",
+                  }}
+                >
+                  <VStack spacing={6} align="stretch">
+                    <VStack spacing={2} align="start">
+                      <Heading size="lg" color={headingColor}>
+                        Contact Information
+                      </Heading>
+                      <Text color={textColor}>
+                        Feel free to reach out through any of these channels
+                      </Text>
+                    </VStack>
 
                   <VStack spacing={4} align="stretch">
                     {contactInfo.map((info, index) => (
@@ -237,25 +265,43 @@ export default function Contact() {
                     ))}
                   </VStack>
                 </VStack>
-              </Box>
+                </Box>
+              </motion.div>
 
-              <Box
-                bg={sectionBg}
-                p={8}
-                borderRadius="2xl"
-                shadow="lg"
-                border="1px"
-                borderColor={borderColor}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <VStack spacing={6} align="stretch">
-                  <VStack spacing={2} align="start">
-                    <Heading size="lg" color={headingColor}>
-                      Connect With Me
-                    </Heading>
-                    <Text color={textColor}>
-                      Follow me on social media for updates
-                    </Text>
-                  </VStack>
+                <Box
+                  bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                  backdropFilter="blur(30px) saturate(180%)"
+                  p={8}
+                  borderRadius="2xl"
+                  shadow="xl"
+                  border="2px solid"
+                  borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                  position="relative"
+                  overflow="hidden"
+                  _before={{
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "4px",
+                    bgGradient: "linear(to-r, orange.400, red.500, yellow.400)",
+                  }}
+                >
+                  <VStack spacing={6} align="stretch">
+                    <VStack spacing={2} align="start">
+                      <Heading size="lg" color={headingColor}>
+                        Connect With Me
+                      </Heading>
+                      <Text color={textColor}>
+                        Follow me on social media for updates
+                      </Text>
+                    </VStack>
 
                   <SimpleGrid columns={2} spacing={4}>
                     {socialLinks.map((social, index) => (
@@ -283,42 +329,111 @@ export default function Contact() {
                     ))}
                   </SimpleGrid>
                 </VStack>
-              </Box>
+                </Box>
+              </motion.div>
 
-              <Box
-                bg={cardBg}
-                p={6}
-                borderRadius="xl"
-                border="1px"
-                borderColor={borderColor}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
               >
-                <VStack spacing={4}>
-                  <Icon as={MdLanguage} boxSize={8} color={accentColor} />
-                  <VStack spacing={2} textAlign="center">
-                    <Text fontWeight="bold" color={headingColor}>
-                      Languages
-                    </Text>
-                    <HStack spacing={2} flexWrap="wrap" justify="center">
-                      <Badge colorScheme="blue" variant="subtle">English</Badge>
-                      <Badge colorScheme="green" variant="subtle">Amharic</Badge>
-                    </HStack>
+                <Box
+                  bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                  backdropFilter="blur(30px) saturate(180%)"
+                  p={6}
+                  borderRadius="xl"
+                  border="2px solid"
+                  borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                  shadow="lg"
+                  position="relative"
+                  overflow="hidden"
+                  _before={{
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "3px",
+                    bgGradient: "linear(to-r, orange.400, red.500, yellow.400)",
+                  }}
+                >
+                  <VStack spacing={4}>
+                    <Box
+                      p={3}
+                      borderRadius="lg"
+                      bgGradient="linear(to-r, yellow.400, orange.500)"
+                      color="white"
+                    >
+                      <Icon as={MdLanguage} boxSize={6} />
+                    </Box>
+                    <VStack spacing={2} textAlign="center">
+                      <Text fontWeight="bold" color={headingColor}>
+                        Languages
+                      </Text>
+                      <HStack spacing={2} flexWrap="wrap" justify="center">
+                        <Badge 
+                          bgGradient="linear(to-r, orange.400, red.500)"
+                          color="white"
+                          px={3}
+                          py={1}
+                          borderRadius="full"
+                          fontWeight="bold"
+                        >
+                          English
+                        </Badge>
+                        <Badge 
+                          bgGradient="linear(to-r, red.400, yellow.500)"
+                          color="white"
+                          px={3}
+                          py={1}
+                          borderRadius="full"
+                          fontWeight="bold"
+                        >
+                          Amharic
+                        </Badge>
+                      </HStack>
+                    </VStack>
                   </VStack>
-                </VStack>
-              </Box>
+                </Box>
+              </motion.div>
             </VStack>
 
-            <Box
-              bg={sectionBg}
-              borderRadius="2xl"
-              shadow="lg"
-              border="1px"
-              borderColor={borderColor}
-              overflow="hidden"
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
+              <Box
+                bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                backdropFilter="blur(30px) saturate(180%)"
+                borderRadius="2xl"
+                shadow="xl"
+                border="2px solid"
+                borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                overflow="hidden"
+                position="relative"
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "4px",
+                  bgGradient: "linear(to-r, orange.400, red.500, yellow.400)",
+                  zIndex: 1,
+                }}
+              >
               <Box p={8} pb={4}>
                 <VStack spacing={4} align="start">
                   <HStack spacing={3}>
-                    <Icon as={FaPaperPlane} color={accentColor} boxSize={6} />
+                    <Box
+                      p={2}
+                      borderRadius="lg"
+                      bgGradient="linear(to-r, orange.400, red.500)"
+                      color="white"
+                    >
+                      <Icon as={FaPaperPlane} boxSize={5} />
+                    </Box>
                     <Heading size="lg" color={headingColor}>
                       Send a Message
                     </Heading>
@@ -350,7 +465,7 @@ export default function Contact() {
                         size="xl"
                         thickness="4px"
                         speed="0.65s"
-                        color="blue.500"
+                        color="orange.500"
                         emptyColor="gray.200"
                       />
                       <Text color={textColor} fontWeight="medium">
@@ -358,8 +473,13 @@ export default function Contact() {
                       </Text>
                       <Button 
                         onClick={handleIframeLoad}
-                        colorScheme="blue"
+                        bgGradient="linear(to-r, orange.400, orange.600)"
+                        color="white"
                         size="sm"
+                        _hover={{
+                          bgGradient: "linear(to-r, orange.500, orange.700)",
+                        }}
+                        borderRadius="full"
                       >
                         Retry
                       </Button>
@@ -380,7 +500,8 @@ export default function Contact() {
                   />
                 </Box>
               </Box>
-            </Box>
+              </Box>
+            </motion.div>
           </SimpleGrid>
         </VStack>
       </Container>
