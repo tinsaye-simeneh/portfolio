@@ -10,7 +10,6 @@ import {
   HStack,
   Badge,
   Icon,
-  useColorModeValue,
   Button,
   SimpleGrid,
   Tooltip,
@@ -31,17 +30,13 @@ import { motion } from "framer-motion";
 const PortfolioLinks = () => {
   const router = useRouter();
 
-  const cardBg = useColorModeValue("gray.50", "gray.700");
-  const headingGradient = useColorModeValue(
-    "linear(to-r, orange.400, red.500, yellow.400)",
-    "linear(to-r, orange.300, red.400, yellow.300)"
-  );
-  const cardBgValue = useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)");
-  const cardBorderValue = useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)");
-  const borderColor = useColorModeValue("gray.200", "gray.600");
-  const textColor = useColorModeValue("gray.600", "gray.300");
-  const headingColor = useColorModeValue("gray.800", "white");
-  const credentialsBg = useColorModeValue("orange.50", "orange.900");
+  const cardBg = "rgba(26, 46, 46, 0.5)";
+  const headingGradient = "linear(to-r, orange.300, red.400, yellow.300)";
+  const cardBgValue = "rgba(26, 46, 46, 0.8)";
+  const cardBorderValue = "rgba(255, 255, 255, 0.15)";
+  const borderColor = "rgba(255, 255, 255, 0.1)";
+  const textColor = "gray.300";
+  const headingColor = "white";
 
   const sections = [
     {
@@ -60,7 +55,7 @@ const PortfolioLinks = () => {
         {
           label: "Jiret (Management Side) - Saas",
           url: "https://jiret.com",
-          description: "A comprehensive client management system.",
+          description: "A SaaS Learning Management System.",
         },
         {
           label: "Guzo School Management System - Saas (Private)",
@@ -69,10 +64,22 @@ const PortfolioLinks = () => {
           hasAuth: true,
         },
         {
-          label: "Bunna Bank Onboarding Systems",
-          description: "A Bunna Bank onboarding system including agent, customer and admin systems",
+          label: "Bunna Bank Agent Port",
+          description: "Agent portal for Bunna Bank onboarding system",
           languages: ["JavaScript", "React", "Tailwind CSS"],
           hasAuth: true,
+        },
+        {
+          label: "Bunna Bank Client Onboarding System",
+          description: "Client onboarding system for Bunna Bank",
+          languages: ["JavaScript", "React", "Tailwind CSS"],
+          hasAuth: true,
+        },
+        {
+          label: "Shangi Main Site with Admin Side",
+          url: "http://shangi-indol.vercel.app/",
+          description: "Main website with admin panel for Shangi",
+          languages: ["JavaScript", "React", "Next.js"],
         },
         {
           label: "Specter systems portal - Saas",
@@ -338,8 +345,8 @@ const PortfolioLinks = () => {
   ];
 
   return (
-    <Box minH="100vh" py={10}>
-      <Container maxW="container.xl">
+    <Box bg="#1a2e2e" minH="100vh" color="white" py={10}>
+      <Container maxW="1600px">
         <VStack spacing={8} align="stretch">
           <VStack spacing={6} textAlign="center">
             <Button
@@ -457,8 +464,8 @@ const PortfolioLinks = () => {
                   <Box
                     p={3}
                     borderRadius="xl"
-                    bg={`${section.color}.100`}
-                    color={`${section.color}.600`}
+                    bg="rgba(74, 90, 90, 0.5)"
+                    color={`${section.color}.300`}
                   >
                     <Icon as={section.icon} boxSize={6} />
                   </Box>
@@ -471,11 +478,13 @@ const PortfolioLinks = () => {
                     </Text>
                   </VStack>
                   <Badge
-                    colorScheme={section.color}
-                    variant="subtle"
+                    bg="rgba(74, 90, 90, 0.8)"
+                    color="white"
                     px={3}
                     py={1}
                     borderRadius="full"
+                    border="1px solid"
+                    borderColor="rgba(255, 255, 255, 0.1)"
                   >
                     {section.links.length} projects
                   </Badge>
@@ -495,7 +504,8 @@ const PortfolioLinks = () => {
                       _hover={{
                         transform: "translateY(-4px)",
                         shadow: "lg",
-                        borderColor: `${section.color}.300`,
+                        borderColor: "rgba(255, 255, 255, 0.3)",
+                        bg: "rgba(74, 90, 90, 0.6)",
                       }}
                     >
                       <VStack align="stretch" spacing={3}>
@@ -534,12 +544,14 @@ const PortfolioLinks = () => {
 
                         {link.hasAuth && (
                           <Box
-                            bg={credentialsBg}
+                            bg="rgba(74, 90, 90, 0.5)"
                             p={2}
                             borderRadius="md"
                             fontSize="xs"
+                            border="1px solid"
+                            borderColor="rgba(255, 255, 255, 0.1)"
                           >
-                            <Text color="orange.600" fontWeight="medium">
+                            <Text color="orange.300" fontWeight="medium">
                               Login required
                             </Text>
                           </Box>
@@ -550,10 +562,16 @@ const PortfolioLinks = () => {
                           href={link.url}
                           isExternal
                           size="sm"
-                          colorScheme={section.color}
+                          bg="rgba(74, 90, 90, 0.8)"
+                          color="white"
+                          _hover={{
+                            bg: "rgba(74, 90, 90, 1)",
+                            textDecoration: "none",
+                          }}
+                          border="1px solid"
+                          borderColor="rgba(255, 255, 255, 0.1)"
                           variant="outline"
                           rightIcon={<Icon as={FaExternalLinkAlt} />}
-                          _hover={{ textDecoration: "none" }}
                           borderRadius="full"
                         >
                           <Icon as={FaEye} mr={2} />

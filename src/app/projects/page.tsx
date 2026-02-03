@@ -1,6 +1,6 @@
 "use client";
 
-import { SimpleGrid, Container, Heading } from "@chakra-ui/react";
+import { SimpleGrid, Container, Heading, Box } from "@chakra-ui/react";
 import ProjectCard from "../components/ProjectCard";
 
 const projects = [
@@ -33,7 +33,7 @@ const projects = [
   {
     title: "Jiret (Management Side) - Saas",
     demoLink: "https://jiret.com",
-    description: "A comprehensive client management system.",
+    description: "A SaaS Learning Management System.",
     languages: ["JavaScript", "React", "Next.js", "Mantine", "Tailwind CSS"],
   },
   {
@@ -233,21 +233,23 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Container maxW="container.xl" py={10}>
-      <Heading as="h1" mb={10} textAlign="center">
-        My Projects (25+)
-      </Heading>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={8}>
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            description={project.description}
-            demoLink={project.demoLink || ""}
-            languages={project.languages}
-          />
-        ))}
-      </SimpleGrid>
-    </Container>
+    <Box bg="#1a2e2e" minH="100vh" color="white">
+      <Container maxW="1600px" py={16}>
+        <Heading as="h1" mb={10} textAlign="center" color="white" fontSize={{ base: "3xl", md: "4xl" }}>
+          My Projects (25+)
+        </Heading>
+        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={8}>
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              demoLink={project.demoLink || ""}
+              languages={project.languages}
+            />
+          ))}
+        </SimpleGrid>
+      </Container>
+    </Box>
   );
 }
