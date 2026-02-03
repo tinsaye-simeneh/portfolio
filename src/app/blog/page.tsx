@@ -13,7 +13,6 @@ import {
   HStack,
   SimpleGrid,
   Heading,
-  useColorModeValue,
   Icon,
   Flex,
   Divider,
@@ -47,21 +46,18 @@ export default function BlogsPage() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  const textColor = useColorModeValue("gray.600", "gray.300");
-  const headingColor = useColorModeValue("gray.800", "white");
-  const headingGradient = useColorModeValue(
-    "linear(to-r, orange.400, red.500, yellow.400)",
-    "linear(to-r, orange.300, red.400, yellow.300)"
-  );
-  const buttonBorderColor = useColorModeValue("orange.300", "orange.600");
-  const buttonColor = useColorModeValue("orange.600", "orange.400");
-  const buttonHoverBg = useColorModeValue("orange.50", "orange.900");
-  const cardBg = useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)");
-  const cardBorder = useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)");
-  const cardHoverBorder = useColorModeValue("orange.300", "orange.600");
-  const subscribeButtonBorder = useColorModeValue("orange.300", "orange.600");
-  const subscribeButtonColor = useColorModeValue("orange.600", "orange.400");
-  const subscribeButtonHoverBg = useColorModeValue("orange.50", "orange.900");
+  const textColor = "gray.300";
+  const headingColor = "white";
+  const headingGradient = "linear(to-r, orange.300, red.400, yellow.300)";
+  const buttonBorderColor = "orange.600";
+  const buttonColor = "orange.400";
+  const buttonHoverBg = "rgba(74, 90, 90, 0.3)";
+  const cardBg = "rgba(26, 46, 46, 0.8)";
+  const cardBorder = "rgba(255, 255, 255, 0.15)";
+  const cardHoverBorder = "orange.600";
+  const subscribeButtonBorder = "orange.600";
+  const subscribeButtonColor = "orange.400";
+  const subscribeButtonHoverBg = "rgba(74, 90, 90, 0.3)";
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -96,7 +92,7 @@ export default function BlogsPage() {
 
   if (isLoading) {
     return (
-      <Box minH="100vh" display="flex" alignItems="center" justifyContent="center">
+      <Box bg="#1a2e2e" minH="100vh" color="white" display="flex" alignItems="center" justifyContent="center">
         <VStack spacing={4}>
           <Spinner size="xl" thickness="4px" speed="0.65s" color="orange.500" />
           <Text color={textColor} fontWeight="medium">
@@ -109,7 +105,7 @@ export default function BlogsPage() {
 
   if (error) {
     return (
-      <Box minH="100vh" display="flex" alignItems="center" justifyContent="center">
+      <Box bg="#1a2e2e" minH="100vh" color="white" display="flex" alignItems="center" justifyContent="center">
         <VStack spacing={6} textAlign="center" maxW="md">
           <Icon as={FaBookOpen} boxSize={16} color="red.400" />
           <VStack spacing={2}>
@@ -142,8 +138,8 @@ export default function BlogsPage() {
   }
 
   return (
-    <Box minH="100vh" py={10}>
-      <Container maxW="container.xl">
+    <Box bg="#1a2e2e" minH="100vh" color="white" py={10}>
+      <Container maxW="1600px">
         <VStack spacing={8} align="stretch">
           <VStack spacing={6} textAlign="center">
             <Button
@@ -359,12 +355,14 @@ export default function BlogsPage() {
                       {post.tags.slice(0, 3).map((tag) => (
                         <Badge
                           key={tag}
-                          colorScheme="blue"
-                          variant="subtle"
+                          bg="rgba(74, 90, 90, 0.8)"
+                          color="white"
                           fontSize="xs"
                           px={2}
                           py={1}
                           borderRadius="full"
+                          border="1px solid"
+                          borderColor="rgba(255, 255, 255, 0.1)"
                         >
                           <Icon as={FaTag} boxSize={2} mr={1} />
                           {tag}
@@ -372,12 +370,14 @@ export default function BlogsPage() {
                       ))}
                       {post.tags.length > 3 && (
                         <Badge
-                          colorScheme="gray"
-                          variant="subtle"
+                          bg="rgba(74, 90, 90, 0.5)"
+                          color="gray.300"
                           fontSize="xs"
                           px={2}
                           py={1}
                           borderRadius="full"
+                          border="1px solid"
+                          borderColor="rgba(255, 255, 255, 0.1)"
                         >
                           +{post.tags.length - 3}
                         </Badge>

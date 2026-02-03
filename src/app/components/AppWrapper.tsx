@@ -1,33 +1,31 @@
 "use client";
 
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import Snow from "./Snow";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Sidebar from "./Sidebar";
 import PageContainer from "./PageContainer";
+import ProgressBar from "./ProgressBar";
 
 type AppWrapperProps = {
   children: ReactNode;
 };
 
 export default function AppWrapper({ children }: AppWrapperProps) {
-  const bgGradient = useColorModeValue(
-    "linear(to-r, orange.50, red.50, yellow.50)",
-    "linear(to-r, orange.900, red.900, yellow.900)"
-  );
-
   return (
     <Box
       minH="100vh"
       display="flex"
       flexDirection="column"
-      bgGradient={bgGradient}
+      bg="#1a2e2e"
+      position="relative"
     >
-      <Snow />
+      <ProgressBar />
       <Navbar />
-      <PageContainer>{children}</PageContainer>
-      <Footer />
+      <Flex flex="1" position="relative">
+        <Sidebar />
+        <PageContainer>{children}</PageContainer>
+      </Flex>
     </Box>
   );
 }

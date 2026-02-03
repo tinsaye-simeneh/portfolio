@@ -11,7 +11,6 @@ import {
   HStack,
   SimpleGrid,
   Spinner,
-  useColorModeValue,
   Icon,
   Link,
   Badge,
@@ -37,15 +36,12 @@ export default function Contact() {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
-  const sectionBg = useColorModeValue("white", "gray.800");
-  const cardBg = useColorModeValue("gray.50", "gray.700");
-  const borderColor = useColorModeValue("gray.200", "gray.600");
-  const textColor = useColorModeValue("gray.600", "gray.300");
-  const headingColor = useColorModeValue("gray.800", "white");
-  const headingGradient = useColorModeValue(
-    "linear(to-r, orange.400, red.500, yellow.400)",
-    "linear(to-r, orange.300, red.400, yellow.300)"
-  );
+  const sectionBg = "rgba(26, 46, 46, 0.8)";
+  const cardBg = "rgba(26, 46, 46, 0.5)";
+  const borderColor = "rgba(255, 255, 255, 0.1)";
+  const textColor = "gray.300";
+  const headingColor = "white";
+  const headingGradient = "linear(to-r, orange.300, red.400, yellow.300)";
 
   const handleIframeLoad = () => {
     setIsLoading(false);
@@ -110,8 +106,8 @@ export default function Contact() {
   ];
 
   return (
-    <Box minH="100vh" py={10}>
-      <Container maxW="container.xl">
+    <Box bg="#1a2e2e" minH="100vh" color="white" py={10}>
+      <Container maxW="1600px">
         <VStack spacing={8} align="stretch">
           <VStack spacing={6} textAlign="center">
             <Button
@@ -159,13 +155,13 @@ export default function Contact() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <Box
-                  bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                  bg="rgba(26, 46, 46, 0.8)"
                   backdropFilter="blur(30px) saturate(180%)"
                   p={8}
                   borderRadius="2xl"
                   shadow="xl"
                   border="2px solid"
-                  borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                  borderColor="rgba(255, 255, 255, 0.15)"
                   position="relative"
                   overflow="hidden"
                   _before={{
@@ -207,7 +203,8 @@ export default function Contact() {
                             _hover={{
                               transform: "translateY(-2px)",
                               shadow: "md",
-                              borderColor: `${info.color}.300`
+                              borderColor: "rgba(255, 255, 255, 0.3)",
+                              bg: "rgba(74, 90, 90, 0.6)",
                             }}
                             cursor="pointer"
                           >
@@ -215,8 +212,8 @@ export default function Contact() {
                               <Box
                                 p={3}
                                 borderRadius="lg"
-                                bg={`${info.color}.100`}
-                                color={`${info.color}.600`}
+                bg={`rgba(74, 90, 90, 0.5)`}
+                color={`${info.color}.300`}
                               >
                                 <Icon as={info.icon} boxSize={5} />
                               </Box>
@@ -245,8 +242,8 @@ export default function Contact() {
                             <Box
                               p={3}
                               borderRadius="lg"
-                              bg={`${info.color}.100`}
-                              color={`${info.color}.600`}
+                bg={`rgba(74, 90, 90, 0.5)`}
+                color={`${info.color}.300`}
                             >
                               <Icon as={info.icon} boxSize={5} />
                             </Box>
@@ -273,13 +270,13 @@ export default function Contact() {
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <Box
-                  bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                  bg="rgba(26, 46, 46, 0.8)"
                   backdropFilter="blur(30px) saturate(180%)"
                   p={8}
                   borderRadius="2xl"
                   shadow="xl"
                   border="2px solid"
-                  borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                  borderColor="rgba(255, 255, 255, 0.15)"
                   position="relative"
                   overflow="hidden"
                   _before={{
@@ -337,12 +334,12 @@ export default function Contact() {
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
                 <Box
-                  bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                  bg="rgba(26, 46, 46, 0.8)"
                   backdropFilter="blur(30px) saturate(180%)"
                   p={6}
                   borderRadius="xl"
                   border="2px solid"
-                  borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                  borderColor="rgba(255, 255, 255, 0.15)"
                   shadow="lg"
                   position="relative"
                   overflow="hidden"
@@ -403,12 +400,12 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <Box
-                bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+                bg="rgba(26, 46, 46, 0.8)"
                 backdropFilter="blur(30px) saturate(180%)"
                 borderRadius="2xl"
                 shadow="xl"
                 border="2px solid"
-                borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+                borderColor="rgba(255, 255, 255, 0.15)"
                 overflow="hidden"
                 position="relative"
                 _before={{

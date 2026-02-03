@@ -9,7 +9,6 @@ import {
   HStack, 
   Text,
   Container,
-  useColorModeValue,
   Icon,
   Badge,
   Divider
@@ -28,10 +27,10 @@ export default function ResumePage() {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
-  const sectionBg = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.600");
-  const textColor = useColorModeValue("gray.600", "gray.300");
-  const headingColor = useColorModeValue("gray.800", "white");
+  const sectionBg = "rgba(26, 46, 46, 0.8)";
+  const borderColor = "rgba(255, 255, 255, 0.1)";
+  const textColor = "gray.300";
+  const headingColor = "white";
 
   const handleLoad = () => {
     setIsLoading(false);
@@ -47,8 +46,8 @@ export default function ResumePage() {
   };
 
   return (
-    <Box minH="100vh" py={10}>
-      <Container maxW="container.xl">
+    <Box bg="#1a2e2e" minH="100vh" color="white" py={10}>
+      <Container maxW="1600px">
         <VStack spacing={8} align="stretch">
           <VStack spacing={6} textAlign="center">
             <Button
@@ -71,10 +70,7 @@ export default function ResumePage() {
                   as="h1" 
                   size="2xl" 
                   color={headingColor}
-                  bgGradient={useColorModeValue(
-                    "linear(to-r, orange.400, red.500, yellow.400)",
-                    "linear(to-r, orange.300, red.400, yellow.300)"
-                  )}
+                  bgGradient="linear(to-r, orange.300, red.400, yellow.300)"
                   bgClip="text"
                 >
                   My Resume
@@ -115,13 +111,13 @@ export default function ResumePage() {
                 <Button
                   leftIcon={<Icon as={FaPrint} />}
                   variant="outline"
-                  borderColor={useColorModeValue("orange.300", "orange.600")}
-                  color={useColorModeValue("orange.600", "orange.400")}
+                  borderColor="orange.600"
+                  color="orange.400"
                   size="lg"
                   onClick={handlePrint}
                   borderRadius="full"
                   _hover={{
-                    bg: useColorModeValue("orange.50", "orange.900"),
+                    bg: "rgba(74, 90, 90, 0.3)",
                     transform: "translateY(-2px)",
                     shadow: "lg"
                   }}
@@ -165,12 +161,12 @@ export default function ResumePage() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Box
-              bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44, 0.8)")}
+              bg="rgba(26, 46, 46, 0.8)"
               backdropFilter="blur(30px) saturate(180%)"
               borderRadius="2xl"
               shadow="xl"
               border="2px solid"
-              borderColor={useColorModeValue("rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.15)")}
+              borderColor="rgba(255, 255, 255, 0.15)"
               overflow="hidden"
               position="relative"
               minH="80vh"
@@ -205,7 +201,7 @@ export default function ResumePage() {
                     thickness="4px"
                     speed="0.65s"
                     color="orange.500"
-                    emptyColor="gray.200"
+                    emptyColor="rgba(74, 90, 90, 0.5)"
                   />
                   <Text color={textColor} fontWeight="medium">
                     Loading resume...
@@ -296,13 +292,13 @@ export default function ResumePage() {
                 </Button>
                 <Button
                   variant="outline"
-                  borderColor={useColorModeValue("orange.300", "orange.600")}
-                  color={useColorModeValue("orange.600", "orange.400")}
+                  borderColor="orange.600"
+                  color="orange.400"
                   size="lg"
                   onClick={() => router.push('/links')}
                   borderRadius="full"
                   _hover={{
-                    bg: useColorModeValue("orange.50", "orange.900"),
+                    bg: "rgba(74, 90, 90, 0.3)",
                     transform: "translateY(-2px)",
                     shadow: "lg"
                   }}
