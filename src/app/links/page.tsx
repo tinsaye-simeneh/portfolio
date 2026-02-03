@@ -37,7 +37,6 @@ const PortfolioLinks = () => {
   const borderColor = "rgba(255, 255, 255, 0.1)";
   const textColor = "gray.300";
   const headingColor = "white";
-  const credentialsBg = "rgba(74, 90, 90, 0.3)";
 
   const sections = [
     {

@@ -11,7 +11,7 @@ import {
   Icon,
   Flex,
 } from "@chakra-ui/react";
-import { FaGithub, FaCode, FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
+import { FaCode, FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -20,8 +20,6 @@ interface ProjectCardProps {
   description: string;
   demoLink: string;
   languages: string[];
-  githubLink?: string;
-  imageUrl?: string;
 }
 
 const ProjectCard = ({
@@ -29,8 +27,6 @@ const ProjectCard = ({
   description,
   demoLink,
   languages,
-  githubLink,
-  imageUrl,
 }: ProjectCardProps) => {
   return (
     <motion.div
@@ -125,7 +121,7 @@ const ProjectCard = ({
 
           {/* Tech Stack Tags */}
           <Flex wrap="wrap" gap={2} mt="auto">
-            {languages?.slice(0, 5).map((language, index) => (
+            {languages?.slice(0, 5).map((language) => (
               <Badge
                 key={language}
                 fontSize="xs"

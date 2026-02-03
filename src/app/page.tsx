@@ -11,12 +11,11 @@ import {
   GridItem,
   Icon,
   Flex,
-  Divider,
   SimpleGrid,
   Badge,
   Link as ChakraLink,
 } from "@chakra-ui/react";
-import { FaArrowRight, FaCode, FaPalette, FaRocket, FaEnvelope, FaStar, FaCheckCircle, FaUsers, FaChartLine } from "react-icons/fa";
+import { FaArrowRight, FaCode, FaPalette, FaRocket, FaEnvelope, FaStar, FaCheckCircle } from "react-icons/fa";
 import Link from "next/link";
 import ProjectCard from "./components/ProjectCard";
 import Footer from "./components/Footer";
